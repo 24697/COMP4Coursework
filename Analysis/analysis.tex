@@ -3,22 +3,27 @@
 \section{Introduction}
 
 \subsection{Client Identification}
-My Client is Team Cambridge Cycling Club, they have been established for 25 years and run cycling event around Cambridge. However the end user of my project will be Paul Millard who is the Racing Secretary for Team Cambridge, He uses computers daily for his work, he also created the club website, also he maintains the current database that hold the results of each even the club holds. Currently he uses and ASUS laptop running Windows Vista 32 bit. For each event that Team Cambridge holds club members are entered in competitions 
+My Client is Team Cambridge Cycling Club, they have been established for 25 years and run cycling event around Cambridge. However the end user of my project will be Paul Millard who is the Racing Secretary for Team Cambridge, He uses computers daily for his work, he also created the club website, also he maintains the current database that hold the results of each even the club holds. Currently he uses and ASUS laptop running Windows Vista 32 bit.
 \subsection{Define the current system}
-Each year Team Cambridge run 24 events on average, the results from these event are recorded on paper by the time keepers, after the event finishes Paul enter the results in to an excel spread sheet, some variables need to be manually looked up and added to the spread sheet such as personal best. The spread sheet then calculates the handy cap time of each rider, then the handicap times are sorted in increasing order and points are awarded on a riders handicap time.
-\subsection{Describe the problems}
+The current system uses a mix of manual data entry and automatic calculation. depending on the type of the even held determins the type of calculation that needs to be made, however some of the calcuations are used across mulitpul tyrps of event. The compations that Team CAmbridge members are entered for is the Transmedia, Handicap 10, Circuit, Juvenile Handicap 25 and Hill Climb, once a year Team Cambridge holds an open event currently due to the complexity of the results they are uploaded as a link to a  results document. 
 
+After the event finishes Paul enter the results in to an excel spread sheet, often the personal best of each rider needs to be looked up and added to the spread sheet. If ny calculations that need to be executed are done by the spread sheet and are ordered. The the results are then added to the current database manualy. A copy of the results are uploaded to the website and the compations that were effected by the event are updated.
+
+Any new riders have to entered in to the database manualy and some rider change the club that they ride with, if this happens then it is delt with manuly.
+\subsection{Describe the problems}
+The current system has lots of manual steps that can cause the proress to take significantly longer than if it was automated. Currently it can take upto 2 hours to process and upload one set of results
+
+The steps that could be automated is the detection of a new rider, calling of a riders personal best, any calcutions and sorting of the times and uploading data to the database
 \subsection{Section appendix}
-\begin{figure}[H]
-    \includegraphics[width=\textwidth]{./v1-2-Spec for results upload.pdf}
-    \caption{The Specification sheet provided by Paul Millard} \label{}
-\end{figure}
+
+\includepdf[]{v1-2-Spec_for_results_upload}
+
 \section{Investigation}
 
 \subsection{The current system}
 
 \subsubsection{Data sources and destinations}
-
+There are currently two sourses of data used in the system, the race results and the database. For any handicap events both sources of data is needed for all other event only the event results are required. the only data destination is the database
 \subsubsection{Algorithms}
 
 \subsubsection{Data flow diagram}\i
