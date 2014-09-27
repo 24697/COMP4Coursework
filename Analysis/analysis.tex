@@ -5,27 +5,35 @@
 \subsection{Client Identification}
 My Client is Team Cambridge Cycling Club, they have been established for 25 years and run cycling event around Cambridge. However the end user of my project will be Paul Millard who is the Racing Secretary for Team Cambridge, He uses computers daily for his work, he also created the club website, also he maintains the current database that hold the results of each even the club holds. Currently he uses and ASUS laptop running Windows Vista 32 bit.
 \subsection{Define the current system}
-The current system uses a mix of manual data entry and automatic calculation. depending on the type of the even held determins the type of calculation that needs to be made, however some of the calcuations are used across mulitpul tyrps of event. The compations that Team CAmbridge members are entered for is the Transmedia, Handicap 10, Circuit, Juvenile Handicap 25 and Hill Climb, once a year Team Cambridge holds an open event currently due to the complexity of the results they are uploaded as a link to a  results document. 
+The current system uses a mix of manual data entry and automatic calculation. depending on the type of the even held determines the type of calculation that needs to be made, however some of the calculations are used across multiple types of event. The compations that Team Cambridge members are entered for is the Transmedia, Handicap 10, Circuit, Juvenile Handicap 25 and Hill Climb, once a year Team Cambridge holds an open event currently due to the complexity of the results they are uploaded as a link to a  results document. 
 
 After the event finishes Paul enter the results in to an excel spread sheet, often the personal best of each rider needs to be looked up and added to the spread sheet. If ny calculations that need to be executed are done by the spread sheet and are ordered. The the results are then added to the current database manualy. A copy of the results are uploaded to the website and the compations that were effected by the event are updated.
 
-Any new riders have to entered in to the database manualy and some rider change the club that they ride with, if this happens then it is delt with manuly.
+Any new riders have to entered in to the database manually and some rider change the club that they ride with, if this happens then it is dealt with manually.
 \subsection{Describe the problems}
-The current system has lots of manual steps that can cause the proress to take significantly longer than if it was automated. Currently it can take upto 2 hours to process and upload one set of results
+The current system has lots of manual steps that can cause the process to take significantly longer than if it was automated. Currently it can take up to 2 hours to process and upload one set of results
 
-The steps that could be automated is the detection of a new rider, calling of a riders personal best, any calcutions and sorting of the times and uploading data to the database
+The steps that could be automated is the detection of a new rider, calling of a riders personal best, any calculations and sorting of the times and uploading data to the database
 \subsection{Section appendix}
 
-\includepdf[]{v1-2-Spec_for_results_upload}
-
+The Specification supplied by Paul Millard
+\includepdf[pages={1-9}]{TCSpecification}
 \section{Investigation}
 
 \subsection{The current system}
 
 \subsubsection{Data sources and destinations}
-There are currently two sourses of data used in the system, the race results and the database. For any handicap events both sources of data is needed for all other event only the event results are required. the only data destination is the database
-\subsubsection{Algorithms}
+There are currently two sources of data used in the system, the race results and the database. For any handicap events both sources of data is needed for all other event only the results are required. The only data destination is the database.
 
+The data from the results are on a paper form that the time keepers use during the events an example of one bellow shows that there are 8 fields, name & Address, No. , Watch Time, Emergency Tel., Club, Age, Signature. Of thies fields only Name, No., Watch Time, Club and Age (if the rider is under the age of 18) are recorded in the database. As for the database the only information that is needed form it is the riders personal best time
+
+This information is used to calculate the point that the riders are awarded in the competition(s) that are relevant to the event
+
+An example of the Sign on sheet, as supplied by Paul Millard
+\includepdf[pages={1-2}]{SignOnTimeKeepersSheet}
+
+\subsubsection{Algorithms}
+essential
 \subsubsection{Data flow diagram}\i
 
 \subsubsection{Input Forms, Output Forms, Report Formats}
@@ -43,13 +51,29 @@ There are currently two sourses of data used in the system, the race results and
 \section{Objectives}
 
 \subsection{General Objectives}
-
-\subsection{Specific Objectives}
+The General objectives of the project is:
+\begin{itemize}
+	\item To have a web based program that's easy enough for any member to upload the even results
+	\item Minimal data input
+	\item Clear and simple data entry form that any user can follow
+	\item The user has to be able to follow the processes
+	\item The Program need to keep the minimal amount of data to keep the total amount of data in the database as low as posable
+\end{itemize}
 
 \subsection{Core Objectives}
-
+The core objectives of the project is:
+\begin{itemize}
+	\item The program needs to be able to calculate times and apply the points and positions for Team Cambridge specific competitions
+	\item The program needs to allow the user to edit the final data set, so any errors can be manually rectified
+	\item The program needs to be able to upload the data to the Team Cambridge database
+\end{itemize}
 \subsection{Other Objectives}
-
+Other objective of the project is:
+\begin{itemize}
+	\item To retain the current results database
+	\item Identify improvements to the current data base
+	\item Only retain essential data required for website users 
+\end{itemize}
 \section{ER Diagrams and Descriptions}
 
 \subsection{ER Diagram}
