@@ -1,6 +1,7 @@
 times = [] # list of all the events times
-chages = True
+changes = True
 while changes != False:
+    changes = False
     for count in range(len(times)):
         if times[count] > times[count + 1]:
             hold_times = times[count]

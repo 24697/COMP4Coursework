@@ -25,15 +25,51 @@ The Specification supplied by Paul Millard
 \subsubsection{Data sources and destinations}
 There are currently two sources of data used in the system, the race results and the database. For any handicap events both sources of data is needed for all other event only the results are required. The only data destination is the database.
 
-The data from the results are on a paper form that the time keepers use during the events an example of one bellow shows that there are 8 fields, name & Address, No. , Watch Time, Emergency Tel., Club, Age, Signature. Of thies fields only Name, No., Watch Time, Club and Age (if the rider is under the age of 18) are recorded in the database. As for the database the only information that is needed form it is the riders personal best time
+The data from the results are on a paper form that the time keepers use during the events an example of one bellow shows that there are 8 fields, name and Address, No. , Watch Time, Emergency Tel., Club, Age, Signature. Of thies fields only Name, No., Watch Time, Club and Age (if the rider is under the age of 18) are recorded in the database. As for the database the only information that is needed form it is the riders personal best time
 
 This information is used to calculate the point that the riders are awarded in the competition(s) that are relevant to the event
 
 An example of the Sign on sheet, as supplied by Paul Millard
 \includepdf[pages={1-2}]{SignOnTimeKeepersSheet}
 
+
 \subsubsection{Algorithms}
-essential
+The three Algorithms that are used are shown bellow:
+
+\begin{algorithm}[H]
+\label{fig:Ride Time Algorithm}
+	\caption{$Ride Time Algorithum$}
+\begin{algorithmic}[1]
+\SET{$Watch Time$}{$Time Value$}
+\SET{$Position$}{$The Number that the rider signed on as$}
+\SET{$Ride Time$}{$Watch time$}-{$Position$}
+\end{algorithmic}
+\end{algorithm}
+
+Note: When "Watch Time - Position" is calculated, the "Position" is treated as a time value in minuets, e.g. The rider at "Position" of 13 would have 13 minuets taken off there "Watch Time" to calculate there Ride Time"
+
+\begin{algorithm}
+\label{fig:Time Sort Algorithm}
+	\caption{$Time Sort Algorithm$}
+\begin{algorithmic}
+\SET{$Times$}{$List of events Times$}
+\SET{$Change$}{$True$}
+\SET{$Count$}
+\While{$Change$}
+	\SET{$Changes$}{$False$}
+	\For{$length$}{$Times$}
+		\If{$Times[Count] > Times[Count + 1]$}
+			\SET{$Hold$}{$Times[Count]$}
+			\SET{$Times[Count]$}{$TImes[Count + 1]$}
+			\SET{$Times[Count + 1]$}{$Hold$}
+			\SET{$Count$}{$Count + 1$}
+			\SET{$Changes$}{$True$}
+		\EndIf
+	\EndFor
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
 \subsubsection{Data flow diagram}\i
 
 \subsubsection{Input Forms, Output Forms, Report Formats}
