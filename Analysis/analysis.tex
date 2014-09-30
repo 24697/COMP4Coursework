@@ -29,8 +29,9 @@ The data from the results are on a paper form that the time keepers use during t
 
 This information is used to calculate the point that the riders are awarded in the competition(s) that are relevant to the event
 
-An example of the Sign on sheet, as supplied by Paul Millard
-\includepdf[pages={1-2}]{SignOnTimeKeepersSheet}
+All of the data sources in the current database can be found bellow
+
+\includepdf[]{DataSources}
 
 
 \subsubsection{Algorithms}
@@ -48,10 +49,10 @@ The three Algorithms that are used are shown bellow:
 
 Note: When "Watch Time - Position" is calculated, the "Position" is treated as a time value in minuets, e.g. The rider at "Position" of 13 would have 13 minuets taken off there "Watch Time" to calculate there Ride Time"
 
-\begin{algorithm}
+\begin{algorithm}[H]
 \label{fig:Time Sort Algorithm}
 	\caption{$Time Sort Algorithm$}
-\begin{algorithmic}
+\begin{algorithmic}[2]
 \SET{$Times$}{$List of events Times$}
 \SET{$Change$}{$True$}
 \SET{$Count$}
@@ -70,6 +71,17 @@ Note: When "Watch Time - Position" is calculated, the "Position" is treated as a
 \end{algorithmic}
 \end{algorithm}
 
+\begin{algorithm}[H]
+\label{fig:Handicap Time Algorithm}
+	\caption{$Handicap Time Algorithm$}
+\begin{algorithmic}[3]
+\SET{$Ride Time$}{$Ride Time(from above)$}
+\SET{$Handicap$}
+\SET{$Hndicaped Times$}{$Ride Time - Hadndicap$}
+\end{algorithmic}
+\end{algorithm}
+
+Note: The handicap if found from the Ride Time and a look up table
 \subsubsection{Data flow diagram}\i
 
 \subsubsection{Input Forms, Output Forms, Report Formats}
