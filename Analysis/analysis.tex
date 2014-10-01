@@ -3,21 +3,25 @@
 \section{Introduction}
 
 \subsection{Client Identification}
-My Client is Team Cambridge Cycling Club, they have been established for 25 years and run cycling event around Cambridge. However the end user of my project will be Paul Millard who is the Racing Secretary for Team Cambridge, He uses computers daily for his work, he also created the club website, also he maintains the current database that hold the results of each even the club holds. Currently he uses and ASUS laptop running Windows Vista 32 bit.
+My Client is Team Cambridge Cycling Club, they run cycling event around Cambridge for any one that wishes to enter. The end user of the project is the members of Team Cambridge so that results can be uploaded soon after an event, as currently only the Racing Secatery can upload results due to the compelxaity of the current system. The Racing Secatery is Paul Millard currently he uses computers daily for his work, he created the club website, and he maintains the current database that hold the results of each even the club holds. This is carried out on an ASUS laptop running Windows Vista 32 bit.
 \subsection{Define the current system}
-The current system uses a mix of manual data entry and automatic calculation. depending on the type of the even held determines the type of calculation that needs to be made, however some of the calculations are used across multiple types of event. The compations that Team Cambridge members are entered for is the Transmedia, Handicap 10, Circuit, Juvenile Handicap 25 and Hill Climb, once a year Team Cambridge holds an open event currently due to the complexity of the results they are uploaded as a link to a  results document. 
+I was able to interview Paul Millard about the current system, Paul also was able to prodive me with a spesication of the current system outling how the diffent systems work. Both are attached in the section apendix.
 
-After the event finishes Paul enter the results in to an excel spread sheet, often the personal best of each rider needs to be looked up and added to the spread sheet. If ny calculations that need to be executed are done by the spread sheet and are ordered. The the results are then added to the current database manualy. A copy of the results are uploaded to the website and the compations that were effected by the event are updated.
+The current system uses a mix of manual data entry and automatic calculation. depending on the type of the even held determines the type of calculation that needs to be made, however some of the calculations are used across multiple types of event. The compations that Team Cambridge members are entered for is the Transmedia, Handicap 10, Circuit, Juvenile Handicap 25 (if under age 16) and Hill Climb, once a year Team Cambridge holds an open event currently due to the complexity of the results they are uploaded as a link to a  results document. 
+
+After the event finishes Paul enter the results in to an excel spread sheet, for handicaped compations the personal best of each rider needs to be looked up and added to the spread sheet. If any calculations that need to be executed are done by the spread sheet and are ordered. The the results are then added to the current database manualy. A copy of the results are uploaded to the website and the compations that were effected by the event are updated.
 
 Any new riders have to entered in to the database manually and some rider change the club that they ride with, if this happens then it is dealt with manually.
 \subsection{Describe the problems}
-The current system has lots of manual steps that can cause the process to take significantly longer than if it was automated. Currently it can take up to 2 hours to process and upload one set of results
+The current system has lots of manual steps that can cause the process to take a long, currently it takes on average 2 hours to process and upload one set of results
 
 The steps that could be automated is the detection of a new rider, calling of a riders personal best, any calculations and sorting of the times and uploading data to the database
 \subsection{Section appendix}
 
-The Specification supplied by Paul Millard
+The Specification supplied by Paul Millard.
 \includepdf[pages={1-9}]{TCSpecification}
+
+The interview questions and notes taken from answers.
 \section{Investigation}
 
 \subsection{The current system}
@@ -83,6 +87,11 @@ Note: When "Watch Time - Position" is calculated, the "Position" is treated as a
 
 Note: The handicap if found from the Ride Time and a look up table
 \subsubsection{Data flow diagram}\i
+The dataflow diagrams for the current system can be found bellow.
+
+
+
+
 
 \subsubsection{Input Forms, Output Forms, Report Formats}
 The current system only has one form, the sign on sheet. It's used by the Time Keepers on the day of the event, the fields on the form are "Name", "No.", "Watch Time", "Emergency Tel.", "Club", "Age", "Signature", "Course" and "Date".
@@ -100,7 +109,7 @@ The current system only has one form, the sign on sheet. It's used by the Time K
 \subsubsection{Data dictionary}
 
 \subsubsection{Volumetrics}
-
+Currently the raw cvs files amount to 0.3MB of data, this is aproxamatly 7800 records. This is from partical recoreds from 1989-1996 and then full records from 1996-presant. The proposed system needs to be able to expand.
 \section{Objectives}
 
 \subsection{General Objectives}
