@@ -22,6 +22,12 @@ The Specification supplied by Paul Millard.
 \includepdf[pages={1-9}]{TCSpecification}
 
 The interview questions and notes taken from answers.
+
+
+
+
+
+
 \section{Investigation}
 
 \subsection{The current system}
@@ -35,7 +41,11 @@ This information is used to calculate the point that the riders are awarded in t
 
 All of the data sources in the current database can be found bellow
 
-\includepdf[]{DataSources}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./DataSources.pdf}
+    \caption{The data sources and destinations of the current system} \label{fig:Data_Sources}
+\end{figure}
+
 
 
 \subsubsection{Algorithms}
@@ -47,11 +57,11 @@ The three Algorithms that are used are shown bellow:
 \begin{algorithmic}[1]
 \SET{$Watch Time$}{$Time Value$}
 \SET{$Position$}{$The Number that the rider signed on as$}
-\SET{$Ride Time$}{$Watch time$}-{$Position$}
+\SET{$Ride Time$}{$Watch time$}-{$Position*$}
 \end{algorithmic}
 \end{algorithm}
 
-Note: When "Watch Time - Position" is calculated, the "Position" is treated as a time value in minuets, e.g. The rider at "Position" of 13 would have 13 minuets taken off there "Watch Time" to calculate there Ride Time"
+* When "Watch Time - Position" is calculated, the "Position" is treated as a time value in minuets, e.g. The rider at "Position" of 13 would have 13 minuets taken off there "Watch Time" to calculate there Ride Time"
 
 \begin{algorithm}[H]
 \label{fig:Time Sort Algorithm}
@@ -80,18 +90,24 @@ Note: When "Watch Time - Position" is calculated, the "Position" is treated as a
 	\caption{$Handicap Time Algorithm$}
 \begin{algorithmic}[3]
 \SET{$Ride Time$}{$Ride Time(from above)$}
-\SET{$Handicap$}
+\SET{$Handicap$}{$**$}
 \SET{$Hndicaped Times$}{$Ride Time - Hadndicap$}
 \end{algorithmic}
 \end{algorithm}
 
-Note: The handicap if found from the Ride Time and a look up table
+**The handicap if found from the rideres best time for the distance in the kast 2 years and a look up table
 \subsubsection{Data flow diagram}\i
-The data flow diagrams for the current system can be found bellow.
+This is the data flow diargram for add the results of a handicap event.
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./HandicapDFD.pdf}
+    \caption{Handicap events data flow diagram} \label{fig:Handicap_even_DFD}
+\end{figure}
 
-\includepdf[]{HandicapDFD}
-
-
+This is the data flow diargram for adding a non-handicap even.
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./Non-HandicapDFD.pdf}
+    \caption{Non-Handicap events data flow diagram} \label{fig:non-handicap_DFD}
+\end{figure}
 
 \subsubsection{Input Forms, Output Forms, Report Formats}
 The current system only has one form, the sign on sheet. It's used by the Time Keepers on the day of the event, the fields on the form are "Name", "No.", "Watch Time", "Emergency Tel.", "Club", "Age", "Signature", "Course" and "Date".
@@ -155,15 +171,25 @@ Other objective of the project is:
 \section{Constraints}
 
 \subsection{Hardware}
+The Curunt system is run off an ASUS laptop with the following system spesifcation:
 
+\begin{itemize}
+\item OS: Windows Vista 32Bit
+\item CPU: Intel Celleron
+\item GPU:
+\item RAM: 3GB
+\item Storage:
+\end{itemize}
+
+This is going to be used as the minium requerments as it should be reresntative of most members that will use this program will likely have similer or better hardware.
 \subsection{Software}
-
+The Cliant does not want there members to have to buy addishional software to allow the program to work as the program will be used by mulitple members. The only exception to this is that the Race Secarty has requested that I use the current database rarther than crease a new one, however the Race Secarty will allow me to make modifications to the current database so i can inporove it by normalization.
 \subsection{Time}
-
+The cliant hsa not set a deadline for the prject so the only time restrition is thouse set by my teacher
 \subsection{User Knowledge}
-
+The user has to be able to use the program with out any knowlage of the current system, I will assume that any user is compatent with a computor as they woulnd  trusted with the permishions assosated with the database if they could not be ttursted.
 \subsection{Access restrictions}
-
+TThe current database is controlled by permishions, as 
 \section{Limitations}
 
 \subsection{Areas which will not be included in computerisation}
