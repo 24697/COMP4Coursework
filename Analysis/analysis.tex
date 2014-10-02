@@ -3,13 +3,13 @@
 \section{Introduction}
 
 \subsection{Client Identification}
-My Client is Team Cambridge Cycling Club, they run cycling event around Cambridge for any one that wishes to enter. The end user of the project is the members of Team Cambridge so that results can be uploaded soon after an event, as currently only the Racing Secatery can upload results due to the compelxaity of the current system. The Racing Secatery is Paul Millard currently he uses computers daily for his work, he created the club website, and he maintains the current database that hold the results of each even the club holds. This is carried out on an ASUS laptop running Windows Vista 32 bit.
+My Client is Team Cambridge Cycling Club, they run cycling event around Cambridge for any one that wishes to enter. The end user of the project is the members of Team Cambridge so that results can be uploaded soon after an event, as currently only the Racing Secretary can upload results due to the complexity of the current system. The Racing Secretary is Paul Millard currently he uses computers daily for his work, he created the club website, and he maintains the current database that hold the results of each even the club holds. This is carried out on an ASUS laptop running Windows Vista 32 bit.
 \subsection{Define the current system}
-I was able to interview Paul Millard about the current system, Paul also was able to prodive me with a spesication of the current system outling how the diffent systems work. Both are attached in the section apendix.
+I was able to interview Paul Millard about the current system, Paul also was able to provide me with a specification of the current system outing how the different systems work. Both are attached in the section appendix.
 
-The current system uses a mix of manual data entry and automatic calculation. depending on the type of the even held determines the type of calculation that needs to be made, however some of the calculations are used across multiple types of event. The compations that Team Cambridge members are entered for is the Transmedia, Handicap 10, Circuit, Juvenile Handicap 25 (if under age 16) and Hill Climb, once a year Team Cambridge holds an open event currently due to the complexity of the results they are uploaded as a link to a  results document. 
+The current system uses a mix of manual data entry and automatic calculation. depending on the type of the even held determines the type of calculation that needs to be made, however some of the calculations are used across multiple types of event. The competitions that Team Cambridge members are entered for is the Transmedia, Handicap 10, Circuit, Juvenile Handicap 25 (if under age 16) and Hill Climb, once a year Team Cambridge holds an open event currently due to the complexity of the results they are uploaded as a link to a  results document. 
 
-After the event finishes Paul enter the results in to an excel spread sheet, for handicaped compations the personal best of each rider needs to be looked up and added to the spread sheet. If any calculations that need to be executed are done by the spread sheet and are ordered. The the results are then added to the current database manualy. A copy of the results are uploaded to the website and the compations that were effected by the event are updated.
+After the event finishes Paul enter the results in to an excel spread sheet, for handicapped competitions the personal best of each rider needs to be looked up and added to the spread sheet. If any calculations that need to be executed are done by the spread sheet and are ordered. The results are then added to the current database manual. A copy of the results are uploaded to the website and the competitions that were effected by the event are updated.
 
 Any new riders have to entered in to the database manually and some rider change the club that they ride with, if this happens then it is dealt with manually.
 \subsection{Describe the problems}
@@ -29,7 +29,7 @@ The interview questions and notes taken from answers.
 \subsubsection{Data sources and destinations}
 There are currently two sources of data used in the system, the race results and the database. For any handicap events both sources of data is needed for all other event only the results are required. The only data destination is the database.
 
-The data from the results are on a paper form that the time keepers use during the events an example of one bellow shows that there are 8 fields, name and Address, No. , Watch Time, Emergency Tel., Club, Age, Signature. Of thies fields only Name, No., Watch Time, Club and Age (if the rider is under the age of 18) are recorded in the database. As for the database the only information that is needed form it is the riders personal best time
+The data from the results are on a paper form that the time keepers use during the events an example of one bellow shows that there are 8 fields, name and Address, No. , Watch Time, Emergency Tel., Club, Age, Signature. Of these fields only Name, No., Watch Time, Club and Age (if the rider is under the age of 18) are recorded in the database. As for the database the only information that is needed form it is the riders personal best time
 
 This information is used to calculate the point that the riders are awarded in the competition(s) that are relevant to the event
 
@@ -87,9 +87,9 @@ Note: When "Watch Time - Position" is calculated, the "Position" is treated as a
 
 Note: The handicap if found from the Ride Time and a look up table
 \subsubsection{Data flow diagram}\i
-The dataflow diagrams for the current system can be found bellow.
+The data flow diagrams for the current system can be found bellow.
 
-
+\includepdf[]{HandicapDFD}
 
 
 
@@ -109,7 +109,7 @@ The current system only has one form, the sign on sheet. It's used by the Time K
 \subsubsection{Data dictionary}
 
 \subsubsection{Volumetrics}
-Currently the raw cvs files amount to 0.3MB of data, this is aproxamatly 7800 records. This is from partical recoreds from 1989-1996 and then full records from 1996-presant. The proposed system needs to be able to expand.
+Currently the raw csv files amount to 0.3 MB of data, this is approximately 7800 records. This is from partial records from 1989-1996 and then full records from 1996-present. The proposed system needs to be able to expand.
 \section{Objectives}
 
 \subsection{General Objectives}
