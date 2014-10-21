@@ -3,43 +3,87 @@
 \section{Introduction}
 
 \subsection{Client Identification}
-My Client is Team Cambridge Cycling Club, they run cycling event around Cambridge for any one that wishes to enter. The end user of the project is the members of Team Cambridge so that results can be uploaded soon after an event, as currently only the Racing Secretary can upload results due to the complexity of the current system. The Racing Secretary is Paul Millard currently he uses computers daily for his work, he created the club website, and he maintains the current database that hold the results of each even the club holds. This is carried out on an ASUS laptop running Windows Vista 32 bit.
+My Client is Team Cambridge Cycling Club, they run cycling events around Cambridge for any one that wishes to enter. The end user of the project are the members of Team Cambridge so that results can be uploaded soon after an event, as currently only the Racing Secretary can upload results due to the complexity of the current system. The Racing Secretary is Paul Millard currently he uses computers daily for his work, he created the club website, and he maintains the current database that hold the results of each event the club holds. This is carried out on an Acer laptop running Windows Vista 32 bit.
 \subsection{Define the current system}
 I was able to interview Paul Millard about the current system, Paul also was able to provide me with a specification of the current system outing how the different systems work. Both are attached in the section appendix.
 
-The current system uses a mix of manual data entry and automatic calculation. depending on the type of the even held determines the type of calculation that needs to be made, however some of the calculations are used across multiple types of event. The competitions that Team Cambridge members are entered for is the Transmedia, Handicap 10, Circuit, Juvenile Handicap 25 (if under age 16) and Hill Climb, once a year Team Cambridge holds an open event currently due to the complexity of the results they are uploaded as a link to a  results document. 
+The current system uses a mix of manual data entry and automatic calculation. Depending on the type of the event held determines the type of calculation that needs to be made, however some of the calculations are used across multiple types of event. The competitions that Team Cambridge members are entered for are Transmedia, Handicap 10, Circuit, Juvenile(if under age 16), Handicap 25  and Hill Climb, once a year Team Cambridge holds an open event currently due to the complexity of the results they are uploaded as a link to a results document. 
 
-After the event finishes Paul enter the results in to an excel spread sheet, for handicapped competitions the personal best of each rider needs to be looked up and added to the spread sheet. If any calculations that need to be executed are done by the spread sheet and are ordered. The results are then added to the current database manual. A copy of the results are uploaded to the website and the competitions that were effected by the event are updated.
+After the event finishes Paul enter the results in to a Microsoft Excel spread sheet, for handicapped competitions the personal best of each rider needs to be looked up and added to the spread sheet. Any calculations that need to be executed are done by the spread sheet and are ordered. The results are then manually added to the current database. A copy of the results are uploaded to the website and the competitions that are effected by the event are updated.
 
 Any new riders have to entered in to the database manually and some rider change the club that they ride with, if this happens then it is dealt with manually.
 \subsection{Describe the problems}
-The current system has lots of manual steps that can cause the process to take a long, currently it takes on average 2 hours to process and upload one set of results
+The current system has lots of manual steps that can cause the process to take a long time, currently it takes on average 2 hours to process and upload one set of results
 
-The steps that could be automated is the detection of a new rider, calling of a riders personal best, any calculations and sorting of the times and uploading data to the database
+The steps that could be automated are the detection of a new rider, calling of a riders personal best, any calculations and sorting of the times and uploading data to the database
 \subsection{Section appendix}
 
-The Specification supplied by Paul Millard.
-\includepdf[pages={1-9}]{TCSpecification}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./TeamCambridgeSpec/page1.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./TeamCambridgeSpec/page2.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./TeamCambridgeSpec/page3.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./TeamCambridgeSpec/page4.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./TeamCambridgeSpec/page5.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./TeamCambridgeSpec/page6.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./TeamCambridgeSpec/page7.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./TeamCambridgeSpec/page8.pdf}
+\end{figure}
+
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./TeamCambridgeSpec/page9.pdf}
+     \caption{The specification supplied by Paul Millard} \label{fig:Specification}
+\end{figure}
+
 
 The interview questions and notes taken from answers.
 
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./TeamCambridgeSpec/Questions.pdf}
+    \caption{The Questions that I asked Paul Millard in our interview} \label{fig:Questions}
+\end{figure}
 
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./interview/InterviewNotesPage1.pdf}
+\end{figure}
 
-
-
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./interview/InterviewNotesPage2.pdf}
+    \caption{The notes taken from the interview with Paul Millard} \label{fig:Interview notes}
+\end{figure}
 
 \section{Investigation}
 
 \subsection{The current system}
 
 \subsubsection{Data sources and destinations}
-There are currently two sources of data used in the system, the race results and the database. For any handicap events both sources of data is needed for all other event only the results are required. The only data destination is the database.
+There are currently two sources of data used in the system, the race results from the Time Keepers and the database, also a look up table is used to find the handicap times. For any handicap events both sources of data is needed for all other event only the results are required. The only data destination is the database.
 
-The data from the results are on a paper form that the time keepers use during the events an example of one bellow shows that there are 8 fields, name and Address, No. , Watch Time, Emergency Tel., Club, Age, Signature. Of these fields only Name, No., Watch Time, Club and Age (if the rider is under the age of 18) are recorded in the database. As for the database the only information that is needed form it is the riders personal best time
+The data from the results are on a paper form that the time keepers use during the events an example of one below shows that there are 8 fields, name and Address, No. , Watch Time, Emergency Tel., Club, Age, Signature. Of these fields only Name, No., Watch Time, Club and Age (if the rider is under the age of 18) are recorded in the database. As for the database the only information that is needed from it is the riders personal best time
 
-This information is used to calculate the point that the riders are awarded in the competition(s) that are relevant to the event
+This information is used to calculate the points that the riders are awarded in the competition(s) that are relevant to the event
 
-All of the data sources in the current database can be found bellow
+All of the data sources in the current database can be found below
 
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{./DataSources.pdf}
@@ -61,7 +105,7 @@ The three Algorithms that are used are shown bellow:
 \end{algorithmic}
 \end{algorithm}
 
-* When "Watch Time - Position" is calculated, the "Position" is treated as a time value in minuets, e.g. The rider at "Position" of 13 would have 13 minuets taken off there "Watch Time" to calculate there Ride Time"
+* When "Watch Time - Position" is calculated, the "Position" is treated as a time value in minuets, e.g. The rider at "Position" of 13 would have 13 minuets taken off their "Watch Time" to calculate their Ride Time"
 
 \begin{algorithm}[H]
 \label{fig:Time Sort Algorithm}
@@ -95,15 +139,15 @@ The three Algorithms that are used are shown bellow:
 \end{algorithmic}
 \end{algorithm}
 
-**The handicap if found from the rideres best time for the distance in the kast 2 years and a look up table
+**The handicap is found from the riders best time for the distance in the last 2 years from a look up table
 \subsubsection{Data flow diagram}\i
-This is the data flow diargram for add the results of a handicap event.
+This is the data flow diagram for add the results of a handicap event.
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{./HandicapDFD.pdf}
     \caption{Handicap events data flow diagram} \label{fig:Handicap_even_DFD}
 \end{figure}
 
-This is the data flow diargram for adding a non-handicap even.
+This is the data flow diagram for adding a non-handicap even.
 \begin{figure}[H]
     \includegraphics[width=\textwidth]{./Non-HandicapDFD.pdf}
     \caption{Non-Handicap events data flow diagram} \label{fig:non-handicap_DFD}
@@ -119,17 +163,38 @@ The current system only has one form, the sign on sheet. It's used by the Time K
 \subsection{The proposed system}
 
 \subsubsection{Data sources and destinations}
+The data sources and destination of the proposed system are very slimier to the current system as the project aims to automate the current system rather than change the current one.
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{./DataSourcesPS.pdf}
+	 \caption{Data sources and destinations of the proposed system}
+\end{figure}
 
 \subsubsection{Data flow diagram}
+The data flow diagrams for the proposed system are nearly identical to the current system as there will be no change in the algorithms or the sources of data.
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{./DFDPS.pdf}
+	 \caption{Data Flow Diagram for a Handicap event}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{./Non-HandicapDFD-PS.pdf}
+	\caption{Data flow diagram for a non-handicap event}
+\end{figure}
 
 \subsubsection{Data dictionary}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{./DataDic.pdf}
+	\caption{Dictionary of data}
+\end{figure}
 
 \subsubsection{Volumetrics}
 Currently the raw csv files amount to 0.3 MB of data, this is approximately 7800 records. This is from partial records from 1989-1996 and then full records from 1996-present. The proposed system needs to be able to expand.
 \section{Objectives}
 
 \subsection{General Objectives}
-The General objectives of the project is:
+The General objectives of the project are:
 \begin{itemize}
 	\item To have a web based program that's easy enough for any member to upload the even results
 	\item Minimal data input
@@ -139,57 +204,82 @@ The General objectives of the project is:
 \end{itemize}
 
 \subsection{Core Objectives}
-The core objectives of the project is:
+The core objectives of the project are:
 \begin{itemize}
 	\item The program needs to be able to calculate times and apply the points and positions for Team Cambridge specific competitions
 	\item The program needs to allow the user to edit the final data set, so any errors can be manually rectified
 	\item The program needs to be able to upload the data to the Team Cambridge database
 \end{itemize}
 \subsection{Other Objectives}
-Other objective of the project is:
+Other objectives of the project are:
 \begin{itemize}
 	\item To retain the current results database
 	\item Identify improvements to the current data base
 	\item Only retain essential data required for website users 
 \end{itemize}
+
 \section{ER Diagrams and Descriptions}
 
 \subsection{ER Diagram}
 
-\subsection{Entity Descriptions}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{./ER.jpg}
+	\caption{Entity relationship diagram of the system}
+\end{figure}
 
+
+\subsection{Entity Descriptions}
+Event(\underline{EventID}, Date, \emph{CourseID}, \emph{RiderList*})
+
+Rider(\underline{RiderID}, Forename, Surname, Handicap10Points, CircuitPoints, TransmediaPoints, JuvenlePoints, Age)
+
+Course(\underline{CourseID}, Distance, Type)
+
+RiderRecord(\underline{RRID}, \emph{RiderID}, RideTime, HandicapTime, Position, Club)
+
+*List of 'RiderRecords'
 \section{Object Analysis}
 
 \subsection{Object Listing}
+There will be 4 objects in the system:
 
+\begin{enumerate}
+    \item Events
+    \item Course
+    \item Riders
+    \item RiderRecords
+\end{enumerate}
 \subsection{Relationship diagrams}
 
 \subsection{Class definitions}
-
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{./Class.pdf}
+	\caption{Class definitions of the system}
+\end{figure}
 \section{Other Abstractions and Graphs}
 
 \section{Constraints}
 
 \subsection{Hardware}
-The Curunt system is run off an ASUS laptop with the following system spesifcation:
+The current system is run off an Acer laptop with the following system specification:
 
 \begin{itemize}
-\item OS: Windows Vista 32Bit
-\item CPU: Intel Celleron
-\item GPU:
-\item RAM: 3GB
-\item Storage:
+\item OS: Windows Vista 32 Bit
+\item CPU: Intel Pentium @ 2.16 GHz
+\item GPU:Mobile Intel(R) 4 Series 
+\item RAM: 3 GB
+\item Storage: 144 GB HDD
 \end{itemize}
 
-This is going to be used as the minium requerments as it should be reresntative of most members that will use this program will likely have similer or better hardware.
+This is going to be used as the minimum requirements as it should be representative of most members that will use this program will likely have similar or better hardware.
 \subsection{Software}
-The Cliant does not want there members to have to buy addishional software to allow the program to work as the program will be used by mulitple members. The only exception to this is that the Race Secarty has requested that I use the current database rarther than crease a new one, however the Race Secarty will allow me to make modifications to the current database so i can inporove it by normalization.
+The Client does not want their members to have to buy additional software to allow the program to work as the program will be used by multiple members. The only exception to this is that the Race Sectary has requested that I use the current database rather than crease a new one, however the Race Sectary will allow me to make modifications to the current database so I can improve it by normalization.
 \subsection{Time}
-The cliant hsa not set a deadline for the prject so the only time restrition is thouse set by my teacher
+The client has not set a deadline for the project so the only time restriction is those set by my teacher. However my client would prefer the project to be completed by the start of the next racing season.
 \subsection{User Knowledge}
-The user has to be able to use the program with out any knowlage of the current system, I will assume that any user is compatent with a computor as they woulnd  trusted with the permishions assosated with the database if they could not be ttursted.
+The user has to be able to use the program without any knowledge of the current system, I will assume that any user is competent with a computer as they would have been trusted with the permissions associated with the database. If they were not trusted, then they would not be using the system.
 \subsection{Access restrictions}
-TThe current database is controlled by permishions, as 
+The current database is controlled by permissions, as issued by the racing secretary. The client wishes to keep this system in place.
 \section{Limitations}
 
 \subsection{Areas which will not be included in computerisation}
