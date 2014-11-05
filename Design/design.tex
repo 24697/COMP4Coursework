@@ -60,19 +60,89 @@
 \end{figure}
 
 \subsubsection{Entity Descriptions}
-After looking the specification, I found that there was attributes missing from the entity that needed to be included so I modified the entity descriptions from the analysis
+After looking the specification, I found that there was attributes missing from the entity that needed to be included so I modified the entity descriptions from the analysis.
 
+<<<<<<< HEAD
 Event(\underline{EventID}, \emph{CourseID}, Date, Handicap10, Handicap25, HillClimb, Transmedia, Circuit Series, Juvenile, Code)
+=======
+Event(\underline{EventID}, \emph{CourseID}, Date, CircuitSeries, Handicap10, Handicap25, HillClimb, Transmedia, Juvenile, Code)
+>>>>>>> branch 'master' of https://github.com/24697/COMP4Coursework.git
 
 Rider(\underline{RiderID}, Forename, Surname)
 
+<<<<<<< HEAD
 TeamCambridgerecord(\underline{TCID},\emph{RecordID}, HandicapPoints, TransmediaPoints,CircuitPoints, JuvenlePoints)
+=======
+TCRecord(\underline{TCID},\emph{RecordID}, Handicap10Points, CircuitPoints, TransmediaPoints, JuvenlePoints)
+>>>>>>> branch 'master' of https://github.com/24697/COMP4Coursework.git
 
 Course(\underline{CourseID}, EventCode)
 
 Record(\underline{RecordID}, \emph{RiderID},\emph{EventID}, RideTime, HandicapTime, RacePosition, Club, Age)
 
 \subsubsection{1NF to 3NF}
+
+\subsubsubsection{UNF}
+
+\begin{itemize}
+\item \underline{EventID}
+\item \emph{CourseID}
+\item Date
+\item CircuitSeries
+\item Handicap10
+\item Handicap25
+\item HillClimb
+\item Transmedia
+\item Juvenile
+\item Code
+\item \underline{RiderID}
+\item Forename
+\item Surname
+\item \underline{TCID}
+\item Handicap10Points
+\item CircuitPoints
+\item TransmediaPoints
+\item JuvenlePoints
+\item \underline{CourseID}
+\item EventCode
+\item \underline{RecordID}
+\item RideTime
+\item HandicapTime
+\item RacePosition
+\item Club
+\item Age
+\end{itemize}
+
+\subsubsubsection{UNF to 1NF}
+
+\begin{tabular}{|l|l|}
+\hline
+REPEATING & NON-REPEATING \hline
+\underline{RiderID} & \underline{EventID} \hline
+\emph{EventID} & Date \hline
+Forname & CircuitSeries \hline 
+Surname & Handicap10 \hline 
+TCID & Handicap25 \hline
+Handicap10Points & HillClimb \hline 
+CircuitPoints & Transmedia \hline
+TransmediaPoints & Juvenile \hline
+JuvenilePoints & Code \hline
+RecordID & CourseID \hline
+RideTime & EventCode \hline
+HandicapTime & \hline
+RacePosition & \hline
+Club & \hline
+Age & \hline
+
+\end{tabular}
+
+\subsubsubsection{1NF to 2NF}
+
+
+
+\subsubsubsection{2NF to 3NF}
+
+
 
 \section{Security and Integrity of the System and Data}
 
