@@ -62,13 +62,13 @@
 \subsubsection{Entity Descriptions}
 After looking the specification, I found that there was attributes missing from the entity that needed to be included so I modified the entity descriptions from the analysis
 
-Event(\underline{EventID}, Date, \emph{CourseID}, Circuit Series, Handicap10, Handicap25, HillClimb, Transmedia, Juvenile)
+Event(\underline{EventID}, \emph{CourseID}, Date, Handicap10, Handicap25, HillClimb, Transmedia, Circuit Series, Juvenile, Code)
 
 Rider(\underline{RiderID}, Forename, Surname)
 
-TeamCambridgerecord(\underline{TCID},\emph{RecordID}, Handicap10Points, CircuitPoints, TransmediaPoints, JuvenlePoints)
+TeamCambridgerecord(\underline{TCID},\emph{RecordID}, HandicapPoints, TransmediaPoints,CircuitPoints, JuvenlePoints)
 
-Course(\underline{CourseID}, Distance)
+Course(\underline{CourseID}, EventCode)
 
 Record(\underline{RecordID}, \emph{RiderID},\emph{EventID}, RideTime, HandicapTime, RacePosition, Club, Age)
 
