@@ -27,25 +27,37 @@
 \subsection{Identification of all data output items}
 
 \subsection{Explanation of how data output items are generated}
-
+Blank
 \subsection{Data Dictionary}
 
 \begin{tabular}{|p{1.5cm}|p{1.5cm}|l|l|l|p{2.5cm}|}
 	\hline
 	NAME & DATA TYPE & LENGTH & VALIDATION & EXAMPLE DATA & APPROXIMATE SIZE \\ \hline
-	Name & String & 1 - 100 Characters & Length & Peter Millard & 100 Bytes \\ \hline
-	Position & Integer & 1 - 50 & Range & 05 & 4 Bytes \\ \hline
-	Watch Time & Time & 00:15:00 - 02:00:00 & Range & 01:10:23 & 3 Bytes \\ \hline
-	Club & String & 1 - 100 Characters & Range & Team Cambridge &  100 Bytes\\ \hline
-	Date & date & DD/MM/YYYY & Length & 17/10/1995 & 3 Bytes \\ \hline
-	Ride Time & Time & 00:15:00 - 02:00:00 & Range & 00:24:43 & 3 Bytes \\ \hline
-	Handicap Time & Time & 0:00 - 31:44 & Range & 16:59 & 3 Bytes \\ \hline
-	Handicap Points & Integer & 0 - 350 & Range & 176 & 4 Bytes \\ \hline
-	Handicap Position & Integer & 1 -100 & Range & 5 & 4 Bytes \\ \hline
-	Transmedia Points & Integer & 0- 350 & Range & 190& 4 Bytes \\ \hline
-	Circuit Points & Integer & 0 - 200 & Range & 72 & 4 Bytes \\ \hline	
-	Juvenile Points & Integer & 0 - 350 & Range & 30 & 4 Bytes \\ \hline
-	Hill Climb Points & Integer & 0 - 100 & Range & 20 &  4 Bytes\\ \hline
+	EventID & Integer & 0-9999 & Range & 10 & 4 Bytes \\ \hline
+	CourseID & Integer & 0-9999 & Range & 10 & 4 Bytes \\ \hline
+	Date & Date & DD/MM/YYYY & Range & 1 & 3 Bytes \\ \hline
+	CircuitSeries & Boolean & 0 or 1 & Range & 1 & 2 Bytes \\ \hline
+	Handicap10 & Boolean & 0 or 1 & Range & 1 & 2 Bytes \\ \hline
+	Handicap25 & Boolean & 0 or 1 & Range & 1 & 2 Bytes \\ \hline
+	HillClimb & Boolean & 0 or 1 & Range & 1 & 2 Bytes \\ \hline
+	Transmedia & Boolean & 0 or 1 & Range & 1 & 2 Bytes \\ \hline
+	Juvenile & Boolean & 0 or 1 & Range & 1 & 2 Bytes \\ \hline
+	Code & String & 2 Characters & length & TR & 2 Bytes \\ \hline
+	RiderID & Integer & 0-9999 & Range & 10 & 4 Bytes \\ \hline
+	Forename & String & 50 Characters & length & Peter & 50 Bytes \\ \hline
+	Surname & String & 50 Characters & length & Millard & 50 Bytes \\ \hline
+	TCID & Integer & 0-9999 & Range & 10 & 4 Bytes \\ \hline
+	Handicap10Points & Integer & 0-350 & Range & 125 & 4 Bytes \\ \hline
+	CircuitPoints & Integer & 0-350 & Range & 125 & 4 Bytes \\ \hline
+	TransmediaPoints & Integer & 0-350 & Range & 125 & 4 Bytes \\ \hline
+	JuvenlePoints & Integer & 0-350 & Range & 125 & 4 Bytes \\ \hline
+	CourseID & Integer & 0-9999 & Range & 10 & 4 Bytes \\ \hline
+	RecordID & Integer & 0-9999 & Range & 10 & 4 Bytes \\ \hline
+	RideTime & Time & HH:MM:SS & Range & 01:25:23 & 3 Bytes \\ \hline
+	HandicapTime & Time & HH:MM:SS & Range & 00:25:23 & 3 Bytes \\ \hline
+	RacePosition & Integer & 1-50 & Range & 05 & 4 Bytes \\ \hline
+	Club & String & 50 Characters & Length & Team Cambridge & 100 Bytes \\ \hline
+	Age & Integer & 12 – 99 & Range & 18 & 4 Bytes \\ \hline
 \end{tabular}
 
 \subsection{Identification of appropriate storage media}
@@ -56,7 +68,7 @@
 
 \subsubsection{ER Diagrams}
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{./ER/ERDesing.pdf}
+    \includegraphics[width=\textwidth]{./ER/ERDesing.jpg}
 \end{figure}
 
 \subsubsection{Entity Descriptions}
@@ -94,7 +106,6 @@ Record(\underline{RecordID}, \emph{RiderID},\emph{EventID}, RideTime, HandicapTi
 \item TransmediaPoints
 \item JuvenlePoints
 \item \underline{CourseID}
-\item EventCode
 \item \underline{RecordID}
 \item RideTime
 \item HandicapTime
