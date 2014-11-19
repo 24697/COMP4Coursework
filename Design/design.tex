@@ -68,78 +68,78 @@ Blank
 
 \subsubsection{ER Diagrams}
 \begin{figure}[H]
-    \includegraphics[width=\textwidth]{./ER/ERDesing.jpg}
+    \includegraphics[width=\textwidth]{./ER/ERDesing.pdf}
 \end{figure}
 
 \subsubsection{Entity Descriptions}
-After looking the specification, I found that there was attributes missing from the entity that needed to be included so I modified the entity descriptions from the analysis.
-
-Event(\underline{EventID}, \emph{CourseID}, Date, CircuitSeries, Handicap10, Handicap25, HillClimb, Transmedia, Juvenile, Code)
+Event(\underline{EventID}, Date, CircuitSeries, Handicap10, Handicap25, HillClimb, Transmedia, Juvenile, Code)
 
 Rider(\underline{RiderID}, Forename, Surname)
 
-TCRecord(\underline{TCID},\emph{RecordID}, Handicap10Points, CircuitPoints, TransmediaPoints, JuvenlePoints)
+TCRecord(\underline{TCID},\emph{RecordID}, \emph{RiderIDh} Handicap10Points, CircuitPoints, TransmediaPoints, JuvenlePoints)
 
 Record(\underline{RecordID}, \emph{RiderID},\emph{EventID}, RideTime, HandicapTime, RacePosition, Club, Age)
 
 \subsubsection{UNF to 3NF}
-
 \underline{UNF}
+
+
 \begin{tabular}{l l l}
-EventID & CourseID & Date //
-CircuitSeries & Handicap10 & Handicap25 //
-HillClimb & Transmedia & Juvenile //
-Code & RiderID & Forename //
-Surname & TCID & Handicap10Points //
-CircuitPoints & TransmediaPoints & JuvenlePoints //
-CourseID & RecordID & RideTime //
-HandicapTime & RacePosition Club //
-Age & & //
-\end{tabular}}
+EventID       & Age              & Date             \\
+CircuitSeries & Handicap10       & Handicap25       \\
+HillClimb     & Transmedia       & Juvenile         \\
+Code          & RiderID          & Forename         \\
+Surname       & TCID             & Handicap10Points \\
+CircuitPoints & TransmediaPoints & JuvenlePoints    \\
+ Club         & RecordID         & RideTime         \\
+HandicapTime  & RacePosition     &                  \\
+\end{tabular}
 
 \underline{1NF}
 
 \begin{tabular}{|l|l|}
 \hline
-REPEATING           & NON-REPEATING \\ \hline
-\underline{RiderID} & \underline{EventID} \\ \hline
-\emph{EventID}      & Date \\ \hline
-Forename             & CircuitSeries \\ \hline 
-Surname             & Handicap10 \\ \hline 
-TCID                & Handicap25 \\ \hline
-Handicap10Points    & HillClimb \\ \hline 
-CircuitPoints       & Transmedia \\ \hline
-TransmediaPoints    & Juvenile \\ \hline
-JuvenilePoints      & Code \\ \hline
-RecordID            & \\ \hline
-RideTime            & \\ \hline
-HandicapTime        & \\ \hline
-RacePosition        & \\ \hline
-Club                & \\ \hline
-Age                 & \\ \hline
-
+REPEATING            & NON-REPEATING       \\ \hline
+\underline{RecordID} & \underline{EventID} \\ \hline
+\emph{EventID}       & Date                \\ \hline
+TCID                 & CircuitSeries       \\ \hline
+Handicap10Points     & Handicap10          \\ \hline
+CircuitPoints        & Handicap25          \\ \hline 
+TransmediaPoints     & HillClimb           \\ \hline 
+JuvenlePoints        & Transmedia          \\ \hline
+RideTime             & Juvenile            \\ \hline 
+HandicapTime         & Code                \\ \hline
+RacePosition         &                     \\ \hline
+Club                 &                     \\ \hline
+Age                  &                     \\ \hline
+RiderID              &                     \\ \hline
+Forename             &                     \\ \hline
+Surname              &                     \\ \hline
 \end{tabular}
+
+
 
 \underline{2NF}
 
 \begin{tabular}{|l|l|}
 \hline
-REPEATING & NON-REPEATING \\ \hline
 \underline{RiderID} & \underline{EventID} \\ \hline
-Forename & Date \\ \hline
-Surname & CircuitSeries \\ \hline 
-\underline{TCID} & Handicap10 \\ \hline 
-Handicap10Points & Handicap25 \\ \hline
-CircuitPoints & HillClimb \\ \hline 
-TransmediaPoints & Transmedia \\ \hline
-JuvenilePoints & Juvenile \\ \hline
-\underline{RecordID} & Code \\ \hline
-RideTime & \\ \hline
-HandicapTime & \\ \hline
-RacePosition & \\ \hline
-Club & \\ \hline
-Age & \\ \hline
-
+Forename            & Date                \\ \hline
+Surname             & CircuitSeries       \\ \hline
+                    & Handicap10          \\ \hline
+\underline{RiderID} & Handicap25          \\ \hline
+\emph{EventID}      & HillClimb           \\ \hline 
+TCID                & Transmedia          \\ \hline 
+Handicap10Points    & Juvenile            \\ \hline
+CircuitPoints       & Code                \\ \hline 
+TransmediaPoints    &                     \\ \hline
+JuvenilePoints      &                     \\ \hline
+RecordID            &                     \\ \hline
+RideTime            &                     \\ \hline
+HandicapTime        &                     \\ \hline
+RacePosition        &                     \\ \hline
+Club                &                     \\ \hline
+Age                 &                     \\ \hline
 \end{tabular}
 
 \underline{3NF}
@@ -147,32 +147,38 @@ Age & \\ \hline
 \begin{tabular}{|l|l|l|l|}
 \hline
 \begin{tabular}{l}
-\underline{RiderID}\\
-Forename \\
-Surname \\
+	\underline{RiderID}  \\
+	Forename             \\
+	Surname              \\
 \end{tabular} & \begin{tabular}{l}
-\underline{EventID} \\
-Date \\
-CircuitSeries \\
-Handicap10 \\
-Handicap25 \\
-HillClimb \\
-Transmedia \\
-Juvenile \\
-Code \\
+	\\
+	\underline{EventID}  \\
+	Date                 \\
+	CircuitSeries        \\
+	Handicap10           \\
+	Handicap25           \\
+	HillClimb            \\
+	Transmedia           \\
+	Juvenile             \\
+	Code                 \\
+	\\
 \end{tabular} & \begin{tabular}{l}
-\underline{TCID} \\
-Handicap10Points \\
-CircuitPoints \\
-TransmediaPoints \\
-JuvenilePoints \\
+	\underline{TCID}     \\
+	\emph{RiderID}       \\
+	\emph{EventID}       \\
+	Handicap10Points     \\
+	CircuitPoints        \\
+	TransmediaPoints     \\
+	JuvenilePoints       \\
 \end{tabular} & \begin{tabular}{l}
-\underline{RecordID} \\
-RideTime \\
-HandicapTime \\
-RacePosition \\
-Club \\
-Age \\
+	\underline{RecordID} \\
+	\emph{RiderID}       \\
+	\emph{EventID}       \\
+	RideTime             \\
+	HandicapTime         \\
+	RacePosition         \\
+	Club                 \\
+	Age                  \\
 \end{tabular}\\
 \hline
 \end{tabular}
