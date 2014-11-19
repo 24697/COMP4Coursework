@@ -82,37 +82,20 @@ TCRecord(\underline{TCID},\emph{RecordID}, Handicap10Points, CircuitPoints, Tran
 
 Record(\underline{RecordID}, \emph{RiderID},\emph{EventID}, RideTime, HandicapTime, RacePosition, Club, Age)
 
-\subsubsection{1NF to 3NF}
+\subsubsection{UNF to 3NF}
 
 \underline{UNF}
-
-\begin{itemize}
-\item \underline{EventID}
-\item \emph{CourseID}
-\item Date
-\item CircuitSeries
-\item Handicap10
-\item Handicap25
-\item HillClimb
-\item Transmedia
-\item Juvenile
-\item Code
-\item \underline{RiderID}
-\item Forename
-\item Surname
-\item \underline{TCID}
-\item Handicap10Points
-\item CircuitPoints
-\item TransmediaPoints
-\item JuvenlePoints
-\item \underline{CourseID}
-\item \underline{RecordID}
-\item RideTime
-\item HandicapTime
-\item RacePosition
-\item Club
-\item Age
-\end{itemize}
+\begin{tabular}{l l l}
+EventID & CourseID & Date //
+CircuitSeries & Handicap10 & Handicap25 //
+HillClimb & Transmedia & Juvenile //
+Code & RiderID & Forename //
+Surname & TCID & Handicap10Points //
+CircuitPoints & TransmediaPoints & JuvenlePoints //
+CourseID & RecordID & RideTime //
+HandicapTime & RacePosition Club //
+Age & & //
+\end{tabular}}
 
 \underline{1NF}
 
@@ -145,13 +128,11 @@ REPEATING & NON-REPEATING \\ \hline
 \underline{RiderID} & \underline{EventID} \\ \hline
 Forename & Date \\ \hline
 Surname & CircuitSeries \\ \hline 
-
 \underline{TCID} & Handicap10 \\ \hline 
 Handicap10Points & Handicap25 \\ \hline
 CircuitPoints & HillClimb \\ \hline 
 TransmediaPoints & Transmedia \\ \hline
-JuvenilePoints & Juvenile \\ \hline]
-
+JuvenilePoints & Juvenile \\ \hline
 \underline{RecordID} & Code \\ \hline
 RideTime & \\ \hline
 HandicapTime & \\ \hline
