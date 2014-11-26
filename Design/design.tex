@@ -8,6 +8,8 @@
 
 \section{User Interface Designs}
 
+\section{Hardwear Spesifiacation}
+
 \section{Program Structure}
 
 \subsection{Top-down design structure charts}
@@ -72,13 +74,18 @@ Blank
 \end{figure}
 
 \subsubsection{Entity Descriptions}
-Event(\underline{EventID}, Date, CircuitSeries, Handicap10, Handicap25, HillClimb, Transmedia, Juvenile, Code)
 
 Rider(\underline{RiderID}, Forename, Surname)
 
-TCRecord(\underline{TCID},\emph{RecordID}, \emph{RiderIDh} Handicap10Points, CircuitPoints, TransmediaPoints, JuvenlePoints)
+Event(\underline{EventID}, \emph{CourseID} ,Date, CircuitSeries ,Handicap10, Handicap25, HillClimb, Transmedia, Juvenile)
 
-Record(\underline{RecordID}, \emph{RiderID},\emph{EventID}, RideTime, HandicapTime, RacePosition, Club, Age)
+Team Cambride Record(\underline{TCID}, \emph{RiderID}, \emph{EventID}, Handicap10Points, CircuitPoints, TransmediaPoints, JuvenilePoints)
+
+Record(\underline{RecordID}, \emph{RiderID}, \emph{EventID}, RdieTime, Age)
+
+Club(\underline{ClubReferance}, \emph{RiderID}, Club, DateJoined, DateLeft)
+
+Course(\underline{CourseID}, CourseCode, CourseDistance)
 
 \subsubsection{UNF to 3NF}
 \underline{UNF}
@@ -88,11 +95,12 @@ Record(\underline{RecordID}, \emph{RiderID},\emph{EventID}, RideTime, HandicapTi
 EventID       & Age              & Date             \\
 CircuitSeries & Handicap10       & Handicap25       \\
 HillClimb     & Transmedia       & Juvenile         \\
-Code          & RiderID          & Forename         \\
+ClubReferance & RiderID          & Forename         \\
 Surname       & TCID             & Handicap10Points \\
 CircuitPoints & TransmediaPoints & JuvenlePoints    \\
- Club         & RecordID         & RideTime         \\
-HandicapTime  & RacePosition     &                  \\
+Club          & RecordID         & RideTime         \\
+CourceID      & CourceCode       & CourceDistance   \\
+DateJoined    & DateLeft         &                  \\
 \end{tabular}
 
 \underline{1NF}
@@ -108,14 +116,16 @@ CircuitPoints        & Handicap25          \\ \hline
 TransmediaPoints     & HillClimb           \\ \hline 
 JuvenlePoints        & Transmedia          \\ \hline
 RideTime             & Juvenile            \\ \hline 
-HandicapTime         & Code                \\ \hline
-RacePosition         &                     \\ \hline
-Club                 &                     \\ \hline
-Age                  &                     \\ \hline
-RiderID              &                     \\ \hline
-Forename             &                     \\ \hline
+Age                  & CourseID            \\ \hline
+RiderID              & CourseCode          \\ \hline
+Forename             & CorseDistance       \\ \hline
 Surname              &                     \\ \hline
+ClubReferance        &                     \\ \hline
+Club                 &                     \\ \hline
+DateJoined           &                     \\ \hline
+DateLeft             &                     \\ \hline
 \end{tabular}
+
 
 
 
@@ -126,20 +136,24 @@ Surname              &                     \\ \hline
 \underline{RiderID} & \underline{EventID} \\ \hline
 Forename            & Date                \\ \hline
 Surname             & CircuitSeries       \\ \hline
-                    & Handicap10          \\ \hline
-\underline{RiderID} & Handicap25          \\ \hline
-\emph{EventID}      & HillClimb           \\ \hline 
-TCID                & Transmedia          \\ \hline 
-Handicap10Points    & Juvenile            \\ \hline
-CircuitPoints       & Code                \\ \hline 
+ClubReferance       & Handicap10          \\ \hline
+Club                & Handicap25          \\ \hline
+DateJoined          & HillClimb           \\ \hline
+DateLeft            & Transmedia          \\ \hline
+                    & Juvenile            \\ \hline
+\underline{RiderID} & CourceID            \\ \hline
+\emph{EventID}      & CourceCode          \\ \hline 
+TCID                & CourceDistance      \\ \hline 
+Handicap10Points    &                     \\ \hline
+CircuitPoints       &                     \\ \hline 
 TransmediaPoints    &                     \\ \hline
 JuvenilePoints      &                     \\ \hline
 RecordID            &                     \\ \hline
 RideTime            &                     \\ \hline
 HandicapTime        &                     \\ \hline
 RacePosition        &                     \\ \hline
-Club                &                     \\ \hline
 Age                 &                     \\ \hline
+                    &                     \\ \hline
 \end{tabular}
 
 \underline{3NF}
@@ -153,6 +167,7 @@ Age                 &                     \\ \hline
 \end{tabular} & \begin{tabular}{l}
 	\\
 	\underline{EventID}  \\
+	\emph{CourseID }     \\
 	Date                 \\
 	CircuitSeries        \\
 	Handicap10           \\
@@ -160,7 +175,6 @@ Age                 &                     \\ \hline
 	HillClimb            \\
 	Transmedia           \\
 	Juvenile             \\
-	Code                 \\
 	\\
 \end{tabular} & \begin{tabular}{l}
 	\underline{TCID}     \\
@@ -175,11 +189,21 @@ Age                 &                     \\ \hline
 	\emph{RiderID}       \\
 	\emph{EventID}       \\
 	RideTime             \\
-	HandicapTime         \\
-	RacePosition         \\
-	Club                 \\
 	Age                  \\
-\end{tabular}\\
+\end{tabular} \\ \hline
+\begin{tabular}{l}
+	\\
+	\underline{ClubReferance} \\
+	\emph{RiderID} \\
+	Club \\
+	DateJoined \\
+	DateLeft \\
+	\\
+\end{tabular} & \begin{tabular}{l}
+	\underline{CourseID} \\
+	CourseCode \\
+	CourseDistance \\
+\end{tabular} & & \\
 \hline
 \end{tabular}
 
