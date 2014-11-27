@@ -77,7 +77,7 @@ Blank
 
 Rider(\underline{RiderID}, Forename, Surname)
 
-Event(\underline{EventID}, \emph{CourseID} ,Date, CircuitSeries ,Handicap10, Handicap25, HillClimb, Transmedia, Juvenile)
+Event(\underline{EventID}, \emph{CourseID} , \emph{EventTypeID}, Date )
 
 Team Cambride Record(\underline{TCID}, \emph{RiderID}, \emph{EventID}, Handicap10Points, CircuitPoints, TransmediaPoints, JuvenilePoints)
 
@@ -87,20 +87,20 @@ Club(\underline{ClubReferance}, \emph{RiderID}, Club, DateJoined, DateLeft)
 
 Course(\underline{CourseID}, CourseCode, CourseDistance)
 
+EventType(\underline{EventTypeID}, EventPrimaryType, EventSecondaryType, EventTertiaryType)
+
 \subsubsection{UNF to 3NF}
 \underline{UNF}
 
 
 \begin{tabular}{l l l}
-EventID       & Age              & Date             \\
-CircuitSeries & Handicap10       & Handicap25       \\
-HillClimb     & Transmedia       & Juvenile         \\
-ClubReferance & RiderID          & Forename         \\
-Surname       & TCID             & Handicap10Points \\
-CircuitPoints & TransmediaPoints & JuvenlePoints    \\
-Club          & RecordID         & RideTime         \\
-CourceID      & CourceCode       & CourceDistance   \\
-DateJoined    & DateLeft         &                  \\
+EventID       & Age              & Date               \\
+EventTypeID   & EventPrimaryType & EventSecondaryType \\
+ClubReferance & RiderID          & Forename           \\
+Surname       & TCID             & EventPoints        \\
+Club          & RecordID         & RideTime           \\
+CourceID      & CourceCode       & CourceDistance     \\
+DateJoined    & DateLeft         & EventTertiaryType  \\
 \end{tabular}
 
 \underline{1NF}
@@ -109,16 +109,15 @@ DateJoined    & DateLeft         &                  \\
 \hline
 REPEATING            & NON-REPEATING       \\ \hline
 \underline{RecordID} & \underline{EventID} \\ \hline
-\emph{EventID}       & Date                \\ \hline
-TCID                 & CircuitSeries       \\ \hline
-Handicap10Points     & Handicap10          \\ \hline
-CircuitPoints        & Handicap25          \\ \hline 
-TransmediaPoints     & HillClimb           \\ \hline 
-JuvenlePoints        & Transmedia          \\ \hline
-RideTime             & Juvenile            \\ \hline 
-Age                  & CourseID            \\ \hline
-RiderID              & CourseCode          \\ \hline
-Forename             & CorseDistance       \\ \hline
+\underline{EventID}  & Date                \\ \hline
+TCID                 & CourseID            \\ \hline
+EventPoints          & CourseCode          \\ \hline
+EventTypeID          & CorseDistance       \\ \hline 
+EventSubType         &                     \\ \hline 
+RideTime             &                     \\ \hline 
+Age                  &                     \\ \hline
+RiderID              &                     \\ \hline
+Forename             &                     \\ \hline
 Surname              &                     \\ \hline
 ClubReferance        &                     \\ \hline
 Club                 &                     \\ \hline
@@ -135,25 +134,23 @@ DateLeft             &                     \\ \hline
 \hline
 \underline{RiderID} & \underline{EventID} \\ \hline
 Forename            & Date                \\ \hline
-Surname             & CircuitSeries       \\ \hline
-ClubReferance       & Handicap10          \\ \hline
-Club                & Handicap25          \\ \hline
-DateJoined          & HillClimb           \\ \hline
-DateLeft            & Transmedia          \\ \hline
-                    & Juvenile            \\ \hline
-\underline{RiderID} & CourceID            \\ \hline
-\emph{EventID}      & CourceCode          \\ \hline 
-TCID                & CourceDistance      \\ \hline 
-Handicap10Points    &                     \\ \hline
-CircuitPoints       &                     \\ \hline 
-TransmediaPoints    &                     \\ \hline
-JuvenilePoints      &                     \\ \hline
+Surname             & CourceID            \\ \hline
+ClubReferance       & CourceCode          \\ \hline
+Club                & CourceDistance      \\ \hline
+DateJoined          &                     \\ \hline
+DateLeft            &                     \\ \hline
+                    &                     \\ \hline
+\underline{RiderID} &                     \\ \hline
+\underline{EventID} &                     \\ \hline 
+TCID                &                     \\ \hline 
+EventPoints         &                     \\ \hline
 RecordID            &                     \\ \hline
 RideTime            &                     \\ \hline
 HandicapTime        &                     \\ \hline
 RacePosition        &                     \\ \hline
 Age                 &                     \\ \hline
-                    &                     \\ \hline
+EventTypeID         &                     \\ \hline
+EventSubType        &                     \\ \hline
 \end{tabular}
 
 \underline{3NF}
@@ -165,18 +162,12 @@ Age                 &                     \\ \hline
 	Forename             \\
 	Surname              \\
 \end{tabular} & \begin{tabular}{l}
-	\\
 	\underline{EventID}  \\
 	\emph{CourseID }     \\
+	\emph{EvetnTypeID}    \\
 	Date                 \\
-	CircuitSeries        \\
-	Handicap10           \\
-	Handicap25           \\
-	HillClimb            \\
-	Transmedia           \\
-	Juvenile             \\
-	\\
 \end{tabular} & \begin{tabular}{l}
+	\\
 	\underline{TCID}     \\
 	\emph{RiderID}       \\
 	\emph{EventID}       \\
@@ -184,6 +175,7 @@ Age                 &                     \\ \hline
 	CircuitPoints        \\
 	TransmediaPoints     \\
 	JuvenilePoints       \\
+	\\
 \end{tabular} & \begin{tabular}{l}
 	\underline{RecordID} \\
 	\emph{RiderID}       \\
@@ -194,16 +186,21 @@ Age                 &                     \\ \hline
 \begin{tabular}{l}
 	\\
 	\underline{ClubReferance} \\
-	\emph{RiderID} \\
-	Club \\
-	DateJoined \\
-	DateLeft \\
+	\emph{RiderID}            \\
+	Club                      \\
+	DateJoined                \\
+	DateLeft                  \\
 	\\
 \end{tabular} & \begin{tabular}{l}
 	\underline{CourseID} \\
-	CourseCode \\
-	CourseDistance \\
-\end{tabular} & & \\
+	CourseCode           \\
+	CourseDistance       \\
+\end{tabular} & \begin{tabular}{l}
+	\underline{EvntTypeID} \\
+	EventPrimaryType       \\
+	EventSecondaryType     \\
+	EventTertiaryType      \\
+\end{tabular} & \\
 \hline
 \end{tabular}
 
