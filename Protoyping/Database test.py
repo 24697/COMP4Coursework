@@ -22,55 +22,51 @@ def create_table(db_name,table_name,sql):
 
 if __name__ == "__main__":
     db_name = "Team Cambridge.db"
-    table_name = "Event"
-    sql = """create table Event(
-    EventID integer,
-    CircuitSeries integer,
-    Handicap10 integer,
-    Handicap25 integer,
-    HillClimb integer,
-    Transmedia integer,
-    Juvenule integer,
-    Code Text,
-    Primary Key(EventID))"""
-    create_table(db_name,table_name,sql)
-    
-    db_name = "Team Cambridge.db"
     table_name = "Rider"
-    sql = """create table Rider(
+    sql = """create table Event(
     RiderID integer,
     Forename text,
     Surname text,
     Primary Key(RiderID))"""
     create_table(db_name,table_name,sql)
-    
-    db_name = "Team Cambridge.db"
-    table_name = "Record"
-    sql = """create table Record(
-    RecordID integer,
-    RideTime text,
-    HandicapTime text,
-    RacePostiton integer,
+
+    table_name = "Club"
+    sql="""create table Club(
+    ClubID integer,
     Club text,
-    Age integer,
-    RiderID integer,
-    EventID integer,
-    Primary Key(RecordID),
-    foreign Key(RiderID) referances Rider(RiderID),
-    foreign Key(EventID) referances Event(EventID))"""
+    Primary Key(ClubID))"""
+    create_table(db_name,table_name,sql)
+    
+
+    table_name = "EventType"
+    sql = """create table EventType(
+    EventTypeID integer,
+    EventType text,
+    Primary Key(EventTypeID))"""
     create_table(db_name,table_name,sql)
 
-    db_name = "Team Cambridge.db"
-    table_name = "Team Cambridge Record"
-    sql = """ create table Team Cambridge Record(
-    TCID integer,
-    Handicap10Points integer,
-    CircuitPoints integer,
-    TransmediaPoints integer,
-    JuvenilePoints integer,
-    RiderID integer,
-    EventID integer,
-    Primary Key(TCID),
-    foreign Key(RiderID) referances Rider(RiderID),
-    foreign Key(EventID) referances Event(EventID))"""
+    table_name = "Course"
+    sql = """create table Course(
+    CourseID integer,
+    CourseCode text,
+    CourseDistance intefer,
+    Primary Key(CourseID))"""
     create_table(db_name,table_name,sql)
+
+    table_name = "EventReferance"
+    sql = """create table EventReferance(
+    EventReferanceID integer,
+    EventTypeID integer,
+    Primary Key(EventReferanceID),
+    foreign Key(EventTypeID) referances EventType(EventTypeID)"""
+    create_table(db_name,table_name,sql)
+
+    table_name = "Event"
+    sql = """create table Event(
+    EventID integer,
+    Date text,
+    CourseID integer,
+    EventReferanceID integer,
+    Primary Key(EventID),
+    foreign Key(EventTypeID) referances EventReferance(EventReferanceID),
+    foreign Key(CourseID) referances Course(CourseID)

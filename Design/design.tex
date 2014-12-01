@@ -75,11 +75,11 @@ Blank
 
 \subsubsection{Entity Descriptions}
 
-Event(\underline{EventID}, \emph{CourseID} , \emph{EventTypeID}, Date )
+Event(\underline{EventID}, \emph{CourseID} , \emph{EventReferanceID}, Date )
 
 Course(\underline{CourseID}, CourseCode, CourseDistance)
 
-Event Referance(\underline{EventReferanceID}, \emph{EventID}, \emph{EventTypeID})
+Event Referance(\underline{EventReferanceID}, \emph{EventTypeID})
 
 Event Type(\underline{EventTypeID}, EventType)
 
@@ -157,6 +157,7 @@ EventPointsType      &                     \\ \hline
 	\\
 	\underline{EventID} \\
 	\emph{CourseID}     \\
+	\emph{EventReferanceID}
 	Date                \\
 	\\
 \end{tabular}& \begin{tabular}{l}
@@ -165,7 +166,6 @@ EventPointsType      &                     \\ \hline
 	CourseDistance       \\
 \end{tabular} & \begin{tabular}{l}
 	\underline{EventReferanceID} \\
-	\emph{EventID}               \\
 	\emph{EventTypeID}           \\
 \end{tabular} &\begin{tabular}{l}
 	\underline{RiderID} \\
