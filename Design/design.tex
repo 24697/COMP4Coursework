@@ -75,7 +75,7 @@ Blank
 
 \subsubsection{Entity Descriptions}
 
-Event(\underline{EventID}, \emph{CourseID} , \emph{EventReferanceID}, Date )
+Event(\underline{EventID}, \emph{CourseID} , \emph{EventReferanceID}, Date, Laps )
 
 Course(\underline{CourseID}, CourseCode, CourseDistance)
 
@@ -105,7 +105,7 @@ Surname        & HandicapMod      & EventPointsID      \\
 Club           & RecordID         & RideTime           \\
 CourceID       & CourceCode       & CourceDistance     \\
 DateJoined     & DateLeft         & EventReferanceID   \\
-EventTypeID    & ClubID           &                    \\
+EventTypeID    & ClubID           & Laps               \\
 
 \end{tabular}
 
@@ -120,7 +120,7 @@ ClubReferance       & DateLeft        & CourseID            \\ \hline
 Surname             & HandicapMod     & CourseCode          \\ \hline
 DateJoined          & RiderID         & CorseDistance       \\ \hline 
 EventPointsID       & Age             & EventReferanceID    \\ \hline
-EventTypeID         & ClubID          &                     \\ \hline
+EventTypeID         & ClubID          & Laps                \\ \hline
 \end{tabular}
 
 
@@ -138,7 +138,7 @@ Club                 & CourceDistance      \\ \hline
 DateJoined           & EventTypeID         \\ \hline
 DateLeft             & EventType           \\ \hline
 ClubID               & EventReferanceID    \\ \hline
-                     &                     \\ \hline
+                     & Laps                \\ \hline
 \underline{RecordID} &                     \\ \hline
 \underline{EventID}  &                     \\ \hline 
 EventPointsID        &                     \\ \hline
@@ -155,10 +155,11 @@ EventPointsType      &                     \\ \hline
 \hline
 \begin{tabular}{l}
 	\\
-	\underline{EventID} \\
-	\emph{CourseID}     \\
-	\emph{EventReferanceID}
-	Date                \\
+	\underline{EventID}     \\
+	\emph{CourseID}         \\
+	\emph{EventReferanceID} \\
+	Date                    \\
+	Laps                    \\
 	\\
 \end{tabular}& \begin{tabular}{l}
 	\underline{CourseID} \\
