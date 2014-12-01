@@ -79,11 +79,15 @@ Event(\underline{EventID}, \emph{CourseID} , \emph{EventTypeID}, Date )
 
 Course(\underline{CourseID}, CourseCode, CourseDistance)
 
-Event Type(\underline{EventTypeID}, \emph{EventID}, EventType)
+Event Referance(\underline{EventReferanceID}, \emph{EventID}, \emph{EventTypeID})
+
+Event Type(\underline{EventTypeID}, EventType)
 
 Rider(\underline{RiderID}, Forename, Surname)
 
-Club Reference(\underline{ClubReferance}, \emph{RiderID}, Club, DateJoined, DateLeft)
+Club Reference(\underline{ClubReferance}, \emph{RiderID}, \emph{ClubID}, DateJoined, DateLeft)
+
+Club(\underline{ClubID}, Club)
 
 Record(\underline{RecordID}, \emph{EventID}, RdieTime, Age, HandicapMod)
 
@@ -100,7 +104,8 @@ ClubReferance  & RiderID          & Forename           \\
 Surname        & HandicapMod      & EventPointsID      \\
 Club           & RecordID         & RideTime           \\
 CourceID       & CourceCode       & CourceDistance     \\
-DateJoined     & DateLeft         & EventTypeID        \\
+DateJoined     & DateLeft         & EventReferanceID   \\
+EventTypeID    & ClubID           &                    \\
 
 \end{tabular}
 
@@ -114,8 +119,8 @@ REPEATING           &                 & NON-REPEATING       \\ \hline
 ClubReferance       & DateLeft        & CourseID            \\ \hline
 Surname             & HandicapMod     & CourseCode          \\ \hline
 DateJoined          & RiderID         & CorseDistance       \\ \hline 
-EventPointsID       & Age             &                     \\ \hline
-EventTypeID         &                 &                     \\ \hline
+EventPointsID       & Age             & EventReferanceID    \\ \hline
+EventTypeID         & ClubID          &                     \\ \hline
 \end{tabular}
 
 
@@ -132,6 +137,7 @@ ClubReferance        & CourceCode          \\ \hline
 Club                 & CourceDistance      \\ \hline
 DateJoined           & EventTypeID         \\ \hline
 DateLeft             & EventType           \\ \hline
+ClubID               & EventReferanceID    \\ \hline
                      &                     \\ \hline
 \underline{RecordID} &                     \\ \hline
 \underline{EventID}  &                     \\ \hline 
@@ -148,17 +154,19 @@ EventPointsType      &                     \\ \hline
 \begin{tabular}{|l|l|l|l|}
 \hline
 \begin{tabular}{l}
+	\\
 	\underline{EventID} \\
 	\emph{CourseID}     \\
-	Date
+	Date                \\
+	\\
 \end{tabular}& \begin{tabular}{l}
 	\underline{CourseID} \\
 	CourseCode           \\
 	CourseDistance       \\
 \end{tabular} & \begin{tabular}{l}
-	\underline{EventTypeID} \\
-	\emph{EventID}          \\
-	EventType               \\
+	\underline{EventReferanceID} \\
+	\emph{EventID}               \\
+	\emph{EventTypeID}           \\
 \end{tabular} &\begin{tabular}{l}
 	\underline{RiderID} \\
 	Forename            \\
@@ -167,22 +175,33 @@ EventPointsType      &                     \\ \hline
 \begin{tabular}{l}
 	\underline{ClubReference} \\
 	\emph{RiderID}            \\
-	Club                      \\
+	\emph{ClubID}             \\
 	DateJoined                \\
 	DateLeft                  \\
 \end{tabular} & \begin{tabular}{l}
+	\\
 	\underline{RecordID} \\
 	\emph{EventID}       \\
 	\emph{RiderID }      \\
 	RideTime             \\
 	Age                  \\
 	HandicapMod          \\
+	\\
 \end{tabular} & \begin{tabular}{l}
 	\underline{EventPointsID} \\
 	\emph{RecordID}           \\
 	EventPointsType           \\
 	EventPoints               \\
-\end{tabular} & \\ \hline
+\end{tabular} & \begin{tabular}{l}
+	\underline{ClubID} \\
+	Club               \\
+\end{tabular} \\ \hline
+\begin{tabular}{l}
+	\\
+	\underline{EventTypeID} \\
+	EventType               \\
+	\\
+\end{tabular} & & & \\ \hline 
 \end{tabular}
 
 \section{Security and Integrity of the System and Data}
