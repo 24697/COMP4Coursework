@@ -6,14 +6,18 @@
 
 Cycling database management system
 \begin{itemize}
-	\item Data management
+	\item Data management and general interface
 	\item Creating new records in the database
 	\item Exporting data on events
 \end{itemize}
 
-Data management
+Data management and general interface
 \begin{itemize}
-	\item In the program there will need to be functionality that allows the user to search and sort the records. 
+	\item In the program there will need to be functionality that allows the user to search and sort the records.
+	\item The program will need to be able to edit and delete existing records
+	\item The program will need to be able to create new records
+	\item The program will need to be able to view related information of the currently view record
+	\item There will need to be keyboard short cuts as the program need to speed up the current system
 \end{itemize}
 
 Creating new records in the database
@@ -23,22 +27,19 @@ Creating new records in the database
 	\item when a new record is made the main layout will change with spaces for the user to enter the required data. There will also be buttons for "Saving" the record and "Saving and creating a new record" as these will be the two options that the user will need when creating 
 \end{itemize}
 
+Exporting data on events
+\begin{itemize}
+	\item The program will need to be able to export the data so that it can be uploaded to the club website and viewed by the public
+	\item The data will need to be exported in csv format so that the website can properly format the data in a way that is easy to understand.
+\end{itemize}
 \subsection{System flowcharts showing an overview of the complete system}
+
+
 
 \section{User Interface Designs}
 \begin{figure}[H]
-    	\includegraphics[width=\textwidth]{./UIDesign/BasePart1.pdf}
-    	\caption{The main window when the program opens} \label{fig:The main window when the program opens}
-\end{figure}
-
-\begin{figure}[H]
-    	\includegraphics[width=\textwidth]{./UIDesign/DatebaseMain1.pdf}
-    	\caption{The main window when a database open} \label{fig:The main window when a database is open}
-\end{figure}
-
-\begin{figure}[H]
-	\includegraphics[width=\textwidth]{./UIDesign/DatebaseMainDropDown.pdf}
-	\caption{A drop down menu to change the viewed table} \label{fig:A drop down menu to change the viewed table}
+	\includegraphics[width=\textwidth]{./UIDesign/BaseMainDrop.pdf}
+	\caption{The main layout of the program} \label{fig:The main layout of the program} 	
 \end{figure}
 
 \begin{figure}[H]
@@ -46,6 +47,10 @@ Creating new records in the database
 	\caption{The new event dialogue box} \label{fig:The new event dialogue box}
 \end{figure}
 \section{Hardware Spesifiacation}
+
+CPU:Pentium
+RAM:4GB
+HDD: 250Gb
 
 \section{Program Structure}
 
@@ -72,33 +77,30 @@ Creating new records in the database
 \begin{tabular}{|p{1.5cm}|p{1.5cm}|l|l|l|p{2.5cm}|}
 	\hline
 	NAME & DATA TYPE & LENGTH & VALIDATION & EXAMPLE DATA & APPROXIMATE SIZE \\ \hline
-	EventID & Integer & 0-9999 & Range & 10 & 4 Bytes \\ \hline
-	CourseID & Integer & 0-9999 & Range & 10 & 4 Bytes \\ \hline
-	Date & Date & DD/MM/YYYY & Range & 1 & 3 Bytes \\ \hline
-	CircuitSeries & Boolean & 0 or 1 & Range & 1 & 2 Bytes \\ \hline
-	Handicap10 & Boolean & 0 or 1 & Range & 1 & 2 Bytes \\ \hline
-	Handicap25 & Boolean & 0 or 1 & Range & 1 & 2 Bytes \\ \hline
-	HillClimb & Boolean & 0 or 1 & Range & 1 & 2 Bytes \\ \hline
-	Transmedia & Boolean & 0 or 1 & Range & 1 & 2 Bytes \\ \hline
-	Juvenile & Boolean & 0 or 1 & Range & 1 & 2 Bytes \\ \hline
-	Code & String & 2 Characters & length & TR & 2 Bytes \\ \hline
-	RiderID & Integer & 0-9999 & Range & 10 & 4 Bytes \\ \hline
-	Forename & String & 50 Characters & length & Peter & 50 Bytes \\ \hline
-	Surname & String & 50 Characters & length & Millard & 50 Bytes \\ \hline
-	TCID & Integer & 0-9999 & Range & 10 & 4 Bytes \\ \hline
-	Handicap10Points & Integer & 0-350 & Range & 125 & 4 Bytes \\ \hline
-	CircuitPoints & Integer & 0-350 & Range & 125 & 4 Bytes \\ \hline
-	TransmediaPoints & Integer & 0-350 & Range & 125 & 4 Bytes \\ \hline
-	JuvenlePoints & Integer & 0-350 & Range & 125 & 4 Bytes \\ \hline
-	CourseID & Integer & 0-9999 & Range & 10 & 4 Bytes \\ \hline
-	RecordID & Integer & 0-9999 & Range & 10 & 4 Bytes \\ \hline
-	RideTime & Time & HH:MM:SS & Range & 01:25:23 & 3 Bytes \\ \hline
-	HandicapTime & Time & HH:MM:SS & Range & 00:25:23 & 3 Bytes \\ \hline
-	RacePosition & Integer & 1-50 & Range & 05 & 4 Bytes \\ \hline
-	Club & String & 50 Characters & Length & Team Cambridge & 100 Bytes \\ \hline
-	Age & Integer & 12 – 99 & Range & 18 & 4 Bytes \\ \hline
-\end{tabular}
-
+	EventID & & & & & \\ \hline
+	Age & & & & & \\ \hline
+	Date & & & & & \\ \hline
+	EventPoints & & & & & \\ \hline
+	EventType & & & & & \\ \hline
+	EventPointType & & & & & \\ \hline
+	ClubReferance & & & & & \\ \hline
+	RiderID & & & & & \\ \hline
+	Forename & & & & & \\ \hline
+	Surname & & & & & \\ \hline
+	HandicapMod & & & & & \\ \hline
+	EventPointsID & & & & & \\ \hline
+	Club & & & & & \\ \hline
+	RecordID & & & & & \\ \hline
+	RideTime & & & & & \\ \hline
+	CourceID & & & & & \\ \hline
+	CourceCode & & & & & \\ \hline
+	ourceDistance & & & & & \\ \hline
+	DateJoined & & & & & \\ \hline
+	DateLeft & & & & & \\ \hline
+	EventReferanceID & & & & & \\ \hline
+	EventTypeID & & & & & \\ \hline
+	ClubID & & & & & \\ \hline
+	Laps & & & & & \\ \hline
 \subsection{Identification of appropriate storage media}
 
 \section{Database Design}
