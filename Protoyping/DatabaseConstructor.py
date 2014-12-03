@@ -23,7 +23,7 @@ def create_table(db_name,table_name,sql):
 if __name__ == "__main__":
     db_name = "Team Cambridge.db"
     table_name = "Rider"
-    sql = """create table Event(
+    sql = """create table Rider(
     RiderID integer,
     Forename text,
     Surname text,
@@ -58,7 +58,7 @@ if __name__ == "__main__":
     EventReferanceID integer,
     EventTypeID integer,
     Primary Key(EventReferanceID),
-    foreign Key(EventTypeID) referances EventType(EventTypeID)"""
+    foreign Key(EventTypeID) references EventType(EventTypeID))"""
     create_table(db_name,table_name,sql)
 
     table_name = "Event"
@@ -66,7 +66,45 @@ if __name__ == "__main__":
     EventID integer,
     Date text,
     CourseID integer,
+    laps integer,
     EventReferanceID integer,
     Primary Key(EventID),
-    foreign Key(EventTypeID) referances EventReferance(EventReferanceID),
-    foreign Key(CourseID) referances Course(CourseID)
+    foreign Key(EventReferanceID) references EventReferance(EventReferanceID),
+    foreign Key(CourseID) references Course(CourseID))"""
+    create_table(db_name,table_name,sql)
+
+    table_name = "Record"
+    sql = """create table Record(
+    RecordID integer,
+    RideTime integer,
+    Age integer,
+    HandicapMod integer,
+    EventID integer,
+    RiderID integer,
+    Primary Key(RecordID),
+    foreign Key(EventID) references Event(EventID),
+    foreign Key(RiderID) references Rdier(RiderID))"""
+    create_table(db_name,table_name,sql)
+
+    table_name = "EventPoints"
+    sql = """create table EventPoints(
+    EventPointsID integer,
+    EventPointsType text,
+    EventPoints integer,
+    RecordID integer,
+    Primary Key(EventPointsID),
+    foreign Key(RecordID) references Record(RecordID))"""
+    create_table(db_name,table_name,sql)
+
+    table_name = "ClubReferance"
+    sql = """create table ClubReferance(
+    ClubReferanceID integer,
+    DateJoined text,
+    DateLeft text,
+    RiderID integer,
+    ClubID integer,
+    Primary Key(ClubReferanceID),
+    foreign Key(RiderID) references Rdier(RiderID),
+    foreign Key(ClubID) references Club(ClubID))"""
+    create_table(db_name,table_name,sql)
+    
