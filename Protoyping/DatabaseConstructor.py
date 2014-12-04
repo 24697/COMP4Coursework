@@ -21,7 +21,7 @@ def create_table(db_name,table_name,sql):
             db.commit()
 
 if __name__ == "__main__":
-    db_name = "Team Cambridge.db"
+    db_name = "TeamCambridge.db"
     table_name = "Rider"
     sql = """create table Rider(
     RiderID integer,
@@ -37,12 +37,13 @@ if __name__ == "__main__":
     Primary Key(ClubID))"""
     create_table(db_name,table_name,sql)
     
-
     table_name = "EventType"
     sql = """create table EventType(
     EventTypeID integer,
     EventType text,
-    Primary Key(EventTypeID))"""
+    EventReferenceID integer,
+    Primary Key(EventTypeID),
+    foreign Key(EventReferenceID) references EventReference(EventReferenceID))"""
     create_table(db_name,table_name,sql)
 
     table_name = "Course"
@@ -53,12 +54,12 @@ if __name__ == "__main__":
     Primary Key(CourseID))"""
     create_table(db_name,table_name,sql)
 
-    table_name = "EventReferance"
-    sql = """create table EventReferance(
-    EventReferanceID integer,
-    EventTypeID integer,
-    Primary Key(EventReferanceID),
-    foreign Key(EventTypeID) references EventType(EventTypeID))"""
+    table_name = "EventReference"
+    sql = """create table EventReference(
+    EventReferenceID integer,
+    EventID intefer,
+    Primary Key(EventReferenceID),
+    foreign Key(EventID) references Event(EventID))"""
     create_table(db_name,table_name,sql)
 
     table_name = "Event"
@@ -67,9 +68,7 @@ if __name__ == "__main__":
     Date text,
     CourseID integer,
     laps integer,
-    EventReferanceID integer,
     Primary Key(EventID),
-    foreign Key(EventReferanceID) references EventReferance(EventReferanceID),
     foreign Key(CourseID) references Course(CourseID))"""
     create_table(db_name,table_name,sql)
 
@@ -96,14 +95,14 @@ if __name__ == "__main__":
     foreign Key(RecordID) references Record(RecordID))"""
     create_table(db_name,table_name,sql)
 
-    table_name = "ClubReferance"
-    sql = """create table ClubReferance(
-    ClubReferanceID integer,
+    table_name = "ClubReference"
+    sql = """create table ClubReference(
+    ClubReferenceID integer,
     DateJoined text,
     DateLeft text,
     RiderID integer,
     ClubID integer,
-    Primary Key(ClubReferanceID),
+    Primary Key(ClubReferenceID),
     foreign Key(RiderID) references Rdier(RiderID),
     foreign Key(ClubID) references Club(ClubID))"""
     create_table(db_name,table_name,sql)
