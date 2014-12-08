@@ -62,6 +62,7 @@ def insert_data_event_points(values):
         sql = "insert into EventPoints (EventPointsType,EventPoints,RecordID) values(?,?,?)"
         cursor.execute(sql,values)
         db.commit
+        
 if __name__ == "__main__":
     values = ("E33\10",10)
     insert_data_course(values)
