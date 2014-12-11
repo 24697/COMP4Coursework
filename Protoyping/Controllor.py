@@ -52,34 +52,34 @@ def get_input_int():
 def get_input_date():
     done1 = False
     done2 = False
-    tests_passed = 0
-    tests_run = 0
+    fin_test = 0
     while done1 == False:
         while done2 == False:
             try:
-                value = str(input(  ">>> "))
+                value = str(input(">>> "))
                 print("")
                 done2 = True
             except ValueError:
                 print("Value not correct data type, please try again")
                 print("")
-    if len(value) != 10:
-        print("The data is not the correct length \nPlease use the format DD/MM/YYYY")
-        print("")
-    else:
-        for count in range(1,10):
-            if count == 1 or count == 2 or count == 4 or count == 5 or count == 7 or count == 8 or count == 9 or count == 10:
-                if value[:count] == "0" or value[:count] == "1" or value[:count] == "2" or value[:count] == "3" or value[:count] == "4" or value[:count] == "5" or value[:count] == "6" or value[:count] == "7" or value[:count] == "8" or value[:count] == "9":
-                    tests_passed += 1
-            elif count == 3 or count == 6:
-                if value[:count] == "/":
-                    tests_passed +=1
-        if tests_passed == 10:
-            done1 = True
-        else:
-            print("The data is not in the correct format \nPlease use the format DD/MM/YYYY")
+        if len(value) != 10:
+            print("The data is not the correct length \nPlease use the format DD/MM/YYYY TYPE 1")
             print("")
             done2 = False
+        else:
+            for count in range(10):
+                if count == 0 or count == 1 or count == 3 or count == 4 or count == 6 or count == 7 or count == 8 or count == 9:
+                    if value[count] == "0" or value[count] == "1" or value[count] == "2" or value[count] == "3" or value[count] == "4" or value[count] == "5" or value[count] == "6" or value[count] == "7" or value[count] == "8" or value[count] == "9":
+                        fin_test += 1
+                elif count == 2 or count == 5:
+                    if value[count] == "/":
+                        fin_test +=1
+            if fin_test == 10:
+                done1 = True
+            else:
+                print("The data is not in the correct format \nPlease use the format DD/MM/YYYY TYPE 2")
+                print("")
+                done2 = False
     return value
 
 def get_input_time():
@@ -96,21 +96,21 @@ def get_input_time():
                 print("Data not correct type, Please try again")
                 print("")
         if len(value) == 8:
-            for count in range(1,8):
-                if count == 1 or count == 2 or count == 4 or count ==  5 or count ==  7 or count == 8:
-                    if value[:count] == "0" or value[:count] == "1" or value[:count] == "2" or value[:count] == "3" or value[:count] == "4" or value[:count] == "5" or value[:count] == "6" or value[:count] == "7" or value[:count] == "8" or value[:count] == "9":
+            for count in range(8):
+                if count == 0 or count == 1 or count == 3 or count ==  4 or count ==  6 or count == 7:
+                    if value[count] == "0" or value[count] == "1" or value[count] == "2" or value[count] == "3" or value[count] == "4" or value[count] == "5" or value[count] == "6" or value[count] == "7" or value[count] == "8" or value[count] == "9":
                         fin_test += 1
-                elif count == 3 or count == 6:
-                    if value[:count] == ":":
+                elif count == 2 or count == 5:
+                    if value[count] == ":":
                         fin_test += 1
             if fin_test == 8:
                 done1 = True
             else:
-                print("Data not in the correct format, Please use HH:MM:SS")
+                print("Data not in the correct format, Please use HH:MM:SS TYPE 1")
                 print("")
                 done2 = False
         else:
-            print("Data not in the correct format, Please use HH:MM:SS")
+            print("Data not in the correct format, Please use HH:MM:SS TYPE 2")
             print("")
             done2 = False
     return value
@@ -127,17 +127,24 @@ def main():
             if value == 1:
                 print("Please enter the forename of the rider")
                 forename = get_input_str()
-                print("Please enter the Surename fo the rider")
+                print("Please enter the Surename of the rider")
                 surname = get_input_str()
                 values = (forename,surname)
                 add_rider(values)
+                
             elif value == 2:
                 print("Please enter the name of the club")
                 club = get_input_str()
                 values = (club,)
                 add_club(values)
+                
             elif value == 3:
-                pass
+                print("Please enter the ID of the reference")
+                ID = get_input_int()
+                print("Please enter the event type")
+                event_type = get_input_str()
+                values = (event_type,ID)
+                
             elif value == 4:
                 print("Please enter the course code")
                 course_code = get_input_str()
@@ -145,8 +152,13 @@ def main():
                 course_distance = get_input_str()
                 values = (course_code,course_distance)
                 add_course(values)
+                
             elif value == 5:
-                pass
+                print("Please enter the ID of the Event")
+                ID = get_input_int()
+                values = (ID,)
+                add_event_reference(values)
+                
             elif value == 6:
                 print("Please enter the ID of the course that the event used")
                 courseID = get_input_int()
@@ -156,12 +168,43 @@ def main():
                 date = get_input_date()
                 values = (date,laps,courseID)
                 add_event(values)
+                
             elif value == 7:
-                pass
+                print("Please enter the ID of the event")
+                event_ID = get_input_int()
+                print("Please enter the ID of the rider")
+                rider_ID = get_input_int()
+                print("Please enter the ride time")
+                ride_time = get_input_time()
+                print("Please enter the handicap modifyer")
+                handicap_mod = get_input_time()
+                print("Please enter the age of the rider")
+                age = get_input_int()
+                values = (ride_time,age,handicap_mod,event_ID,rider_ID)
+                add_record(values)
+                
             elif value == 8:
-                pass
+                print("Please enter the type of the points")
+                event_points_type = get_input_str()
+                print("Please enter the points awared")
+                event_points = get_input_int()
+                print("Please enter the ID of the record")
+                ID = get_input_int()
+                values = (event_points_type,event_points,ID)
+                add_event_points(values)
+                
             elif value == 9:
-                pass
+                print("Please enter the date joined")
+                joined = get_input_date()
+                print("please enter the date left")
+                left = get_input_date()
+                print("Please enter the ID of the rider")
+                rider_ID = get_input_int()
+                print("Please enter the ID the club")
+                club_ID = get_input_int()
+                values = (joined,left,rider_ID,club_ID)
+                add_club_referance(values)
+            
         elif value == 2:
             pass
         elif value == 3:

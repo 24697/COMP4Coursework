@@ -21,7 +21,7 @@ def add_event(values):
     create_new_event(values)
 
 def add_record(values):
-    create_new_recrod(values)
+    create_new_record(values)
 
 def add_event_points(values):
     create_new_event_points(values)
