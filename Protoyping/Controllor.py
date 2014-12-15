@@ -280,14 +280,14 @@ def edit_menu():
             edit_rider_surname(values)
         else:
             pass
-    if value == 2:
+    elif value == 2:
         print("Please enter the ID of the club that you wish to edit")
         ID = get_input_int()
         print("Please enter the new club name of the club")
         name = get_input_str()
         values = (name,ID)
         edit_club(values)
-    if value == 3:
+    elif value == 3:
         print("Which stribute would you like to edit")
         print("1. Event Type")
         print("2. Event Reference ID")
@@ -312,7 +312,7 @@ def edit_menu():
             edit_event_type_type(values)
         else:
             pass
-    if value == 4:
+    elif value == 4:
         print("Which stribute would you like to edit")
         print("1. Course Code")
         print("2. Course Distance")
@@ -361,7 +361,7 @@ def edit_menu():
             date = get_input_date()
             values = (date,ID)
             edit_event_date(values)
-        elif value = 2:
+        elif value == 2:
             rint("Please enter the ID of the event you wish to edit")
             ID = get_input_int()
             print("Please enter the new value of the laps")
@@ -443,7 +443,7 @@ def edit_menu():
             Type = get_input_str()
             values = (Type,ID)
             edit_event_points_type(values)
-        elif value = 2:
+        elif value == 2:
             rint("Please enter the ID of the event points record you wish to edit")
             ID = get_input_int()
             print("Please enter the new value of the pionts")
