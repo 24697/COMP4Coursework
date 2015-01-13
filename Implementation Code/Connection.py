@@ -22,17 +22,37 @@ class SQLConnection:
     def closeEvent(self,event):
         self.close_database()
     
-    def get_all(self):
-        self.model = QSqlQueryModel()
-        print("pass3-1-1")
+    def get_all(self,current_table):
         self.query = QSqlQuery()
+        print("pass3-1-1")
+        if current_table == 0:
+            self.hold = self.query.prepare("""SELECT * FROM Rider""")
+        elif current_table == 1:
+            self.hold = self.query.prepare("""SELECT * FROM Club""")
+
+        elif current_table == 2:
+            self.hold = self.query.prepare("""SELECT * FROM EventType""")
+
+        elif current_table == 3:
+            self.hold = self.query.prepare("""SELECT * FROM Course""")
+
+        elif current_table == 4:
+            self.hold = self.query.prepare("""SELECT * FROM EventReference""")
+
+        elif current_table == 5:
+            self.hold = self.query.prepare("""SELECT * FROM Event""")
+
+        elif current_table == 6:
+            self.hold = self.query.prepare("""SELECT * FROM Record""")
+
+        elif current_table == 7:
+            self.hold = self.query.prepare("""SELECT * FROM EventPoints""")
+
+        elif current_table == 8:
+            self.hold = self.query.prepare("""SELECT * FROM ClubReference""")
+
         print("pass3-1-2")
-        #cant be a float
-        self.hold = self.query.prepare("""SELECT * FROM EventType WHERE EventTypeID = 1""")
-        print("pass3-1-3")
         print(self.hold)
         self.query.exec_()
-        print("pass3-1-4")
-        self.model.setQuery(self.query)
-        print("pass3-1-5")
-        return self.model
+        print("pass3-1-3")
+        return self.query

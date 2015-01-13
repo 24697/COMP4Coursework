@@ -77,21 +77,15 @@ class DisplayWidget(QWidget):
 
     def search(self,current_table):
         if current_table == 0:
-            print("Search function for Rider table")
-            self.options = ["Rider ID", "Forename", "Surname"]
-            self.title_main = "Search"
-            self.title_box = "Rider Search"
-            self.search = DialogBox(self.options,self.title_main,self.title_box)
-            self.search.show()
-            #self.done = False
-            #while self.done == False:
-            #    if self.search.ok_button.clicked:
-            #        self.done == True
-            #        self.search.ok_button.clicked.connect(self.get_search_data(current_table))
-            #        self.search.hide()
-            #    else:
-            #        pass
-            self.search.ok_button.clicked.connect(self.get_search_data(current_table))
+            if not hasattr(self,"rider_search"):
+                print("Search function for Rider table")
+                self.options = ["Rider ID", "Forename", "Surname"]
+                self.title_main = "Search"
+                self.title_box = "Rider Search"
+                self.rider_search = DialogBox(self.options,self.title_main,self.title_box)
+            else:
+                self.rider_search.show()
+            
         elif current_table == 1:
             print("Search function for club table")
             
