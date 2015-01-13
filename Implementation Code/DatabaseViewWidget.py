@@ -13,4 +13,4 @@ class DatabaseViewWidget(QWidget):
         
 
     def display_results_layout(self):
-        self.results_table
+        self.results_table()

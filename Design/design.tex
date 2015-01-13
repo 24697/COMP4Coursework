@@ -32,9 +32,8 @@ Exporting data on events
 	\item The program will need to be able to export the data so that it can be uploaded to the club website and viewed by the public
 	\item The data will need to be exported in csv format so that the website can properly format the data in a way that is easy to understand.
 \end{itemize}
+
 \subsection{System flowcharts showing an overview of the complete system}
-
-
 
 \section{User Interface Designs}
 \begin{figure}[H]
@@ -43,14 +42,26 @@ Exporting data on events
 \end{figure}
 
 \begin{figure}[H]
-	\includegraphics[width=\textwidth]{./UIDesign/NewEventDialog.pdf}
-	\caption{The new event dialogue box} \label{fig:The new event dialogue box}
+	\includegraphics[width=\textwidth]{./UIDesign/DatebaseMainNewDrop.pdf}
+	\caption{The new menubar menu} \label{fig:The new menubar menu} 	
 \end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{./UIDesign/Dialogs.pdf}
+	\caption{The dialogue boxes for new data} \label{fig:The dialogue boxes for new data} 	
+\end{figure}
+
 \section{Hardware Spesifiacation}
 
-CPU:Pentium
-RAM:4GB
-HDD: 250Gb
+The hardware spesifiacation of the program will be as follows,
+
+\begin{tabular}{ll}
+CPU & Intel Pentium T3400 @ 2.17 GHz\\
+RAM & 4 GB DDR2 \\
+Storage & 298 GB HDD \\
+\end{tabular}
+
+These system spesifiacation have been chosen as my client has this hardware available and would prefer not to have to purchase additional hardware.
 
 \section{Program Structure}
 
@@ -74,33 +85,33 @@ HDD: 250Gb
 
 \subsection{Data Dictionary}
 
-\begin{tabular}{|p{1.5cm}|p{1.5cm}|l|l|l|p{2.5cm}|}
+\begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.8cm}|p{2.1cm}|l|p{2.5cm}|}
 	\hline
 	NAME & DATA TYPE & LENGTH & VALIDATION & EXAMPLE DATA & APPROXIMATE SIZE \\ \hline
-	EventID & Integer & 1 - 9999 & & & \\ \hline
-	Age & Integer & 10 - 99  & & & \\ \hline
-	Date & Sting & 10 Charters & & & \\ \hline
-	Event Points & Integer & 0 - 20 & & & \\ \hline
-	EventType & Sting & Up To 10 Charters & & & \\ \hline
-	Event PointType & Sting &  & & & \\ \hline
-	Club Referance & Integer & & & & \\ \hline
-	RiderID & Integer & & & & \\ \hline
-	Forename & Sting & & & & \\ \hline
-	Surname & Sting & & & & \\ \hline
-	Handicap Mod & Sting & & & & \\ \hline
-	Event PointsID & Integer & & & & \\ \hline
-	Club & Sting & & & & \\ \hline
-	RecordID & Integer & & & & \\ \hline
-	RideTime & Sting & & & & \\ \hline
-	CourceID & Integer & & & & \\ \hline
-	Cource Code & Sting & & & & \\ \hline
-	Cource Distance & Integer & & & & \\ \hline
-	Date Joined & Sting & & & & \\ \hline
-	DateLeft & Sting & & & & \\ \hline
-	Event ReferanceID & Integer & & & & \\ \hline
-	Event TypeID & Integer & & & & \\ \hline
-	ClubID & Integer & & & & \\ \hline
-	Laps & Integer & & & & \\ \hline
+	EventID & Integer & 1 - 9999 & Range & 12 & 4 Bytes \\ \hline
+	Age & Integer & 10 - 99  & Range & 19 & 4 Bytes \\ \hline
+	Date & Sting & 10 Charters & Length and Formatting & 23/12/2014 & 10 Bytes \\ \hline
+	Event Points & Integer & 0 - 20 & Range & 15 & 4 Bytes \\ \hline
+	EventType & Sting & Up To 10 Charters & Length & Handicap10 & 10 Bytes \\ \hline
+	Event PointType & Sting & Up To 25 Charters & Length & 10 Series & 25 Bytes \\ \hline
+	Club Referance & Integer & 1 -9999 & Range & 12 & 4 Bytes \\ \hline
+	RiderID & Integer & 1 -9999 & Range & 120 & 4 Bytes \\ \hline
+	Forename & Sting & Up To 25 Charters & Length & Peter & 25 Bytes \\ \hline
+	Surname & Sting & Up To 25 Charters & Length & Millard & 25 Bytes \\ \hline
+	Handicap Mod & Sting & 8 Charters & Length and Formatting & 00:01:15 & 8 Bytes \\ \hline
+	Event PointsID & Integer & 1 - 9999 & Range & 12 & 4 Bytes \\ \hline
+	Club & Sting & Up To 50 Charters & Length & Team Cambridge & 50 Bytes \\ \hline
+	RecordID & Integer & 1 - 9999 & Range & 50: & 4 Bytes \\ \hline
+	RideTime & Sting & 8 Charters & Length and Formatting & 00:25:26 & 8 Bytes \\ \hline
+	CourceID & Integer & 1 - 9999 & Range & 34 & 4 Bytes \\ \hline
+	Cource Code & Sting & Up To 10 Charters & Length & F210/CAX & 10 Bytes \\ \hline
+	Cource Distance & Integer & 1 - 999 & Range & 25 & 4 Bytes \\ \hline
+	Date Joined & Sting & 10 Charters & Length and Formatting & 12/12/2015 & 10 Bytes \\ \hline
+	DateLeft & Sting & 10 Charters & Length and Formatting & 24/10/1995 & 10 Bytes \\ \hline
+	Event ReferanceID & Integer & 1 - 9999 & Range & 230 & 4 Bytes \\ \hline
+	Event TypeID & Integer & 1 - 9999 & Range & 666 & 4 Bytes \\ \hline
+	ClubID & Integer & 1 - 9999 & Range & 624 & 4 Bytes \\ \hline
+	Laps & Integer & 1 - 99 & Range & 2 & 4 Bytes \\ \hline
 \end{tabular}
 \subsection{Identification of appropriate storage media}
 

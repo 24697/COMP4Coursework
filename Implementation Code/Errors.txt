@@ -1,0 +1,27 @@
+Error 1
+
+Traceback (most recent call last):
+  File "C:\Users\Peter\git\COMP4Coursework\Implementation Code\MainWindow.py", line 88, in <module>
+    main()
+  File "C:\Users\Peter\git\COMP4Coursework\Implementation Code\MainWindow.py", line 83, in main
+    manager_window.display_table()
+  File "C:\Users\Peter\git\COMP4Coursework\Implementation Code\MainWindow.py", line 75, in display_table
+    self.table_widget.show_data(query)
+  File "C:\Users\Peter\git\COMP4Coursework\Implementation Code\View.py", line 25, in show_data
+    if not self.model or not isinstance(self.model,"QSqlQueryModel"):
+AttributeError: 'DisplayWidget' object has no attribute 'model'
+
+Error 2
+
+Traceback (most recent call last):
+  File "C:\Users\Peter\git\COMP4Coursework\Implementation Code\MainWindow.py", line 88, in <module>
+    main()
+  File "C:\Users\Peter\git\COMP4Coursework\Implementation Code\MainWindow.py", line 83, in main
+    manager_window.display_table()
+  File "C:\Users\Peter\git\COMP4Coursework\Implementation Code\MainWindow.py", line 75, in display_table
+    self.table_widget.show_data(query)
+  File "C:\Users\Peter\git\COMP4Coursework\Implementation Code\View.py", line 30, in show_data
+    self.model.setQuery(query)
+TypeError: arguments did not match any overloaded call:
+  QSqlQueryModel.setQuery(QSqlQuery): argument 1 has unexpected type 'QSqlQueryModel'
+  QSqlQueryModel.setQuery(str, QSqlDatabase db=QSqlDatabase()): argument 1 has unexpected type 'QSqlQueryModel'
