@@ -4,9 +4,70 @@
 
 \subsection{Short description of the main parts of the system}
 
+Cycling database management system
+\begin{itemize}
+	\item Data management and general interface
+	\item Creating new records in the database
+	\item Exporting data on events
+\end{itemize}
+
+Data management and general interface
+\begin{itemize}
+	\item In the program there will need to be functionality that allows the user to search and sort the records.
+	\item The program will need to be able to edit and delete existing records
+	\item The program will need to be able to create new records
+	\item The program will need to be able to view related information of the currently view record
+	\item There will need to be keyboard short cuts as the program need to speed up the current system
+\end{itemize}
+
+Creating new records in the database
+\begin{itemize}
+	\item Opens a dialogue box forcing the user to enter key data to create the event
+	\item The dialogue box will have a "Save" and "Save and create record" buttons as when the user wants to add an event they will almost always want to also add rider records
+	\item when a new record is made the main layout will change with spaces for the user to enter the required data. There will also be buttons for "Saving" the record and "Saving and creating a new record" as these will be the two options that the user will need when creating 
+\end{itemize}
+
+Exporting data on events
+\begin{itemize}
+	\item The program will need to be able to export the data so that it can be uploaded to the club website and viewed by the public
+	\item The data will need to be exported in csv format so that the website can properly format the data in a way that is easy to understand.
+\end{itemize}
+
 \subsection{System flowcharts showing an overview of the complete system}
 
 \section{User Interface Designs}
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{./UIDesign/BaseMainDrop.pdf}
+	\caption{The main layout of the program} \label{fig:The main layout of the program} 	
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{./UIDesign/EditDialogs.pdf}
+	\caption{The dialogue boxes for the edit functions} \label{fig:The dialogue boxes for the edit functions} 	
+\end{figure}
+
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{./UIDesign/DatebaseMainNewDrop.pdf}
+	\caption{The new menubar menu} \label{fig:The new menubar menu} 	
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{./UIDesign/Dialogs.pdf}
+	\caption{The dialogue boxes for new data} \label{fig:The dialogue boxes for new data} 	
+\end{figure}
+
+\section{Hardware Spesifiacation}
+
+The hardware spesifiacation of the program will be as follows,
+
+\begin{tabular}{ll}
+CPU & Intel Pentium T3400 @ 2.17 GHz\\
+RAM & 4 GB DDR2 \\
+Storage & 298 GB HDD \\
+\end{tabular}
+
+These system spesifiacation have been chosen as my client has this hardware available and would prefer not to have to purchase additional hardware.
 
 \section{Program Structure}
 
@@ -30,6 +91,34 @@
 
 \subsection{Data Dictionary}
 
+\begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.8cm}|p{2.1cm}|l|p{2.5cm}|}
+	\hline
+	NAME & DATA TYPE & LENGTH & VALIDATION & EXAMPLE DATA & APPROXIMATE SIZE \\ \hline
+	EventID & Integer & 1 - 9999 & Range & 12 & 4 Bytes \\ \hline
+	Age & Integer & 10 - 99  & Range & 19 & 4 Bytes \\ \hline
+	Date & Sting & 10 Charters & Length and Formatting & 23/12/2014 & 10 Bytes \\ \hline
+	Event Points & Integer & 0 - 20 & Range & 15 & 4 Bytes \\ \hline
+	EventType & Sting & Up To 10 Charters & Length & Handicap10 & 10 Bytes \\ \hline
+	Event PointType & Sting & Up To 25 Charters & Length & 10 Series & 25 Bytes \\ \hline
+	Club Referance & Integer & 1 -9999 & Range & 12 & 4 Bytes \\ \hline
+	RiderID & Integer & 1 -9999 & Range & 120 & 4 Bytes \\ \hline
+	Forename & Sting & Up To 25 Charters & Length & Peter & 25 Bytes \\ \hline
+	Surname & Sting & Up To 25 Charters & Length & Millard & 25 Bytes \\ \hline
+	Handicap Mod & Sting & 8 Charters & Length and Formatting & 00:01:15 & 8 Bytes \\ \hline
+	Event PointsID & Integer & 1 - 9999 & Range & 12 & 4 Bytes \\ \hline
+	Club & Sting & Up To 50 Charters & Length & Team Cambridge & 50 Bytes \\ \hline
+	RecordID & Integer & 1 - 9999 & Range & 50: & 4 Bytes \\ \hline
+	RideTime & Sting & 8 Charters & Length and Formatting & 00:25:26 & 8 Bytes \\ \hline
+	CourceID & Integer & 1 - 9999 & Range & 34 & 4 Bytes \\ \hline
+	Cource Code & Sting & Up To 10 Charters & Length & F210/CAX & 10 Bytes \\ \hline
+	Cource Distance & Integer & 1 - 999 & Range & 25 & 4 Bytes \\ \hline
+	Date Joined & Sting & 10 Charters & Length and Formatting & 12/12/2015 & 10 Bytes \\ \hline
+	DateLeft & Sting & 10 Charters & Length and Formatting & 24/10/1995 & 10 Bytes \\ \hline
+	Event ReferanceID & Integer & 1 - 9999 & Range & 230 & 4 Bytes \\ \hline
+	Event TypeID & Integer & 1 - 9999 & Range & 666 & 4 Bytes \\ \hline
+	ClubID & Integer & 1 - 9999 & Range & 624 & 4 Bytes \\ \hline
+	Laps & Integer & 1 - 99 & Range & 2 & 4 Bytes \\ \hline
+\end{tabular}
 \subsection{Identification of appropriate storage media}
 
 \section{Database Design}
@@ -37,10 +126,141 @@
 \subsection{Normalisation}
 
 \subsubsection{ER Diagrams}
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{./ER/ERDesing.pdf}
+\end{figure}
 
 \subsubsection{Entity Descriptions}
 
-\subsubsection{1NF to 3NF}
+Event(\underline{EventID}, \emph{CourseID} , \emph{EventReferanceID}, Date, Laps )
+
+Course(\underline{CourseID}, CourseCode, CourseDistance)
+
+Event Referance(\underline{EventReferanceID}, \emph{EventTypeID})
+
+Event Type(\underline{EventTypeID}, EventType)
+
+Rider(\underline{RiderID}, Forename, Surname)
+
+Club Reference(\underline{ClubReferance}, \emph{RiderID}, \emph{ClubID}, DateJoined, DateLeft)
+
+Club(\underline{ClubID}, Club)
+
+Record(\underline{RecordID}, \emph{EventID}, RideTime, Age, HandicapMod)
+
+Event Points(\underline{EventPointsID}, \emph{RecordID}, EventPointsType, EventPoints)
+
+\subsubsection{UNF to 3NF}
+\underline{UNF}
+
+
+\begin{tabular}{l l l}
+EventID        & Age              & Date               \\
+EventPoints    & EventType        & EventPointType     \\
+ClubReferance  & RiderID          & Forename           \\
+Surname        & HandicapMod      & EventPointsID      \\
+Club           & RecordID         & RideTime           \\
+CourceID       & CourceCode       & CourceDistance     \\
+DateJoined     & DateLeft         & EventReferanceID   \\
+EventTypeID    & ClubID           & Laps               \\
+
+\end{tabular}
+
+\underline{1NF}
+
+\begin{tabular}{|l l|l|}
+\hline
+REPEATING           &                 & NON-REPEATING       \\ \hline
+\underline{RecordID}& RideTime        & \underline{EventID} \\ \hline
+\underline{EventID} & EventPointsType & Date                \\ \hline
+ClubReferance       & DateLeft        & CourseID            \\ \hline
+Surname             & HandicapMod     & CourseCode          \\ \hline
+DateJoined          & RiderID         & CorseDistance       \\ \hline 
+EventPointsID       & Age             & EventReferanceID    \\ \hline
+EventTypeID         & ClubID          & Laps                \\ \hline
+\end{tabular}
+
+
+
+
+\underline{2NF}
+
+\begin{tabular}{|l|l|}
+\hline
+\underline{RecordID} & \underline{EventID} \\ \hline
+Forename             & Date                \\ \hline
+Surname              & CourceID            \\ \hline
+ClubReferance        & CourceCode          \\ \hline
+Club                 & CourceDistance      \\ \hline
+DateJoined           & EventTypeID         \\ \hline
+DateLeft             & EventType           \\ \hline
+ClubID               & EventReferanceID    \\ \hline
+                     & Laps                \\ \hline
+\underline{RecordID} &                     \\ \hline
+\underline{EventID}  &                     \\ \hline 
+EventPointsID        &                     \\ \hline
+RideTIme             &                     \\ \hline
+Age                  &                     \\ \hline
+HandicapMod          &                     \\ \hline
+EventPoints          &                     \\ \hline
+EventPointsType      &                     \\ \hline
+\end{tabular}
+
+\underline{3NF}
+
+\begin{tabular}{|l|l|l|l|}
+\hline
+\begin{tabular}{l}
+	\\
+	\underline{EventID}     \\
+	\emph{CourseID}         \\
+	\emph{EventReferanceID} \\
+	Date                    \\
+	Laps                    \\
+	\\
+\end{tabular}& \begin{tabular}{l}
+	\underline{CourseID} \\
+	CourseCode           \\
+	CourseDistance       \\
+\end{tabular} & \begin{tabular}{l}
+	\underline{EventReferanceID} \\
+	\emph{EventTypeID}           \\
+\end{tabular} &\begin{tabular}{l}
+	\underline{RiderID} \\
+	Forename            \\
+	Surname             \\
+\end{tabular} \\ \hline
+\begin{tabular}{l}
+	\underline{ClubReference} \\
+	\emph{RiderID}            \\
+	\emph{ClubID}             \\
+	DateJoined                \\
+	DateLeft                  \\
+\end{tabular} & \begin{tabular}{l}
+	\\
+	\underline{RecordID} \\
+	\emph{EventID}       \\
+	\emph{RiderID }      \\
+	RideTime             \\
+	Age                  \\
+	HandicapMod          \\
+	\\
+\end{tabular} & \begin{tabular}{l}
+	\underline{EventPointsID} \\
+	\emph{RecordID}           \\
+	EventPointsType           \\
+	EventPoints               \\
+\end{tabular} & \begin{tabular}{l}
+	\underline{ClubID} \\
+	Club               \\
+\end{tabular} \\ \hline
+\begin{tabular}{l}
+	\\
+	\underline{EventTypeID} \\
+	EventType               \\
+	\\
+\end{tabular} & & & \\ \hline 
+\end{tabular}
 
 \section{Security and Integrity of the System and Data}
 

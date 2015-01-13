@@ -77,6 +77,7 @@ class DisplayWidget(QWidget):
 
     def search(self,current_table):
         if current_table == 0:
+<<<<<<< HEAD
             print("Search function for Rider table")
             self.options = ["Rider ID", "Forename", "Surname"]
             self.title_main = "Search"
@@ -92,6 +93,17 @@ class DisplayWidget(QWidget):
             #    else:
             #        pass
             self.search.ok_button.clicked.connect(self.get_search_data(current_table))
+=======
+            if not hasattr(self,"rider_search"):
+                print("Search function for Rider table")
+                self.options = ["Rider ID", "Forename", "Surname"]
+                self.title_main = "Search"
+                self.title_box = "Rider Search"
+                self.rider_search = DialogBox(self.options,self.title_main,self.title_box)
+            else:
+                self.rider_search.show()
+            
+>>>>>>> branch 'master' of https://github.com/24697/COMP4Coursework.git
         elif current_table == 1:
             print("Search function for club table")
             

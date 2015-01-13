@@ -52,6 +52,7 @@ class DialogBox(QDialog):
             self.line_edit_6 = QLineEdit()
             self.line_edit_6.setText(options[5])
             self.group_box_layout.addWidget(self.line_edit_6)
+<<<<<<< HEAD
 
         #create the push button and add it to the dialog box
         self.ok_button = QPushButton()
@@ -60,3 +61,72 @@ class DialogBox(QDialog):
         
 
         
+=======
+        def return_data_connection():
+            self.return_data(options)
+
+        #create the push button and add it to the dialog box
+        self.ok_button = QPushButton()
+        self.ok_button.setText("OK")
+        self.layout.addWidget(self.ok_button)
+        self.show()
+        self.ok_button.clicked.connect(self.return_data)
+
+    def return_data(self):
+        try:
+            self.line_1 = self.line_edit_1.text()
+        except:
+            self.hide()
+        
+        try:
+            self.line_2 = self.line_edit_2.text()
+        except:
+            self.hide()
+            print(self.line_1)
+            return self.line_1
+
+        try:
+            self.line_3 = self.line_edit_3.text()
+        except:
+            self.hide()
+            print(self.line_1)
+            print(self.line_2)
+            return self.line_1,self.line_2
+
+        try:
+            self.line_4 = self.line_edit_4.text()
+        except:
+            self.hide()
+            print(self.line_1)
+            print(self.line_2)
+            print(self.line_3)
+            return self.line_1,self.line_2,self.line_3
+
+        try:
+            self.line_5 = self.line_edit_5.text()
+        except:
+            self.hide()
+            print(self.line_1)
+            print(self.line_2)
+            print(self.line_3)
+            print(self.line_4)
+            return self.line_1,self.line_2,self.line_3,self.line_4
+        try:
+            self.line_6 = self.line_edit_6.text()
+        except:
+            self.hide()
+            print(self.line_1)
+            print(self.line_2)
+            print(self.line_3)
+            print(self.line_4)
+            print(self.line_5)
+            return self.line_1,self.line_2,self.line_3,self.line_4,self.line_5
+        self.hide()
+        print(self.line_1)
+        print(self.line_2)
+        print(self.line_3)
+        print(self.line_4)
+        print(self.line_5)
+        print(self.line_6)
+        return self.line_1,self.line_2,self.line_3,self.self.line_4,self.line_5,self.line_6
+>>>>>>> branch 'master' of https://github.com/24697/COMP4Coursework.git
