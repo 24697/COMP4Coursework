@@ -166,30 +166,22 @@ class MainWindow(QMainWindow):
     def search_connection(self):
         print("Search Data")
         self.display.search(self.current_table)
+        if self.current_table == 0:
+            riderID,forename,surname = self.display.get_user_input(self.current_table)
 
     def open_database_connection(self):
-        print("pass1-2-1")
         path = QFileDialog.getOpenFileName()
-        print("pass1-2-2")
         print(path)
         self.connection = SQLConnection(path)
-        print("pass1-2-3")
         ok = self.connection.open_database()
-        print("pass1-2-4")
         print(ok)
 
     def display_table(self):
         if not hasattr(self,"display"):
-            print("Pass1-1-1")
             self.display = DisplayWidget()
-            print()
-            print("Pass1-1-2")
         self.setCentralWidget(self.display)
-        print("pass1-1-3")
         self.model_query = self.connection.get_all(self.current_table)
-        print("pass1-1-4")
         self.display.show_data(self.model_query)
-        print("pass1-1-5")
         
 def main():
     database_application = QApplication(sys.argv)

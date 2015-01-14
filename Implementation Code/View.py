@@ -27,26 +27,18 @@ class DisplayWidget(QWidget):
 
     def show_data(self,query):
         if not hasattr(self,"model"):
-            print("Pass2-1")
             self.model = QSqlQueryModel()
-        print("Pass2-2")
         self.model.setQuery(query)
-        print("Pass2-3")
         self.display_table()
         self.table.setModel(self.model)
-        print("Pass2-4")
         self.table.show()
-        print("Pass2-5")
 
-    def get_search_data(self,current_table):
+    def get_user_input(self,current_table):
         if current_table == 0:
-            self.riderID = self.search.line_edit_1.text()
-            self.forename = self.search.line_edit_2.text()
-            self.surname = self.search.line_edit_3.text()
-            print(self.riderID)
-            print(self.forename)
-            print(self.surname)
-
+            riderID = self.rider_search.line_1
+            forename = self.rider_search.line_2
+            surname = self.rider_search.line_3
+            return riderID,forename,surname
 
     def add_data_rider(self):
         pass
@@ -77,23 +69,8 @@ class DisplayWidget(QWidget):
 
     def search(self,current_table):
         if current_table == 0:
-<<<<<<< HEAD
-            print("Search function for Rider table")
             self.options = ["Rider ID", "Forename", "Surname"]
             self.title_main = "Search"
-            self.title_box = "Rider Search"
-            self.search = DialogBox(self.options,self.title_main,self.title_box)
-            self.search.show()
-            #self.done = False
-            #while self.done == False:
-            #    if self.search.ok_button.clicked:
-            #        self.done == True
-            #        self.search.ok_button.clicked.connect(self.get_search_data(current_table))
-            #        self.search.hide()
-            #    else:
-            #        pass
-            self.search.ok_button.clicked.connect(self.get_search_data(current_table))
-=======
             if not hasattr(self,"rider_search"):
                 print("Search function for Rider table")
                 self.options = ["Rider ID", "Forename", "Surname"]
@@ -101,9 +78,7 @@ class DisplayWidget(QWidget):
                 self.title_box = "Rider Search"
                 self.rider_search = DialogBox(self.options,self.title_main,self.title_box)
             else:
-                self.rider_search.show()
+                self.rider_search.open()
             
->>>>>>> branch 'master' of https://github.com/24697/COMP4Coursework.git
-        elif current_table == 1:
-            print("Search function for club table")
-            
+
+                
