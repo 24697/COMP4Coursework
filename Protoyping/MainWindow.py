@@ -11,7 +11,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle = ("Team Cambridge Database Manager")
-        #self.test_radio_button_layout()
+        self.test_radio_button_layout()
 
         
         
