@@ -164,10 +164,7 @@ class MainWindow(QMainWindow):
         print("delete data")
 
     def search_connection(self):
-        print("Search Data")
         self.display.search(self.current_table)
-        if self.current_table == 0:
-            riderID,forename,surname = self.display.get_user_input(self.current_table)
 
     def open_database_connection(self):
         path = QFileDialog.getOpenFileName()
