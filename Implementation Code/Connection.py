@@ -1,8 +1,11 @@
+from CreatingNewRecords import *
+
 from PyQt4.QtSql import *
 from PyQt4.QtCore import *
 
 class SQLConnection:
     def __init__(self,path):
+        self.add = AddRecords()
         self.path = path
         self.db = None
 
@@ -24,7 +27,7 @@ class SQLConnection:
     
     def get_all(self,current_table):
         self.query = QSqlQuery()
-        print("pass3-1-1")
+        
         if current_table == 0:
             self.hold = self.query.prepare("""SELECT * FROM Rider""")
         elif current_table == 1:
@@ -51,8 +54,11 @@ class SQLConnection:
         elif current_table == 8:
             self.hold = self.query.prepare("""SELECT * FROM ClubReference""")
 
-        print("pass3-1-2")
-        print(self.hold)
         self.query.exec_()
-        print("pass3-1-3")
+        
         return self.query
+
+    def add_rider(self,new_rider):
+        self.add.create_new_rider(new_rider)
+        
+        

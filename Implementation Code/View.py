@@ -33,35 +33,97 @@ class DisplayWidget(QWidget):
         self.table.setModel(self.model)
         self.table.show()
 
+    #
+    #get user input from a search
+    #
+
     def get_user_input(self,current_table):
         if current_table == 0:
-            self.riderID = self.rider_search.line_edit_1.text()
-            self.forename = self.rider_search.line_edit_2.text()
-            self.surname = self.rider_search.line_edit_3.text()
-            print(riderID)
-            print(forename)
-            print(surname)
-            return riderID,forename,surname
+            try:
+                self.line_1 = self.rider_search.line_edit_1.text()
+                self.line_2 = self.rider_search.line_edit_2.text()
+                self.line_3 = self.rider_search.line_edit_3.text()
+            except AttributeError:
+                self.line_1 = self.rider_add.line_edit_1.text()
+                self.line_2 = self.rider_add.line_edit_2.text()
 
-    def add_data_rider(self):
+               
+        elif current_table == 1:
+            self.line_1 = self.club_search.line_edit_1.text()
+            self.line_2 = self.club_search.line_edit_2.text()
+            
+        elif current_table == 2:
+            self.line_1 = self.event_type_search.line_edit_1.text()
+            self.line_2 = self.event_type_search.line_edit_2.text()
+            self.line_3 = self.type_search.line_edit_3.text()
+            
+        elif current_table == 3:
+            self.line_1 = self.course_search.line_edit_1.text()
+            self.line_2 = self.course_search.line_edit_2.text()
+            self.line_3 = self.course_search.line_edit_3.text()
+            
+        elif current_table == 4:
+            self.line_1 = self.event_reference_search.line_edit_1.text()
+            self.line_2 = self.event_reference_search.line_edit_2.text()
+
+        elif current_table == 5:
+            self.line_1 = self.event_search.line_edit_1.text()
+            self.line_2 = self.event_search.line_edit_2.text()
+            self.line_3 = self.event_search.line_edit_3.text()
+            self.line_4 = self.event_search.line_edit_4.text()
+
+        elif current_table == 6:
+            self.line_1 = self.record_search.line_edit_1.text()
+            self.line_2 = self.record_search.line_edit_2.text()
+            self.line_3 = self.record_search.line_edit_3.text()
+            self.line_4 = self.record_search.line_edit_4.text()
+            self.line_5 = self.record_search.line_edit_5.text()
+            self.line_6 = self.record_search.line_edit_6.text()   
+        
+        elif current_table == 7:
+            self.line_1 = self.event_points_search.line_edit_1.text()
+            self.line_2 = self.event_points_search.line_edit_2.text()
+            self.line_3 = self.event_points_search.line_edit_3.text()
+            self.line_4 = self.event_points_search.line_edit_4.text()
+            
+
+        elif current_table == 8:
+            self.line_1 = self.club_reference_search.line_edit_1.text()
+            self.line_2 = self.club_reference_search.line_edit_2.text()
+            self.line_3 = self.club_reference_search.line_edit_3.text()
+            self.line_4 = self.club_reference_search.line_edit_4.text()
+            self.line_5 = self.club_reference_search.line_edit_5.text()
+
+    #
+    #Add Data Function
+    #
+
+    def add_data_rider(self,current_table):
         if not hasattr(self,"rider_add"):
             self.options = ["Forename", "Surname"]
             self.title_main = "Add Data"
             self.title_box = "Rider Add Data"
             self.rider_add = DialogBox(self.options,self.title_main,self.title_box)
+            self.rider_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2
         else:
-            self.rider_add.open()
+            self.rider_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2
 
-    def add_data_club(self):
+    def add_data_club(self,current_table):
         if not hasattr(self,"club_add"):
             self.options = ["Club Name"]
             self.title_main = "Add Data"
             self.title_box = "Club Add Data"
             self.club_add = DialogBox(self.options,self.title_main,self.title_box)
+            self.club_add.exec_()
         else:
-            self.club_add.open()
+            self.club_add.exec_()
+            
 
-    def add_data_event_type(self):
+    def add_data_event_type(self,current_table):
         if not hasattr(self,"event_type_add"):
             self.options = ["Event Type","Event ReferenceID"]
             self.title_main = "Add Data"
@@ -70,7 +132,7 @@ class DisplayWidget(QWidget):
         else:
             self.event_type_add.open()
 
-    def add_data_course(self):
+    def add_data_course(self,current_table):
         if not hasattr(self,"course_add"):
             self.options = ["Course Code","Course Distance"]
             self.title_main = "Add Data"
@@ -79,7 +141,7 @@ class DisplayWidget(QWidget):
         else:
             self.course_add.open()
 
-    def add_data_event_reference(self):
+    def add_data_event_reference(self,current_table):
         if not hasattr(self,"event_reference_add"):
             self.options = ["EventID"]
             self.title_main = "Add Data"
@@ -88,7 +150,7 @@ class DisplayWidget(QWidget):
         else:
             self.event_refernece_add.open()
 
-    def add_data_event(self):
+    def add_data_event(self,current_table):
         if not hasattr(self,"event_add"):
             self.options = ["Date","CourseID","Laps"]
             self.title_main = "Add Data"
@@ -97,7 +159,7 @@ class DisplayWidget(QWidget):
         else:
             self.event_add.open()
 
-    def add_data_record(self):
+    def add_data_record(self,current_table):
         if not hasattr(self,"record_add"):
             self.options = ["Ride Time","Age","Handicap Mod","EventID","RiderID"]
             self.title_main = "Add Data"
@@ -106,7 +168,7 @@ class DisplayWidget(QWidget):
         else:
             self.record_add.open()
 
-    def add_data_event_points(self):
+    def add_data_event_points(self,current_table):
         if not hasattr(self,"event_points_add"):
             self.options = ["Event Points Type","RecordID"]
             self.title_main = "Add Data"
@@ -115,7 +177,7 @@ class DisplayWidget(QWidget):
         else:
             self.event_points_add.open()
 
-    def add_data_club_reference(self):
+    def add_data_club_reference(self,current_table):
         if not hasattr(self,"club_reference_add"):
             self.options = ["Date Joined","Date Left","RiderID","ClubID"]
             self.title_main = "Add Data"
@@ -123,88 +185,126 @@ class DisplayWidget(QWidget):
             self.club_refernce_add = DialogBox(self.options,self.title_main,self.title_box)
         else:
             self.club_refernce_add.open()
+    #
+    #Search Data functions
+    #        
 
-    def search(self,current_table):
-        if current_table == 0:
-            if not hasattr(self,"rider_search"):
-                self.options = ["Rider ID", "Forename", "Surname"]
-                self.title_main = "Search"
-                self.title_box = "Rider Search"
-                self.rider_search = DialogBox(self.options,self.title_main,self.title_box)
-                self.rider_search.run_dialog()
-                self.rider_search.clicked.connect(self.get_user_input)
-            else:
-                self.rider_search.run_dialog()
-                self.rider_search.clicked.connect(self.get_user_input)
-            
-        elif current_table == 1:
+    def search_rider(self,current_table):
+        if not hasattr(self,"rider_search"):
+            self.options = ["Rider ID", "Forename", "Surname"]
+            self.title_main = "Search"
+            self.title_box = "Rider Search"
+            self.rider_search = DialogBox(self.options,self.title_main,self.title_box)
+            self.rider_search.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2,self.line_3
+        else:
+            self.rider_search.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2,self.line_3
+        
+        def search_club(self,current_talbe):
             if not hasattr(self,"club_search"):
                 self.options = ["ClubID", "Club Name"]
                 self.title_main = "Search"
                 self.title_box = "Club Search"
                 self.club_search = DialogBox(self.options,self.title_main,self.title_box)
+                self.club_search.exec_()
+                self.get_user_input(current_table)
+                return self.line_1,self.line_2
             else:
-                self.club_search.open()
+                self.club_search.exec_()
+                return self.line_1,self.line_2
 
-        elif current_table == 2:
-            if not hasattr(self,"event_type_search"):
-                self.options = ["Event TypeID", "Event Type","Event ReferenceID"]
-                self.title_main = "Search"
-                self.title_box = "Event Type Search"
-                self.event_type_search = DialogBox(self.options,self.title_main,self.title_box)
-            else:
-                self.event_type_search.open()
+    def search_event_type(self,current_table):
+        if not hasattr(self,"event_type_search"):
+            self.options = ["Event TypeID", "Event Type","Event ReferenceID"]
+            self.title_main = "Search"
+            self.title_box = "Event Type Search"
+            self.event_type_search = DialogBox(self.options,self.title_main,self.title_box)
+            self.rider_search.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2,self.line_3
+        else:
+            self.club_search.exec_()
+            return self.line_1,self.line_2,self.line_3
 
-        elif current_table == 3:
-            if not hasattr(self,"course_search"):
-                self.options = ["CourseID", "Course Code","Course Distance"]
-                self.title_main = "Search"
-                self.title_box = "Course Search"
-                self.course_search = DialogBox(self.options,self.title_main,self.title_box)
-            else:
-                self.course_search.open()
+    def search_course(self,current_table):
+        if not hasattr(self,"course_search"):
+            self.options = ["CourseID", "Course Code","Course Distance"]
+            self.title_main = "Search"
+            self.title_box = "Course Search"
+            self.course_search = DialogBox(self.options,self.title_main,self.title_box)
+            self.rider_search.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2,self.line_3
+        else:
+            self.club_search.exec_()
+            return self.line_1,self.line_2,self.line_3
 
-        elif current_table == 4:
-            if not hasattr(self,"event_reference_search"):
-                self.options = ["Event ReferncerID", "EventID"]
-                self.title_main = "Search"
-                self.title_box = "Event Reference Search"
-                self.event_reference_search = DialogBox(self.options,self.title_main,self.title_box)
-            else:
-                self.event_refernece_search.open()
 
-        elif current_table == 5:
-            if not hasattr(self,"event_search"):
-                self.options = ["EventID", "Date","CourseID","Laps"]
-                self.title_main = "Search"
-                self.title_box = "Event Search"
-                self.event_search = DialogBox(self.options,self.title_main,self.title_box)
-            else:
-                self.event_search.open()
+    def search_event_reference(self,current_table):
+        if not hasattr(self,"event_reference_search"):
+            self.options = ["Event ReferncerID", "EventID"]
+            self.title_main = "Search"
+            self.title_box = "Event Reference Search"
+            self.event_reference_search = DialogBox(self.options,self.title_main,self.title_box)
+            self.rider_search.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2
+        else:
+            self.club_search.exec_()
+            return self.line_1,self.line_2
 
-        elif current_table == 6:
-            if not hasattr(self,"record_search"):
-                self.options = ["RecordID", "Ride Time","Age","Handicap Mod","EventID","RiderID"]
-                self.title_main = "Search"
-                self.title_box = "Record Search"
-                self.record_search = DialogBox(self.options,self.title_main,self.title_box)
-            else:
-                self.record_search.open()
 
-        elif current_table == 7:
-            if not hasattr(self,"event_points_search"):
-                self.options = ["Event PointsID", "Event Points Type","RecordID"]
-                self.title_main = "Search"
-                self.title_box = "Event Points Search"
-                self.event_search = DialogBox(self.options,self.title_main,self.title_box)
-            else:
-                self.event_points_search.open()
+    def search_event(self,current_table):
+        if not hasattr(self,"event_search"):
+            self.options = ["EventID", "Date","CourseID","Laps"]
+            self.title_main = "Search"
+            self.title_box = "Event Search"
+            self.event_search = DialogBox(self.options,self.title_main,self.title_box)
+            self.rider_search.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2,self.line_3,line_4
+        else:
+            self.club_search.exec_()
+            return self.line_1,self.line_2,self.line_3,line_4
 
-        elif current_table == 8:
-            if not hasattr(self,"club_reference_search"):
-                self.options = ["Club RefernceID", "Date Joined","Date Left","RiderID","ClubID"]
-                self.title_main = "Search"
-                self.title_box = "Club Refernce Search"
-                self.club_refernce_search = DialogBox(self.options,self.title_main,self.title_box)
-            else:
-                self.club_refernce_search.open()
+    def search_record(self,current_table):
+        if not hasattr(self,"record_search"):
+            self.options = ["RecordID", "Ride Time","Age","Handicap Mod","EventID","RiderID"]
+            self.title_main = "Search"
+            self.title_box = "Record Search"
+            self.record_search = DialogBox(self.options,self.title_main,self.title_box)
+            self.rider_search.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2,self.line_3,line_4,line_5,line_6
+        else:
+            self.club_search.exec_()
+            return self.line_1,self.line_2,self.line_3,line_4,line_5,line_6
+        
+    def search_event_points(self,current_table):
+        if not hasattr(self,"event_points_search"):
+            self.options = ["Event PointsID", "Event Points Type","RecordID"]
+            self.title_main = "Search"
+            self.title_box = "Event Points Search"
+            self.event_search = DialogBox(self.options,self.title_main,self.title_box)
+            self.rider_search.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2,self.line_3
+        else:
+            self.club_search.exec_()
+            return self.line_1,self.line_2,self.line_3
+        
+    def search_club_reference(self,current_table):
+        if not hasattr(self,"club_reference_search"):
+            self.options = ["Club RefernceID", "Date Joined","Date Left","RiderID","ClubID"]
+            self.title_main = "Search"
+            self.title_box = "Club Refernce Search"
+            self.club_refernce_search = DialogBox(self.options,self.title_main,self.title_box)
+            self.rider_search.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2,self.line_3,line_4,line_5
+        else:
+            self.club_search.exec_()
+            return self.line_1,self.line_2,self.line_3,line_4,line_5

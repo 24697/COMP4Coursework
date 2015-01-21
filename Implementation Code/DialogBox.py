@@ -4,6 +4,7 @@ class DialogBox(QDialog):
     def __init__(self,options,title_main,title_box):
         super().__init__()
         self.setWindowTitle(title_main)
+        self.setModal(2)
 
         #create the box and set the title
         self.group_box = QGroupBox()
@@ -27,7 +28,6 @@ class DialogBox(QDialog):
             self.line_edit_1 = QLineEdit()
             self.line_edit_1.setText(options[0])
             self.group_box_layout.addWidget(self.line_edit_1)
-            #self.line_edit_1.text()  gets the text form a line edit
             
         if len(options) > 1:
             self.line_edit_2 = QLineEdit()
@@ -58,55 +58,11 @@ class DialogBox(QDialog):
         self.ok_button = QPushButton()
         self.ok_button.setText("OK")
         self.layout.addWidget(self.ok_button)
-    def run_dialog(self):
-        self.open()
+
+        self.ok_button.clicked.connect(self.close)
+            
         
 
-    def end(self):
-        self.done()
-        self.hide()
-        
-    def return_data(self):
-        try:
-            self.line_1 = self.line_edit_1.text()
-        except:
-            self.done()
-        
-        try:
-            self.line_2 = self.line_edit_2.text()
-        except:
-            self.done()
-            return self.line_1
-            
-
-        try:
-            self.line_3 = self.line_edit_3.text()
-        except:
-            self.done()
-            return self.line_1,self.line2
-            
-
-        try:
-            self.line_4 = self.line_edit_4.text()
-        except:
-            self.done()
-            return self.line_1,self.line_2,self.line_3
-            
-
-        try:
-            self.line_5 = self.line_edit_5.text()
-        except:
-            self.done()
-            return self.line_1,self.line_2,self.line_3,self.line_4
-            
-        try:
-            self.line_6 = self.line_edit_6.text()
-        except:
-            self.done()
-            return self.line_1,self.line_2,self.line_3,self.line_4,self.line_5
-
-
-        self.done()
-        return self.line_1,self.line_2,self.line_3,self.line_4,self.line_5,self.line_6
+    
                   
        

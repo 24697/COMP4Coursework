@@ -131,31 +131,52 @@ class MainWindow(QMainWindow):
 
     def add_data_connection(self):
         if self.current_table == 0:
-            self.display.add_data_rider()
-            
+            self.forename,self.surname = self.display.add_data_rider(self.current_table)
+            self.new_rider = (self.forename,self.surname)
+            self.connection.add_rider(self.new_rider)
+            self.display_table()
+
         elif self.current_table == 1:
-            self.display.add_data_club()
+            self.club = self.display.add_data_club(self.current_table)
+            self.new_club = (self.club,)
+            self.connection.add_club(self.new_club)
+            self.display_table()
             
         elif self.current_table == 2:
-            self.display.add_data_event_type()
+            self.event_type,self.event_referenceID = self.display.add_data_event_type(self.current_table)
+            self.new_event_type = (self.event_type,self.event_referenceID)
+            self.connection.add_event_type(new_event_type)
+            self.display_table()
             
         elif self.current_table == 3:
-            self.display.add_data_course()
+            self.course_code,self.course_distance = self.display.add_data_course(self.current_table)
+            self.new_course = (self.course_code,self.course_distance)
+            self.connection.add_course(new_course)
+            self.display_table()
             
         elif self.current_table == 4:
-            self.display.add_data_event_reference()
+            self.eventID = self.display.add_data_event_reference(self.current_table)
+            self.new_event_reference = (self.eventID,)
+            self.connection.add_event_reference(new_event_refernece)
+            self.display_table()            
             
         elif self.current_table == 5:
-            self.display.add_data_event()
+            self.date,self.courseID,self.laps = display.add_data_event(self.current_table)
+            self.new_event = (self.data,self.courseID,self.laps)
+            self.connection.add_event(new_event)
+            self.display_table()
             
         elif self.current_table == 6:
-            self.display.add_data_record()
+            self.ride_time,self.age,self.handicap,self.eventID,self.riderID = self.display.add_data_record(self.current_table)
+            self.new_record = (self.ride_time,self.age,self.handicap,self.eventID,self.riderID)
+            self.connection.add_record(new_record)
+            self.display_table()
             
         elif self.current_table == 7:
-            self.display.add_data_event_points()
+            self.display.add_data_event_points(self.current_table)
             
         elif self.current_table == 8:
-            self.display.add_data_club_reference()
+            self.display.add_data_club_reference(self.current_table)
 
     def edit_data_connection(self):
         print("edit data")
@@ -164,7 +185,32 @@ class MainWindow(QMainWindow):
         print("delete data")
 
     def search_connection(self):
-        self.display.search(self.current_table)
+        if self.current_table == 0:
+            self.riderID,self.forename,self.surname = self.display.search_rider(self.current_table)
+            
+        elif self.current_table == 1:
+            self.riderID,self.forename,self.surname = self.display.search_club(self.current_table)
+            
+        elif self.current_table == 2:
+            self.riderID,self.forename,self.surname = self.display.search_event_type(self.current_table)
+            
+        elif self.current_table == 3:
+            self.riderID,self.forename,self.surname = self.display.search_course(self.current_table)
+            
+        elif self.current_table == 4:
+            self.riderID,self.forename,self.surname = self.display.search_event_reference(self.current_table)
+            
+        elif self.current_table == 5:
+            self.riderID,self.forename,self.surname = self.display.search_event(self.current_table)
+            
+        elif self.current_table == 6:
+            self.riderID,self.forename,self.surname = self.display.search_record(self.current_table)
+            
+        elif self.current_table == 7:
+            self.riderID,self.forename,self.surname = self.display.search_event_points(self.current_table)
+            
+        elif self.current_table == 8:
+            self.riderID,self.forename,self.surname = self.display.search_club_reference(self.current_table)
 
     def open_database_connection(self):
         path = QFileDialog.getOpenFileName()
