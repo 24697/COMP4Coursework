@@ -173,10 +173,16 @@ class MainWindow(QMainWindow):
             self.display_table()
             
         elif self.current_table == 7:
-            self.display.add_data_event_points(self.current_table)
+            self.event_points_type,self.event_points, self.recordID = self.display.add_data_event_points(self.current_table)
+            self.new_event_points = (self.event_points_type,self.event_points,self.recordID)
+            self.connection.add_event_points(self.new_event_points)
+            self.display_table()
             
         elif self.current_table == 8:
-            self.display.add_data_club_reference(self.current_table)
+            self.date_joined,self.date_left,self.riderID,self.clubID = self.display.add_data_club_reference(self.current_table)
+            self.new_club_reference = (self.date_joined,self.date_left,self.riderID,self.clubID)
+            self.connection.add_club_reference(new_club_reference)
+            self.display_table()
 
     def edit_data_connection(self):
         print("edit data")

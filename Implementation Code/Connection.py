@@ -60,5 +60,10 @@ class SQLConnection:
 
     def add_rider(self,new_rider):
         self.add.create_new_rider(new_rider)
+
+    def add_club(self,new_club):
+        self.add.create_new_club(new_club)
+
+    def add_
         
         
