@@ -186,11 +186,11 @@ class DisplayWidget(QWidget):
             self.title_main = "Add Data"
             self.title_box = "Course Add Data"
             self.course_add = DialogBox(self.options,self.title_main,self.title_box)
-            self.event_type_add.exec_()
+            self.course_add.exec_()
             self.get_user_input(current_table)
             return self.line_1,self.line_2
         else:
-            self.event_type_add.exec_()
+            self.course_add.exec_()
             self.get_user_input(current_table)
             return self.line_1,self.line_2
         
@@ -200,17 +200,13 @@ class DisplayWidget(QWidget):
             self.title_main = "Add Data"
             self.title_box = "Event Reference Add Data"
             self.event_reference_add = DialogBox(self.options,self.title_main,self.title_box)
-            self.club_add.exec_()
+            self.event_reference_add.exec_()
             self.get_user_input(current_table)
             return self.line_1
         else:
-            self.club_add.exec_()
+            self.event_reference_add.exec_()
             self.get_user_input(current_table)
-            return self.line_1
-##################################################
-#                      FIX                       #
-##################################################
-        
+            return self.line_1  
 
     def add_data_event(self,current_table):
         if not hasattr(self,"event_add"):
@@ -218,8 +214,13 @@ class DisplayWidget(QWidget):
             self.title_main = "Add Data"
             self.title_box = "Event Add Data"
             self.event_add = DialogBox(self.options,self.title_main,self.title_box)
+            self.event_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,line_2,line_3
         else:
-            self.event_add.open()
+            self.event_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,line_2,line_3
 
     def add_data_record(self,current_table):
         if not hasattr(self,"record_add"):
@@ -227,8 +228,13 @@ class DisplayWidget(QWidget):
             self.title_main = "Add Data"
             self.title_box = "Record Add Data"
             self.record_add = DialogBox(self.options,self.title_main,self.title_box)
+            self.record_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,line_2,line_3,line_4
         else:
-            self.record_add.open()
+            self.record_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,line_2,line_3,line_4
 
     def add_data_event_points(self,current_table):
         if not hasattr(self,"event_points_add"):
@@ -236,8 +242,13 @@ class DisplayWidget(QWidget):
             self.title_main = "Add Data"
             self.title_box = "Event Points Add Data"
             self.event_add = DialogBox(self.options,self.title_main,self.title_box)
+            self.event_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,line_2
         else:
-            self.event_points_add.open()
+            self.event_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,line_2
 
     def add_data_club_reference(self,current_table):
         if not hasattr(self,"club_reference_add"):
@@ -245,11 +256,14 @@ class DisplayWidget(QWidget):
             self.title_main = "Add Data"
             self.title_box = "Club Refernce Add Data"
             self.club_refernce_add = DialogBox(self.options,self.title_main,self.title_box)
+            self.club_reference_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,line_2,line_3,line_4
         else:
-            self.club_refernce_add.open()
-##################################################
-#                      END FIX                   #
-##################################################
+            self.club_reference_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,line_2,line_3,line_4
+
             
     #
     #Search Data functions
