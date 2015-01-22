@@ -33,6 +33,9 @@ class DisplayWidget(QWidget):
         self.table.setModel(self.model)
         self.table.show()
 
+    def show_search(self,search_query):
+        pass
+
     #
     #get user input from a search
     #
@@ -40,59 +43,95 @@ class DisplayWidget(QWidget):
     def get_user_input(self,current_table):
         if current_table == 0:
             try:
-                self.line_1 = self.rider_search.line_edit_1.text()
-                self.line_2 = self.rider_search.line_edit_2.text()
-                self.line_3 = self.rider_search.line_edit_3.text()
+               self.line_1 = self.rider_search.line_edit_1.text()
+               self.line_2 = self.rider_search.line_edit_2.text()
+               self.line_3 = self.rider_search.line_edit_3.text()
             except AttributeError:
                 self.line_1 = self.rider_add.line_edit_1.text()
                 self.line_2 = self.rider_add.line_edit_2.text()
 
                
         elif current_table == 1:
-            self.line_1 = self.club_search.line_edit_1.text()
-            self.line_2 = self.club_search.line_edit_2.text()
+            try:
+                self.line_1 = self.club_search.line_edit_1.text()
+                self.line_2 = self.club_search.line_edit_2.text()
+            except AttributeError:
+                self.line_1 = self.club_add.line_edit_1.text()
             
         elif current_table == 2:
-            self.line_1 = self.event_type_search.line_edit_1.text()
-            self.line_2 = self.event_type_search.line_edit_2.text()
-            self.line_3 = self.type_search.line_edit_3.text()
+            try:
+                self.line_1 = self.event_type_search.line_edit_1.text()
+                self.line_2 = self.event_type_search.line_edit_2.text()
+                self.line_3 = self.type_search.line_edit_3.text()
+            except AttributeError:
+                self.line_1 = self.event_type_add.line_edit_1.text()
+                self.line_2 = self.event_type_add.line_edit_2.text()
             
         elif current_table == 3:
-            self.line_1 = self.course_search.line_edit_1.text()
-            self.line_2 = self.course_search.line_edit_2.text()
-            self.line_3 = self.course_search.line_edit_3.text()
+            try:
+                self.line_1 = self.course_search.line_edit_1.text()
+                self.line_2 = self.course_search.line_edit_2.text()
+                self.line_3 = self.course_search.line_edit_3.text()
+            except AttributeError:
+                self.line_1 = self.course_add.line_edit_1.text()
+                self.line_2 = self.course_add.line_edit_2.text()
             
         elif current_table == 4:
-            self.line_1 = self.event_reference_search.line_edit_1.text()
-            self.line_2 = self.event_reference_search.line_edit_2.text()
+            try:
+                self.line_1 = self.event_reference_search.line_edit_1.text()
+                self.line_2 = self.event_reference_search.line_edit_2.text()
+            except AttributeError:
+                self.line_1 = self.event_reference_add.line_edit_1.text()
 
         elif current_table == 5:
-            self.line_1 = self.event_search.line_edit_1.text()
-            self.line_2 = self.event_search.line_edit_2.text()
-            self.line_3 = self.event_search.line_edit_3.text()
-            self.line_4 = self.event_search.line_edit_4.text()
+            try:
+                self.line_1 = self.event_search.line_edit_1.text()
+                self.line_2 = self.event_search.line_edit_2.text()
+                self.line_3 = self.event_search.line_edit_3.text()
+                self.line_4 = self.event_search.line_edit_4.text()
+            except AttributeError:
+                self.line_1 = self.event_add.line_edit_1.text()
+                self.line_2 = self.event_add.line_edit_2.text()
+                self.line_3 = self.event_add.line_edit_3.text()
 
         elif current_table == 6:
-            self.line_1 = self.record_search.line_edit_1.text()
-            self.line_2 = self.record_search.line_edit_2.text()
-            self.line_3 = self.record_search.line_edit_3.text()
-            self.line_4 = self.record_search.line_edit_4.text()
-            self.line_5 = self.record_search.line_edit_5.text()
-            self.line_6 = self.record_search.line_edit_6.text()   
+            try:
+                self.line_1 = self.record_search.line_edit_1.text()
+                self.line_2 = self.record_search.line_edit_2.text()
+                self.line_3 = self.record_search.line_edit_3.text()
+                self.line_4 = self.record_search.line_edit_4.text()
+                self.line_5 = self.record_search.line_edit_5.text()
+                self.line_6 = self.record_search.line_edit_6.text()
+            except AttributeError:
+                self.line_1 = self.record_add.line_edit_1.text()
+                self.line_2 = self.record_add.line_edit_2.text()
+                self.line_3 = self.record_add.line_edit_3.text()
+                self.line_4 = self.record_add.line_edit_4.text()
+                self.line_5 = self.record_add.line_edit_5.text()
         
         elif current_table == 7:
-            self.line_1 = self.event_points_search.line_edit_1.text()
-            self.line_2 = self.event_points_search.line_edit_2.text()
-            self.line_3 = self.event_points_search.line_edit_3.text()
-            self.line_4 = self.event_points_search.line_edit_4.text()
-            
+            try:
+                self.line_1 = self.event_points_search.line_edit_1.text()
+                self.line_2 = self.event_points_search.line_edit_2.text()
+                self.line_3 = self.event_points_search.line_edit_3.text()
+                self.line_4 = self.event_points_search.line_edit_4.text()
+            except AttributeError:
+                self.line_1 = self.event_points_add.line_edit_1.text()
+                self.line_2 = self.event_points_add.line_edit_2.text()
+                self.line_3 = self.event_points_add.line_edit_3.text()
 
         elif current_table == 8:
-            self.line_1 = self.club_reference_search.line_edit_1.text()
-            self.line_2 = self.club_reference_search.line_edit_2.text()
-            self.line_3 = self.club_reference_search.line_edit_3.text()
-            self.line_4 = self.club_reference_search.line_edit_4.text()
-            self.line_5 = self.club_reference_search.line_edit_5.text()
+            try:   
+                self.line_1 = self.club_reference_search.line_edit_1.text()
+                self.line_2 = self.club_reference_search.line_edit_2.text()
+                self.line_3 = self.club_reference_search.line_edit_3.text()
+                self.line_4 = self.club_reference_search.line_edit_4.text()
+                self.line_5 = self.club_reference_search.line_edit_5.text()
+            except AttributeError:
+                self.line_1 = self.club_reference_search.line_edit_1.text()
+                self.line_2 = self.club_reference_search.line_edit_2.text()
+                self.line_3 = self.club_reference_search.line_edit_3.text()
+                self.line_4 = self.club_reference_search.line_edit_4.text()
 
     #
     #Add Data Function
@@ -119,8 +158,12 @@ class DisplayWidget(QWidget):
             self.title_box = "Club Add Data"
             self.club_add = DialogBox(self.options,self.title_main,self.title_box)
             self.club_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1
         else:
             self.club_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1
             
 
     def add_data_event_type(self,current_table):
@@ -129,8 +172,13 @@ class DisplayWidget(QWidget):
             self.title_main = "Add Data"
             self.title_box = "Event Type Add Data"
             self.event_type_add = DialogBox(self.options,self.title_main,self.title_box)
+            self.event_type_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2
         else:
-            self.event_type_add.open()
+            self.event_type_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2
 
     def add_data_course(self,current_table):
         if not hasattr(self,"course_add"):
@@ -138,17 +186,31 @@ class DisplayWidget(QWidget):
             self.title_main = "Add Data"
             self.title_box = "Course Add Data"
             self.course_add = DialogBox(self.options,self.title_main,self.title_box)
+            self.event_type_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2
         else:
-            self.course_add.open()
-
+            self.event_type_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2
+        
     def add_data_event_reference(self,current_table):
         if not hasattr(self,"event_reference_add"):
             self.options = ["EventID"]
             self.title_main = "Add Data"
             self.title_box = "Event Reference Add Data"
             self.event_reference_add = DialogBox(self.options,self.title_main,self.title_box)
+            self.club_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1
         else:
-            self.event_refernece_add.open()
+            self.club_add.exec_()
+            self.get_user_input(current_table)
+            return self.line_1
+##################################################
+#                      FIX                       #
+##################################################
+        
 
     def add_data_event(self,current_table):
         if not hasattr(self,"event_add"):
@@ -185,6 +247,10 @@ class DisplayWidget(QWidget):
             self.club_refernce_add = DialogBox(self.options,self.title_main,self.title_box)
         else:
             self.club_refernce_add.open()
+##################################################
+#                      END FIX                   #
+##################################################
+            
     #
     #Search Data functions
     #        

@@ -145,31 +145,31 @@ class MainWindow(QMainWindow):
         elif self.current_table == 2:
             self.event_type,self.event_referenceID = self.display.add_data_event_type(self.current_table)
             self.new_event_type = (self.event_type,self.event_referenceID)
-            self.connection.add_event_type(new_event_type)
+            self.connection.add_event_type(self.new_event_type)
             self.display_table()
             
         elif self.current_table == 3:
             self.course_code,self.course_distance = self.display.add_data_course(self.current_table)
             self.new_course = (self.course_code,self.course_distance)
-            self.connection.add_course(new_course)
+            self.connection.add_course(self.new_course)
             self.display_table()
             
         elif self.current_table == 4:
             self.eventID = self.display.add_data_event_reference(self.current_table)
             self.new_event_reference = (self.eventID,)
-            self.connection.add_event_reference(new_event_refernece)
+            self.connection.add_event_reference(self.new_event_refernece)
             self.display_table()            
             
         elif self.current_table == 5:
             self.date,self.courseID,self.laps = display.add_data_event(self.current_table)
             self.new_event = (self.data,self.courseID,self.laps)
-            self.connection.add_event(new_event)
+            self.connection.add_event(self.new_event)
             self.display_table()
             
         elif self.current_table == 6:
             self.ride_time,self.age,self.handicap,self.eventID,self.riderID = self.display.add_data_record(self.current_table)
             self.new_record = (self.ride_time,self.age,self.handicap,self.eventID,self.riderID)
-            self.connection.add_record(new_record)
+            self.connection.add_record(self.new_record)
             self.display_table()
             
         elif self.current_table == 7:
@@ -181,7 +181,7 @@ class MainWindow(QMainWindow):
         elif self.current_table == 8:
             self.date_joined,self.date_left,self.riderID,self.clubID = self.display.add_data_club_reference(self.current_table)
             self.new_club_reference = (self.date_joined,self.date_left,self.riderID,self.clubID)
-            self.connection.add_club_reference(new_club_reference)
+            self.connection.add_club_reference(self.new_club_reference)
             self.display_table()
 
     def edit_data_connection(self):
@@ -193,8 +193,9 @@ class MainWindow(QMainWindow):
     def search_connection(self):
         if self.current_table == 0:
             self.riderID,self.forename,self.surname = self.display.search_rider(self.current_table)
-            data = [self.riderID,self.forename,self.surname]
-            self.connection.search(self.data)
+            self.data = [self.riderID,self.forename,self.surname]
+            self.search_query = self.connection.search_database(self.current_table,self.data)
+            self.display.show_search(self.search_query)
             
         elif self.current_table == 1:
             self.riderID,self.forename,self.surname = self.display.search_club(self.current_table)
