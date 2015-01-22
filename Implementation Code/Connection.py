@@ -1,4 +1,5 @@
 from CreatingNewRecords import *
+from Search import *
 
 from PyQt4.QtSql import *
 from PyQt4.QtCore import *
@@ -6,6 +7,7 @@ from PyQt4.QtCore import *
 class SQLConnection:
     def __init__(self,path):
         self.add = AddRecords()
+        self.search = Search()
         self.path = path
         self.db = None
 
@@ -58,12 +60,27 @@ class SQLConnection:
         
         return self.query
 
+    #
+    #add data
+    #
+    
     def add_rider(self,new_rider):
         self.add.create_new_rider(new_rider)
 
     def add_club(self,new_club):
         self.add.create_new_club(new_club)
 
-    def add_
-        
+    def add_event_type(self,new_event_type):
+        self.add.create_new_event_type(new_event_type)
+
+    #
+    #search database
+    #
+    
+    def search_database(self,current_table,data):
+        if current_table == 0:
+            if data[1] != "RiderID" and data[2] == "Forename" and data[3] == "Surname":
+                data = (data[1],)
+                self.search.search_rider()
+            
         

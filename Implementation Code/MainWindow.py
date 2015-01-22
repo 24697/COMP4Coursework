@@ -193,6 +193,8 @@ class MainWindow(QMainWindow):
     def search_connection(self):
         if self.current_table == 0:
             self.riderID,self.forename,self.surname = self.display.search_rider(self.current_table)
+            data = [self.riderID,self.forename,self.surname]
+            self.connection.search(self.data)
             
         elif self.current_table == 1:
             self.riderID,self.forename,self.surname = self.display.search_club(self.current_table)
