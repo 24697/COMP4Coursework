@@ -96,13 +96,13 @@ class SQLConnection:
     #
     
     def search_database(self,current_table,data):
+        self.search_query = QSqlQuery()
         if current_table == 0:
-
-
             if data[0] != "Rider ID" and data[1] == "Forename" and data[2] == "Surname":
                 self.values = (data[0],)
-                self.setting = 1
-                self.search_query = self.search.search_rider(self.setting,self.values)
+                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID = ?")
+                print(self.ok)
+                self.search_query.addBindValue(self.values)
                 return self.search_query
             
         

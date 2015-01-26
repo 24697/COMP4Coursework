@@ -13,6 +13,9 @@ class DisplayWidget(QWidget):
         self.stacked_layout = QStackedLayout()
         self.model = None
         self.setLayout(self.stacked_layout)
+    #
+    #table display funcions
+    #
 
     def display_table(self):
         self.table = QTableView()
@@ -34,10 +37,14 @@ class DisplayWidget(QWidget):
         self.table.show()
 
     def show_search(self,search_query):
-        pass
+        self.model.setQuery(search_query)
+        self.show_data()
+        self.table.setModel(self.model)
+        self.table.show()
+        
 
     #
-    #get user input from a search
+    #get user input from a search Functions
     #
 
     def get_user_input(self,current_table):
@@ -134,7 +141,7 @@ class DisplayWidget(QWidget):
                 self.line_4 = self.club_refernce_add.line_edit_4.text()
 
     #
-    #Add Data Function
+    #add data function
     #
 
     def add_data_rider(self,current_table):
@@ -266,7 +273,7 @@ class DisplayWidget(QWidget):
 
             
     #
-    #Search Data functions
+    #search data functions
     #        
 
     def search_rider(self,current_table):

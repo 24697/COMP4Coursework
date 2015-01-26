@@ -195,7 +195,7 @@ class MainWindow(QMainWindow):
             self.riderID,self.forename,self.surname = self.display.search_rider(self.current_table)
             self.data = [self.riderID,self.forename,self.surname]
             self.search_query = self.connection.search_database(self.current_table,self.data)
-            self.display.show_search(self.search_query)
+            self.display.show_data(self.search_query)
             
         elif self.current_table == 1:
             self.riderID,self.forename,self.surname = self.display.search_club(self.current_table)
