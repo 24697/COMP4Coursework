@@ -1,0 +1,1 @@
+esc on add dialog boxes still sends data

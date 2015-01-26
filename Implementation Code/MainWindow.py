@@ -157,12 +157,12 @@ class MainWindow(QMainWindow):
         elif self.current_table == 4:
             self.eventID = self.display.add_data_event_reference(self.current_table)
             self.new_event_reference = (self.eventID,)
-            self.connection.add_event_reference(self.new_event_refernece)
+            self.connection.add_new_event_reference(self.new_event_reference)
             self.display_table()            
             
         elif self.current_table == 5:
-            self.date,self.courseID,self.laps = display.add_data_event(self.current_table)
-            self.new_event = (self.data,self.courseID,self.laps)
+            self.date,self.courseID,self.laps = self.display.add_data_event(self.current_table)
+            self.new_event = (self.date,self.courseID,self.laps)
             self.connection.add_event(self.new_event)
             self.display_table()
             

@@ -74,22 +74,22 @@ class SQLConnection:
         self.add.create_new_event_type(new_event_type)
 
     def add_course(self,new_course):
-        self.add.create_new_club(new_course)
+        self.add.create_new_course(new_course)
 
-    def add_event_reference(self,new_event_reference):
+    def add_new_event_reference(self,new_event_reference):
         self.add.create_new_event_reference(new_event_reference)
         
     def add_event(self,new_event):
         self.add.create_new_event(new_event)
         
-    def add_new_record(self,new_record):
+    def add_record(self,new_record):
         self.add.create_new_record(new_record)
         
-    def add_new_event_points(self,new_event_points):
+    def add_event_points(self,new_event_points):
         self.add.create_new_event_points(new_event_points)
         
-    def add_new_club_reference(new_club_refernece):
-        self.add.create_new_club_reference(new_reference)
+    def add_club_reference(self,new_club_reference):
+        self.add.create_new_club_reference(new_club_reference)
 
     #
     #search database

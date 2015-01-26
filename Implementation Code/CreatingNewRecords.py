@@ -56,10 +56,10 @@ class AddRecords():
             with sqlite3.connect("TeamCambridge.db") as self.db:
                 self.cursor = self.db.cursor()
                 self.sql = "insert into EventPoints(EventPointsType,EventPoints,RecordID) values(?,?,?)"
-                self.cursor.execute(sql,values)
+                self.cursor.execute(self.sql,values)
                 self.db.commit()
 
-        def create_new_club_refernce(self,values):
+        def create_new_club_reference(self,values):
             with sqlite3.connect("TeamCambridge.db") as self.db:
                 self.cursor = self.db.cursor()
                 self.sql = "insert into ClubReference(DateJoined,DateLeft,RiderID,ClubID) values(?,?,?,?)"

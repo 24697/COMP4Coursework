@@ -122,16 +122,16 @@ class DisplayWidget(QWidget):
 
         elif current_table == 8:
             try:   
-                self.line_1 = self.club_reference_search.line_edit_1.text()
-                self.line_2 = self.club_reference_search.line_edit_2.text()
-                self.line_3 = self.club_reference_search.line_edit_3.text()
-                self.line_4 = self.club_reference_search.line_edit_4.text()
-                self.line_5 = self.club_reference_search.line_edit_5.text()
+                self.line_1 = self.club_refernce_add.line_edit_1.text()
+                self.line_2 = self.club_refernce_add.line_edit_2.text()
+                self.line_3 = self.club_refernce_add.line_edit_3.text()
+                self.line_4 = self.club_refernce_add.line_edit_4.text()
+                self.line_5 = self.club_refernce_add.line_edit_5.text()
             except AttributeError:
-                self.line_1 = self.club_reference_search.line_edit_1.text()
-                self.line_2 = self.club_reference_search.line_edit_2.text()
-                self.line_3 = self.club_reference_search.line_edit_3.text()
-                self.line_4 = self.club_reference_search.line_edit_4.text()
+                self.line_1 = self.club_refernce_add.line_edit_1.text()
+                self.line_2 = self.club_refernce_add.line_edit_2.text()
+                self.line_3 = self.club_refernce_add.line_edit_3.text()
+                self.line_4 = self.club_refernce_add.line_edit_4.text()
 
     #
     #Add Data Function
@@ -216,11 +216,11 @@ class DisplayWidget(QWidget):
             self.event_add = DialogBox(self.options,self.title_main,self.title_box)
             self.event_add.exec_()
             self.get_user_input(current_table)
-            return self.line_1,line_2,line_3
+            return self.line_1,self.line_2,self.line_3
         else:
             self.event_add.exec_()
             self.get_user_input(current_table)
-            return self.line_1,line_2,line_3
+            return self.line_1,self.line_2,self.line_3
 
     def add_data_record(self,current_table):
         if not hasattr(self,"record_add"):
@@ -230,25 +230,25 @@ class DisplayWidget(QWidget):
             self.record_add = DialogBox(self.options,self.title_main,self.title_box)
             self.record_add.exec_()
             self.get_user_input(current_table)
-            return self.line_1,line_2,line_3,line_4
+            return self.line_1,self.line_2,self.line_3,self.line_4,self.line_5
         else:
             self.record_add.exec_()
             self.get_user_input(current_table)
-            return self.line_1,line_2,line_3,line_4
+            return self.line_1,self.line_2,self.line_3,self.line_4,self.line_5
 
     def add_data_event_points(self,current_table):
         if not hasattr(self,"event_points_add"):
-            self.options = ["Event Points Type","RecordID"]
+            self.options = ["Event Points Type","Event Points","RecordID"]
             self.title_main = "Add Data"
             self.title_box = "Event Points Add Data"
-            self.event_add = DialogBox(self.options,self.title_main,self.title_box)
-            self.event_add.exec_()
+            self.event_points_add = DialogBox(self.options,self.title_main,self.title_box)
+            self.event_points_add.exec_()
             self.get_user_input(current_table)
-            return self.line_1,line_2
+            return self.line_1,self.line_2,self.line_3
         else:
-            self.event_add.exec_()
+            self.event_points_add.exec_()
             self.get_user_input(current_table)
-            return self.line_1,line_2
+            return self.line_1,self.line_2,self.line_3
 
     def add_data_club_reference(self,current_table):
         if not hasattr(self,"club_reference_add"):
@@ -256,13 +256,13 @@ class DisplayWidget(QWidget):
             self.title_main = "Add Data"
             self.title_box = "Club Refernce Add Data"
             self.club_refernce_add = DialogBox(self.options,self.title_main,self.title_box)
-            self.club_reference_add.exec_()
+            self.club_refernce_add.exec_()
             self.get_user_input(current_table)
-            return self.line_1,line_2,line_3,line_4
+            return self.line_1,self.line_2,self.line_3,self.line_4
         else:
-            self.club_reference_add.exec_()
+            self.club_refernce_add.exec_()
             self.get_user_input(current_table)
-            return self.line_1,line_2,line_3,line_4
+            return self.line_1,self.line_2,self.line_3,self.line_4
 
             
     #
