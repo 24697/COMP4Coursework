@@ -98,11 +98,48 @@ class SQLConnection:
     def search_database(self,current_table,data):
         self.search_query = QSqlQuery()
         if current_table == 0:
-            if data[0] != "Rider ID" and data[1] == "Forename" and data[2] == "Surname":
+            if (data[0] != "Rider ID" or data[0] != "") and (data[1] == "Forename" or data[1] == "") and (data[2] == "Surname" or data[2] == ""):
                 self.values = (data[0],)
                 self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID = ?")
                 print(self.ok)
-                self.search_query.addBindValue(self.values)
+                self.search_query.addBindValue(data[0])
+                self.search_query.exec_()
                 return self.search_query
             
+            elif (data[0] == "Rider ID" or data[0] == "") and (data[1] != "Forename" or data[1] != "") and (data[2] == "Surname" or data[2] == ""):
+                self.values = (data[0],)
+                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE Forename = ?")
+                print(self.ok)
+                self.search_query.addBindValue(data[1])
+                self.search_query.exec_()
+                return self.search_query
+
+            elif (data[0] == "Rider ID" or data[0] == "") and (data[1] == "Forename" or data[1] == "") and (data[2] != "Surname" or data[2] != ""):
+                self.values = (data[0],)
+                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE Surname = ?")
+                print(self.ok)
+                self.search_query.addBindValue(data[2])
+                self.search_query.exec_()
+                return self.search_query
+
+
+            
+            elif (data[0] != "Rider ID" or data[0] != "") and (data[1] != "Forename" or data[1] != "") and (data[2] == "Surname" or data [2] ==  ""):
+                self.values = (data[0],)
+                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID = ? AND Forename = ?")
+                print(self.ok)
+                self.search_query.addBindValue(data[0])
+                self.search_query.addBindValue(data[1])
+                self.search_query.exec_()
+                return self.search_query
+
+            elif (data[0] == "Rider ID" or data[0] == "") and (data[1] != "Forename" or data[1] != "") and (data[2] != "Surname" or data[2] != ""):
+                self.values = (data[0],)
+                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID = ? AND Forename = ?")
+                print(self.ok)
+                self.search_query.addBindValue(data[0])
+                self.search_query.addBindValue(data[1])
+                self.search_query.exec_()
+                return self.search_query
+        
         
