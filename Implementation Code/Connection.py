@@ -97,9 +97,11 @@ class SQLConnection:
     
     def search_database(self,current_table,data):
         self.search_query = QSqlQuery()
+        #
+        #Rider Searcing
+        #
         if current_table == 0:
             if (data[0] != "Rider ID" or data[0] != "") and (data[1] == "Forename" or data[1] == "") and (data[2] == "Surname" or data[2] == ""):
-                self.values = (data[0],)
                 self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
@@ -107,7 +109,6 @@ class SQLConnection:
                 return self.search_query
             
             elif (data[0] == "Rider ID" or data[0] == "") and (data[1] != "Forename" or data[1] != "") and (data[2] == "Surname" or data[2] == ""):
-                self.values = (data[0],)
                 self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE Forename = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[1])
@@ -115,17 +116,13 @@ class SQLConnection:
                 return self.search_query
 
             elif (data[0] == "Rider ID" or data[0] == "") and (data[1] == "Forename" or data[1] == "") and (data[2] != "Surname" or data[2] != ""):
-                self.values = (data[0],)
                 self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE Surname = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[2])
                 self.search_query.exec_()
                 return self.search_query
-
-
             
             elif (data[0] != "Rider ID" or data[0] != "") and (data[1] != "Forename" or data[1] != "") and (data[2] == "Surname" or data [2] ==  ""):
-                self.values = (data[0],)
                 self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID = ? AND Forename = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
@@ -134,12 +131,60 @@ class SQLConnection:
                 return self.search_query
 
             elif (data[0] == "Rider ID" or data[0] == "") and (data[1] != "Forename" or data[1] != "") and (data[2] != "Surname" or data[2] != ""):
-                self.values = (data[0],)
-                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID = ? AND Forename = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE Forename = ? AND Surname = ?")
+                print(self.ok)
+                self.search_query.addBindValue(data[1])
+                self.search_query.addBindValue(data[2])
+                self.search_query.exec_()
+                return self.search_query
+
+            elif (data[0] != "Rider ID" or data[0] != "") and (data[1] == "Forename" or data[1] == "") and (data[2] != "Surname" or data[2] != ""):
+                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID = ? AND Surname = ?")
+                print(self.ok)
+                self.search_query.addBindValue(data[0])
+                self.search_query.addBindValue(data[2])
+                self.search_query.exec_()
+                return self.search_query
+
+            elif (data[0] != "Rider ID" or data[0] != "") and (data[1] != "Forename" or data[1] != "") and (data[2] != "Surname" or data[2] != ""):
+                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID = ? AND Forename = ? AND Surname = ?")
+                print(self.ok)
+                self.search_query.addBindValue(data[0])
+                self.search_query.addBindValue(data[1])
+                self.search_query.addBindValue(data[2])
+                self.search_query.exec_()
+                return self.search_query
+        
+        #
+        #Club Search
+        #
+
+        elif current_table == 1:
+            if (data[0] != "ClubID" or data[0] != "") and (data[1] == "Club Name" or data[1] == ""):
+                self.ok = self.search_query.prepare("SELECT * FROM Club WHERE ClubID = ?")
+                print(self.ok)
+                self.search_query.addBindValue(data[0])
+                self.search_query.exec_()
+                return self.search_query
+
+            elif (data[0] == "ClubID" or data[0] == "") and (data[1] != "Club Name" or data[1] != ""):
+                self.ok = self.search_query.prepare("SELECT * FROM Club WHERE Club = ?")
+                print(self.ok)
+                self.search_query.addBindValue(data[1])
+                self.search_query.exec_()
+                return self.search_query
+
+            elif (data[0] != "ClubID" or data[0] != "") and (data[1] != "Club Name" or data[1] != ""):
+                self.ok = self.search_query.prepare("SELECT * FROM Club WHERE ClubID = ? AND Club = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
                 self.search_query.addBindValue(data[1])
                 self.search_query.exec_()
                 return self.search_query
-        
-        
+
+        #
+        #Event Type
+        #
+
+        elif current_table == 3:
+            if 

@@ -198,13 +198,22 @@ class MainWindow(QMainWindow):
             self.display.show_data(self.search_query)
             
         elif self.current_table == 1:
-            self.riderID,self.forename,self.surname = self.display.search_club(self.current_table)
+            self.clubID,self.club = self.display.search_club(self.current_table)
+            self.data = [self.clubID,self.club]
+            self.search_query = self.connection.search_database(self.current_table,self.data)
+            self.display.show_data(self.search_query)
             
         elif self.current_table == 2:
-            self.riderID,self.forename,self.surname = self.display.search_event_type(self.current_table)
+            self.event_typeID,self.event_type,self.event_referenceID = self.display.search_event_type(self.current_table)
+            self.data = [self.event_typeID,self.event_type,self.referenceID]
+            self.search_query = self.connection.search_database(self.current_table,self.data)
+            self.display.show_data(self.search_query)
             
         elif self.current_table == 3:
             self.riderID,self.forename,self.surname = self.display.search_course(self.current_table)
+            self.data = [self.clubID,self.club]
+            self.search_query = self.connection.search_database(self.current_table,self.data)
+            self.display.show_data(self.search_query)
             
         elif self.current_table == 4:
             self.riderID,self.forename,self.surname = self.display.search_event_reference(self.current_table)

@@ -36,13 +36,6 @@ class DisplayWidget(QWidget):
         self.table.setModel(self.model)
         self.table.show()
 
-    def show_search(self,search_query):
-        self.model.setQuery(search_query)
-        self.show_data()
-        self.table.setModel(self.model)
-        self.table.show()
-        
-
     #
     #get user input from a search Functions
     #
@@ -290,18 +283,18 @@ class DisplayWidget(QWidget):
             self.get_user_input(current_table)
             return self.line_1,self.line_2,self.line_3
         
-        def search_club(self,current_talbe):
-            if not hasattr(self,"club_search"):
-                self.options = ["ClubID", "Club Name"]
-                self.title_main = "Search"
-                self.title_box = "Club Search"
-                self.club_search = DialogBox(self.options,self.title_main,self.title_box)
-                self.club_search.exec_()
-                self.get_user_input(current_table)
-                return self.line_1,self.line_2
-            else:
-                self.club_search.exec_()
-                return self.line_1,self.line_2
+    def search_club(self,current_table):
+        if not hasattr(self,"club_search"):
+            self.options = ["ClubID", "Club Name"]
+            self.title_main = "Search"
+            self.title_box = "Club Search"
+            self.club_search = DialogBox(self.options,self.title_main,self.title_box)
+            self.club_search.exec_()
+            self.get_user_input(current_table)
+            return self.line_1,self.line_2
+        else:
+            self.club_search.exec_()
+            return self.line_1,self.line_2
 
     def search_event_type(self,current_table):
         if not hasattr(self,"event_type_search"):
