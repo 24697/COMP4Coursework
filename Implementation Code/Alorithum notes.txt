@@ -1,0 +1,6 @@
+14 and 15 seconds have the same data
+29 and 30 seconds have the same data
+59 and 60 seconds have the same data
+
+each second down increases the HandicapMod by 00:01
+each minuet along increase the HandicapMod by 00:56
