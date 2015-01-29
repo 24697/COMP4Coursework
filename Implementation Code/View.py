@@ -132,6 +132,10 @@ class DisplayWidget(QWidget):
                 self.line_2 = self.club_refernce_add.line_edit_2.text()
                 self.line_3 = self.club_refernce_add.line_edit_3.text()
                 self.line_4 = self.club_refernce_add.line_edit_4.text()
+                
+    def get_ID(self):
+        self.line_1 = self.delete_dialog.line_edit_1.text()
+        
 
     #
     #add data function
@@ -294,6 +298,7 @@ class DisplayWidget(QWidget):
             return self.line_1,self.line_2
         else:
             self.club_search.exec_()
+            self.get_user_input(current_table)
             return self.line_1,self.line_2
 
     def search_event_type(self,current_table):
@@ -302,11 +307,12 @@ class DisplayWidget(QWidget):
             self.title_main = "Search"
             self.title_box = "Event Type Search"
             self.event_type_search = DialogBox(self.options,self.title_main,self.title_box)
-            self.rider_search.exec_()
+            self.event_type_search.exec_()
             self.get_user_input(current_table)
             return self.line_1,self.line_2,self.line_3
         else:
-            self.club_search.exec_()
+            self.event_type_search.exec_()
+            self.get_user_input(current_table)
             return self.line_1,self.line_2,self.line_3
 
     def search_course(self,current_table):
@@ -315,11 +321,12 @@ class DisplayWidget(QWidget):
             self.title_main = "Search"
             self.title_box = "Course Search"
             self.course_search = DialogBox(self.options,self.title_main,self.title_box)
-            self.rider_search.exec_()
+            self.course_search.exec_()
             self.get_user_input(current_table)
             return self.line_1,self.line_2,self.line_3
         else:
-            self.club_search.exec_()
+            self.course_search.exec_()
+            self.get_user_input(current_table)
             return self.line_1,self.line_2,self.line_3
 
 
@@ -329,11 +336,12 @@ class DisplayWidget(QWidget):
             self.title_main = "Search"
             self.title_box = "Event Reference Search"
             self.event_reference_search = DialogBox(self.options,self.title_main,self.title_box)
-            self.rider_search.exec_()
+            self.event_reference_search.exec_()
             self.get_user_input(current_table)
             return self.line_1,self.line_2
         else:
-            self.club_search.exec_()
+            self.event_reference_search.exec_()
+            self.get_user_input(current_table)
             return self.line_1,self.line_2
 
 
@@ -343,11 +351,12 @@ class DisplayWidget(QWidget):
             self.title_main = "Search"
             self.title_box = "Event Search"
             self.event_search = DialogBox(self.options,self.title_main,self.title_box)
-            self.rider_search.exec_()
+            self.event_search.exec_()
             self.get_user_input(current_table)
             return self.line_1,self.line_2,self.line_3,line_4
         else:
-            self.club_search.exec_()
+            self.event_search.exec_()
+            self.get_user_input(current_table)
             return self.line_1,self.line_2,self.line_3,line_4
 
     def search_record(self,current_table):
@@ -356,11 +365,12 @@ class DisplayWidget(QWidget):
             self.title_main = "Search"
             self.title_box = "Record Search"
             self.record_search = DialogBox(self.options,self.title_main,self.title_box)
-            self.rider_search.exec_()
+            self.record_search.exec_()
             self.get_user_input(current_table)
             return self.line_1,self.line_2,self.line_3,line_4,line_5,line_6
         else:
-            self.club_search.exec_()
+            self.record_search.exec_()
+            self.get_user_input(current_table)
             return self.line_1,self.line_2,self.line_3,line_4,line_5,line_6
         
     def search_event_points(self,current_table):
@@ -369,11 +379,12 @@ class DisplayWidget(QWidget):
             self.title_main = "Search"
             self.title_box = "Event Points Search"
             self.event_search = DialogBox(self.options,self.title_main,self.title_box)
-            self.rider_search.exec_()
+            self.event_search.exec_()
             self.get_user_input(current_table)
             return self.line_1,self.line_2,self.line_3
         else:
-            self.club_search.exec_()
+            self.event_search.exec_()
+            self.get_user_input(current_table)
             return self.line_1,self.line_2,self.line_3
         
     def search_club_reference(self,current_table):
@@ -382,9 +393,25 @@ class DisplayWidget(QWidget):
             self.title_main = "Search"
             self.title_box = "Club Refernce Search"
             self.club_refernce_search = DialogBox(self.options,self.title_main,self.title_box)
-            self.rider_search.exec_()
+            self.club_refernce_search.exec_()
             self.get_user_input(current_table)
             return self.line_1,self.line_2,self.line_3,line_4,line_5
         else:
-            self.club_search.exec_()
+            self.club_refernce_search.exec_()
+            self.get_user_input(current_table)
             return self.line_1,self.line_2,self.line_3,line_4,line_5
+
+    def delete_data(self,current_table):
+        if current_table == 0:
+            if not hasattr(self,"delete_dialog"):
+                self.options = ["ID of option"]
+                self.title_main = "Delete"
+                self.title_box ="ID of item to be deleted"
+                self.delete_dialog = DialogBox(self.options,self.title_main,self.title_box)
+                self.delete_dialog.exec_()
+                self.get_ID()
+                return self.line_1
+            else:
+                self.delete_dialog.exec_()
+                self.get_ID()
+                return self.line_1

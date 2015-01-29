@@ -24,6 +24,7 @@ class MainWindow(QMainWindow):
         self.edit_data = QAction("Edit Data",self)
         self.delete_data = QAction("Delete Data",self)
         self.search = QAction("Search",self)
+        self.refresh = QAction("Refresh",self)
 
         self.rider = QAction("Rider",self)
         self.club = QAction("Club",self)
@@ -61,6 +62,7 @@ class MainWindow(QMainWindow):
         self.edit_data.triggered.connect(self.edit_data_connection)
         self.delete_data.triggered.connect(self.delete_data_connection)
         self.search.triggered.connect(self.search_connection)
+        self.refresh.triggered.connect(self.display_table)
 
         self.rider.triggered.connect(self.rider_connection)
         self.club.triggered.connect(self.club_connection)
@@ -80,6 +82,7 @@ class MainWindow(QMainWindow):
         self.toolbar.addAction(self.edit_data)
         self.toolbar.addAction(self.delete_data)
         self.toolbar.addAction(self.search)
+        self.toolbar.addAction(self.refresh)
 
         self.addToolBar(self.toolbar)
 
@@ -188,7 +191,10 @@ class MainWindow(QMainWindow):
         print("edit data")
 
     def delete_data_connection(self):
-        print("delete data")
+        self.line_1 = self.display.delete_data(self.current_table)
+        self.data = [self.line_1]
+        self.connection.delete_data(self.current_table,self.data)
+        self.display_table()
 
     def search_connection(self):
         if self.current_table == 0:
