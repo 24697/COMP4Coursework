@@ -218,14 +218,14 @@ class SQLConnection:
                 return self.search_query
 
             elif (data[0] == "ClubID" or data[0] == "") and (data[1] != "Club Name" or data[1] != ""):
-                self.ok = self.search_query.prepare("SELECT * FROM Club WHERE Club LIKE = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM Club WHERE Club = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[1])
                 self.search_query.exec_()
                 return self.search_query
 
             elif (data[0] != "ClubID" or data[0] != "") and (data[1] != "Club Name" or data[1] != ""):
-                self.ok = self.search_query.prepare("SELECT * FROM Club WHERE ClubID LIKE = ? AND Club LIKE = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM Club WHERE ClubID = ? AND Club = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
                 self.search_query.addBindValue(data[1])
@@ -235,30 +235,33 @@ class SQLConnection:
         #
         #Event Type
         #
-
-        elif current_table == 3:
-            if (data[0] != "Event Type ID" or data[0] != "") and (data[1] == "Event Type" or data[1] == "") and (data[2] == "Event Reference ID" or data[2] == ""):
+        
+        elif current_table == 2:
+            print("Pass 2")
+            if (data[0] != "Event TypeID" or data[0] != "") and (data[1] == "Event Type" or data[1] == "") and (data[2] == "Event ReferenceID" or data[2] == ""):
+                print("Pass 3")
                 self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventTypeID = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
                 self.search_query.exec_()
+                print("Pass 4")
                 return self.search_query
             
-            elif (data[0] == "Event Type ID" or data[0] == "") and (data[1] != "Event Type" or data[1] != "") and (data[2] == "Event Reference ID" or data[2] == ""):
+            elif (data[0] == "Event TypeID" or data[0] == "") and (data[1] != "Event Type" or data[1] != "") and (data[2] == "Event ReferenceID" or data[2] == ""):
                 self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventType = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[1])
                 self.search_query.exec_()
                 return self.search_query
 
-            elif (data[0] == "Event Type ID" or data[0] == "") and (data[1] == "Event Type" or data[1] == "") and (data[2] != "Event Reference ID" or data[2] != ""):
+            elif (data[0] == "Event TypeID" or data[0] == "") and (data[1] == "Event Type" or data[1] == "") and (data[2] != "Event ReferenceID" or data[2] != ""):
                 self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventReferenceID = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[2])
                 self.search_query.exec_()
                 return self.search_query
             
-            elif (data[0] != "Event Type ID" or data[0] != "") and (data[1] != "Event Type" or data[1] != "") and (data[2] == "Event Reference ID" or data [2] ==  ""):
+            elif (data[0] != "Event TypeID" or data[0] != "") and (data[1] != "Event Type" or data[1] != "") and (data[2] == "Event ReferenceID" or data [2] ==  ""):
                 self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventTypeID = ? AND EventType = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
@@ -266,7 +269,7 @@ class SQLConnection:
                 self.search_query.exec_()
                 return self.search_query
 
-            elif (data[0] == "Event Type ID" or data[0] == "") and (data[1] != "Event Type" or data[1] != "") and (data[2] != "Event Reference ID" or data[2] != ""):
+            elif (data[0] == "Event TypeID" or data[0] == "") and (data[1] != "Event Type" or data[1] != "") and (data[2] != "Event ReferenceID" or data[2] != ""):
                 self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventType = ? AND EventReferenceID = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[1])
@@ -274,7 +277,7 @@ class SQLConnection:
                 self.search_query.exec_()
                 return self.search_query
 
-            elif (data[0] != "Event Type ID" or data[0] != "") and (data[1] == "Event Type" or data[1] == "") and (data[2] != "Event Reference ID" or data[2] != ""):
+            elif (data[0] != "Event TypeID" or data[0] != "") and (data[1] == "Event Type" or data[1] == "") and (data[2] != "Event ReferenceID" or data[2] != ""):
                 self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventTypeID = ? AND EventReferenceID = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
@@ -282,7 +285,7 @@ class SQLConnection:
                 self.search_query.exec_()
                 return self.search_query
 
-            elif (data[0] != "Event Type ID" or data[0] != "") and (data[1] != "Event Type" or data[1] != "") and (data[2] != "Event Reference ID" or data[2] != ""):
+            elif (data[0] != "Event TypeID" or data[0] != "") and (data[1] != "Event Type" or data[1] != "") and (data[2] != "Event ReferenceID" or data[2] != ""):
                 self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventTypeID = ? AND EventType = ? AND EventReferenceID = ?")
                 print(self.ok)
                 self.search_query.addBindValue(data[0])

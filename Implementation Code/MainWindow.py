@@ -211,7 +211,7 @@ class MainWindow(QMainWindow):
             
         elif self.current_table == 2:
             self.event_typeID,self.event_type,self.event_referenceID = self.display.search_event_type(self.current_table)
-            self.data = [self.event_typeID,self.event_type,self.referenceID]
+            self.data = [self.event_typeID,self.event_type,self.event_referenceID]
             self.search_query = self.connection.search_database(self.current_table,self.data)
             self.display.show_data(self.search_query)
             
