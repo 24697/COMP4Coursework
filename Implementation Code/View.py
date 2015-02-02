@@ -402,16 +402,16 @@ class DisplayWidget(QWidget):
             return self.line_1,self.line_2,self.line_3,line_4,line_5
 
     def delete_data(self,current_table):
-        if current_table == 0:
-            if not hasattr(self,"delete_dialog"):
-                self.options = ["ID of option"]
-                self.title_main = "Delete"
-                self.title_box ="ID of item to be deleted"
-                self.delete_dialog = DialogBox(self.options,self.title_main,self.title_box)
-                self.delete_dialog.exec_()
-                self.get_ID()
-                return self.line_1
-            else:
-                self.delete_dialog.exec_()
-                self.get_ID()
-                return self.line_1
+        if not hasattr(self,"delete_dialog"):
+            self.options = ["ID of option"]
+            self.title_main = "Delete"
+            self.title_box ="ID of item to be deleted"
+            self.delete_dialog = DialogBox(self.options,self.title_main,self.title_box)
+            self.delete_dialog.exec_()
+            self.get_ID()
+            return self.line_1
+        else:
+            self.delete_dialog.exec_()
+            self.get_ID()
+            return self.line_1
+            

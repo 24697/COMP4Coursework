@@ -64,7 +64,47 @@ class SQLConnection:
 
     def delete_data(self,current_table,data):
         if current_table == 0:
-            self.ok = self.query.prepare(""""DELETE FROM Rider WHERE RiderID =?""")
+            self.ok = self.query.prepare("""DELETE FROM Rider WHERE RiderID = ?""")
+            print(self.ok)
+            self.query.addBindValue(data[0])
+            self.query.exec_()
+        elif current_table == 1:
+            self.ok = self.query.prepare("""DELETE FROM Club WHERE ClubID = ?""")
+            print(self.ok)
+            self.query.addBindValue(data[0])
+            self.query.exec_()
+        elif current_table == 2:
+            self.ok = self.query.prepare("""DELETE FROM EventType WHERE EventTypeID = ?""")
+            print(self.ok)
+            self.query.addBindValue(data[0])
+            self.query.exec_()
+        elif current_table == 3:
+            self.ok = self.query.prepare("""DELETE FROM Course WHERE CourseID = ?""")
+            print(self.ok)
+            self.query.addBindValue(data[0])
+            self.query.exec_()
+        elif current_table == 4:
+            self.ok = self.query.prepare("""DELETE FROM EventReference WHERE EventReferenceID = ?""")
+            print(self.ok)
+            self.query.addBindValue(data[0])
+            self.query.exec_()
+        elif current_table == 5:
+            self.ok = self.query.prepare("""DELETE FROM Event WHERE EventID = ?""")
+            print(self.ok)
+            self.query.addBindValue(data[0])
+            self.query.exec_()
+        elif current_table == 6:
+            self.ok = self.query.prepare("""DELETE FROM Record WHERE RecordID = ?""")
+            print(self.ok)
+            self.query.addBindValue(data[0])
+            self.query.exec_()
+        elif current_table == 7:
+            self.ok = self.query.prepare("""DELETE FROM EventPoints WHERE EventPointsID = ?""")
+            print(self.ok)
+            self.query.addBindValue(data[0])
+            self.query.exec_()
+        elif current_table == 8:
+            self.ok = self.query.prepare("""DELETE FROM ClubReference WHERE ClubReferenceID = ?""")
             print(self.ok)
             self.query.addBindValue(data[0])
             self.query.exec_()
