@@ -4,6 +4,7 @@ from PyQt4.QtSql import *
 
 from RadioButtonWidget import *
 from DialogBox import *
+from RecordDialogBox import *
 
 class DisplayWidget(QWidget):
     """The Widget that shows the main layout"""
@@ -216,7 +217,7 @@ class DisplayWidget(QWidget):
             self.options = ["Ride Time","Age","Handicap Mod","EventID","RiderID"]
             self.title_main = "Add Data"
             self.title_box = "Record Add Data"
-            self.record_add = DialogBox(self.options,self.title_main,self.title_box)
+            self.record_add = RecordDialogBox(self.options,self.title_main,self.title_box)
             self.record_add.exec_()
             self.get_user_input_add(current_table)
             return self.line_add_1,self.line_add_2,self.line_add_3,self.line_add_4,self.line_add_5
