@@ -4,7 +4,6 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from PyQt4.QtSql import *
 
-from RadioButtonWidget import *
 from Connection import *
 from View import *
 
@@ -170,7 +169,7 @@ class MainWindow(QMainWindow):
             self.display_table()
             
         elif self.current_table == 6:
-            self.ride_time,self.age,self.handicap,self.eventID,self.riderID = self.display.add_data_record(self.current_table)
+            self.ride_time,self.age,self.handicap,self.eventID,self.riderID = self.display.add_data_record(self.current_table,self.path)
             self.new_record = (self.ride_time,self.age,self.handicap,self.eventID,self.riderID)
             self.connection.add_record(self.new_record)
             self.display_table()
@@ -237,9 +236,9 @@ class MainWindow(QMainWindow):
             self.riderID,self.forename,self.surname = self.display.search_club_reference(self.current_table)
 
     def open_database_connection(self):
-        path = QFileDialog.getOpenFileName()
-        print(path)
-        self.connection = SQLConnection(path)
+        self.path = QFileDialog.getOpenFileName()
+        print(self.path)
+        self.connection = SQLConnection(self.path)
         ok = self.connection.open_database()
         print(ok)
 

@@ -1,10 +1,12 @@
 from PyQt4.QtGui import *
+from HandicapCal import *
 
 class RecordDialogBox(QDialog):
-    def __init__(self,options,title_main,title_box):
+    def __init__(self,options,title_main,title_box,path):
         super().__init__()
         self.setWindowTitle(title_main)
         self.setModal(2)
+        self.path = path
 
         #create the box and set the title
         self.group_box = QGroupBox()
@@ -67,5 +69,10 @@ class RecordDialogBox(QDialog):
         
         self.layout.addLayout(self.button_layout)
         
-
+        self.handicap_button.clicked.connect(self.cal_connect)
         self.ok_button.clicked.connect(self.close)
+        
+    def cal_connect(self):
+        self.eventID = self.line_edit_4.text()
+        self.RiderID = self.line_edit_5.text()
+        cal_handicap(self.eventID,self.riderID,self.path)
