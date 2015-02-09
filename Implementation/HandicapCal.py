@@ -3,34 +3,28 @@ import math
 from PyQt4.QtSql import *
 from PyQt4.QtCore import *
 
-def open_database(self,path):
-        if db:
-            close_database()
-
+def open_database(path):
         db = QSqlDatabase.addDatabase("QSQLITE")
-        db.setDatabaseName(-path)
+        db.setDatabaseName(path)
         opened_ok = db.open()
         print(opened_ok)
 
 def get_event_type(eventID):
     query = QSqlQuery()
-    query.prepare("SELECT * FROM EventReference WHERE EventID = ?")
+    query.prepare("""
+        Select *
+        From EventType,EventReference
+        Where EventReference.EventID = ? and EventType.EventReferenceID = EventReference.EventID
+    """)
     query.addBindValue(eventID)
-    query.exec_()
-    referenceID = query.result()
-
-    print(referenceID)
+    hold = query.exec_()
+    print(hold)
+    query.first()
+    value = query.value(1)
+    print(value)
     
-    query.clear
-
-    query.prepare("SELECT * FROM EventType WHERE EventReferenceI = ?")
-    query.addBindValue(referenceID)
-    query.exec_()
-    e_type = query.result()
     
-    print(e_type)
-    
-    return e_type
+    return value
 
 def get_fast_time(event_type,riderID):
     return "00:16:34"
