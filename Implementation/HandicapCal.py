@@ -12,9 +12,10 @@ def open_database(path):
 def get_event_type(eventID):
     query = QSqlQuery()
     query.prepare("""
-        Select *
-        From EventType,EventReference
-        Where EventReference.EventID = ? and EventType.EventReferenceID = EventReference.EventID
+        SELECT *
+        FROM EventType,EventReference
+        WHERE EventReference.EventID = ? AND
+        EventType.EventReferenceID = EventReference.EventID
     """)
     query.addBindValue(eventID)
     hold = query.exec_()
@@ -23,16 +24,29 @@ def get_event_type(eventID):
     value = query.value(1)
     print(value)
     
-    
     return value
 
 def get_fast_time(event_type,riderID):
-    return "00:16:34"
+    query.prepare("""
+    SELECT *
+    FROM Record
+    WHERE RiderID = ?
+    ORDER BY RideTime
+        """)
+    query.addBindValue(riderID)
+    
+    
+    #return 
 
 def cal_handicap(eventID,riderID,path):
     open_database(path)
     event_type = get_event_type(eventID)
     fast_time = get_fast_time(event_type,riderID)
+
+    #
+    #10 Cal
+    #
+    
     if event_type == "10":
         #slice time sting to components
         fast_hour = int(fast_time[0:2])
@@ -78,7 +92,10 @@ def cal_handicap(eventID,riderID,path):
             h_min = ("0{0}".format(h_min))
         handicap = ("{0}:{1}:{2}".format(h_hour,h_min,h_sec))
         print(handicap)
-        
+
+  #
+  #25 Cal
+  #
     elif event_type == "25":
         #slice time sting to components
         fast_hour = int(fast_time[0:2])
@@ -124,6 +141,11 @@ def cal_handicap(eventID,riderID,path):
             h_min = ("0{0}".format(h_min))
         handicap = ("{0}:{1}:{2}".format(h_hour,h_min,h_sec))
         print(handicap)
+
+        #
+        #Cir Cal
+        #
+
 
     elif event_type == "cir":
         #slice time sting to components
@@ -171,6 +193,7 @@ def cal_handicap(eventID,riderID,path):
         handicap = ("{0}:{1}:{2}".format(h_hour,h_min,h_sec))
         print(handicap)
 
+    return handicap
 
-if __name__ == "__main__":
-    cal_handicap(2,4)
+
+

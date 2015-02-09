@@ -75,4 +75,5 @@ class RecordDialogBox(QDialog):
     def cal_connect(self):
         self.eventID = self.line_edit_4.text()
         self.riderID = self.line_edit_5.text()
-        cal_handicap(self.eventID,self.riderID,self.path)
+        self.handicap = cal_handicap(self.eventID,self.riderID,self.path)
+        self.line_edit_3.setText(self.handicap)
