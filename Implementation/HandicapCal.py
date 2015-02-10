@@ -27,16 +27,14 @@ def get_event_type(eventID):
     return value
 
 def get_fast_time(event_type,riderID):
-    query.prepare("""
-    SELECT *
-    FROM Record
-    WHERE RiderID = ?
-    ORDER BY RideTime
+    if event_type = cir:
+        query.clear()
+        query.prepare("""
+        SELECT *
+        FROM Record,Event,Course
+        WHERE RiderID = ?
+        AND Event.Course.CourseCode = E33/10
         """)
-    query.addBindValue(riderID)
-    
-    
-    #return 
 
 def cal_handicap(eventID,riderID,path):
     open_database(path)
