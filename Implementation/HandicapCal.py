@@ -22,41 +22,80 @@ def get_event_type(eventID):
     print(hold)
     query.first()
     value = query.value(1)
-    print(value)
+    print("Event Type {0}".format(value))
     
     return value
 
 def get_fast_time(event_type,riderID):
-    if event_type == "cir":
-        query.clear()
-        query.prepare("""
-        SELECT *
-        FROM Record
-        WHERE Record.EventID  = (SELECT Event.EventID
-        FROM Event
-        WHERE Event.CourseID = (SELECT Course.CourseID
-        FROM Course
-        WHERE CourseCode = "E33/10"))
-        AND RiderID = ?
-        """)
-        query.addBindValue(riderID)
-        hold = query.exec_()
-        print(hold)
-        query.first()
-        value = query.value(1)
-        print(value)
-    elif event_type = "10":
-        query.clear()
-        query.prepare("""
-        SELECT * 
-        FROM Record
-        WHERE Record.EventID = (SELECT EventReference.EventID
-	FROM EventReference
-	WHERE EventRefernce.EventReferenceID = (SELECET EventType.EventRefrenceID
-	FROM EventType
-	WHERE EventType = 10))
-        AND Record.RiderID
-        """)
+    try:
+        if event_type == "cir":
+            query = QSqlQuery()
+            query.prepare("""
+            SELECT *
+            FROM Record
+            WHERE Record.EventID  = (SELECT Event.EventID
+            FROM Event
+            WHERE Event.CourseID = (SELECT Course.CourseID
+            FROM Course
+            WHERE CourseCode = "E33/10"))
+            AND RiderID = ?
+            ORDER BY RideTime
+            """)
+            query.addBindValue(riderID)
+            hold = query.exec_()
+            print("Is exec {0}".format(hold))
+            query.first()
+            value = query.value(1)
+            print("Handicap {0}".format(value))
+        elif event_type == "10":
+            query = QSqlQuery()
+            query.prepare("""
+            SELECT * 
+            FROM Record
+            WHERE Record.EventID = (SELECT EventReference.EventID
+            FROM EventReference
+            WHERE EventReference.EventReferenceID = (SELECT EventType.EventReferenceID
+            FROM EventType
+            WHERE EventType = 10))
+            AND Record.RiderID
+            ORDER BY RideTime
+            """)
+            query.addBindValue(riderID)
+            hold = query.exec_()
+            print("Is exec {0}".format(hold))
+            query.first()
+            value = query.value(1)
+            print("Handicap {0}".format(value))
+        elif event_type == "25":
+            query.clear()
+            query.prepare("""
+            SELECT * 
+            FROM Record
+            WHERE Record.EventID = (SELECT EventReference.EventID
+            FROM EventReference
+            WHERE EventReference.EventReferenceID = (SELECT EventType.EventReferenceID
+            FROM EventType
+            WHERE EventType = 25))
+            AND Record.RiderID
+            ORDER BY RideTime
+            """)
+            query.addBindValue(riderID)
+            hold = query.exec_()
+            print("Is exec {0}".format(hold))
+            query.first()
+            value = query.value(1)
+            print("Handicap {0}".format(value))
+        try:
+            error = query.lastError()
+            print(error.type())
+            print(error.text())
+        except:
+                pass
+        return value
+    except:
+            error = query.lastError()
+            print(error.type())
+            print(error.text())
         
 
 def cal_handicap(eventID,riderID,path):
