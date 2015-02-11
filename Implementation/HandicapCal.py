@@ -48,7 +48,14 @@ def get_fast_time(event_type,riderID):
     elif event_type = "10":
         query.clear()
         query.prepare("""
-        SELECT *
+        SELECT * 
+        FROM Record
+        WHERE Record.EventID = (SELECT EventReference.EventID
+	FROM EventReference
+	WHERE EventRefernce.EventReferenceID = (SELECET EventType.EventRefrenceID
+	FROM EventType
+	WHERE EventType = 10))
+        AND Record.RiderID
         """)
         
 
