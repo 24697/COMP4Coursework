@@ -6,6 +6,7 @@ from PyQt4.QtSql import *
 
 from Connection import *
 from View import *
+from ErrorDialog import *
 
 class MainWindow(QMainWindow):
     """Creates the main window"""
@@ -134,28 +135,44 @@ class MainWindow(QMainWindow):
     def add_data_connection(self):
         if self.current_table == 0:
             self.forename,self.surname = self.display.add_data_rider(self.current_table)
-            self.new_rider = (self.forename,self.surname)
-            self.connection.add_rider(self.new_rider)
-            self.display_table()
+            if self.forename == "Forename" or self.surname == "Surname":
+                self.error = QErrorMessage()
+                self.error.showMessage("All fileds mush be filled")
+            else:
+                self.new_rider = (self.forename,self.surname)
+                self.connection.add_rider(self.new_rider)
+                self.display_table()
 
         elif self.current_table == 1:
             self.club = self.display.add_data_club(self.current_table)
-            self.new_club = (self.club,)
-            self.connection.add_club(self.new_club)
-            self.display_table()
-            
+            if self.club == "Club Name":
+                self.error = QErrorMessage()
+                self.error.showMessage("All fileds mush be filled")
+            else:
+                self.new_club = (self.club,)
+                self.connection.add_club(self.new_club)
+                self.display_table()
+                
         elif self.current_table == 2:
             self.event_type,self.event_referenceID = self.display.add_data_event_type(self.current_table)
-            self.new_event_type = (self.event_type,self.event_referenceID)
-            self.connection.add_event_type(self.new_event_type)
-            self.display_table()
+            if self.event_type == "Event Type" or self.event_reference == "Event ReferecneID":
+                self.error = QErrorMessage()
+                self.error.showMessage("All fileds mush be filled")
+            else:
+                self.new_event_type = (self.event_type,self.event_referenceID)
+                self.connection.add_event_type(self.new_event_type)
+                self.display_table()
             
         elif self.current_table == 3:
             self.course_code,self.course_distance = self.display.add_data_course(self.current_table)
-            self.new_course = (self.course_code,self.course_distance)
-            self.connection.add_course(self.new_course)
-            self.display_table()
-            
+            if self.course_code == "Course Code" or self.course_distance == "Course Distance":
+                self.error = QErrorMessage()
+                self.error.showMessage("All fileds mush be filled")
+            else:
+                self.new_course = (self.course_code,self.course_distance)
+                self.connection.add_course(self.new_course)
+                self.display_table()
+                
         elif self.current_table == 4:
             self.eventID = self.display.add_data_event_reference(self.current_table)
             self.new_event_reference = (self.eventID,)
