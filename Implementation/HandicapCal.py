@@ -38,7 +38,7 @@ def get_fast_time(event_type,riderID):
             WHERE Event.CourseID = (SELECT Course.CourseID
             FROM Course
             WHERE CourseCode = "E33/10"))
-            AND RiderID = ?
+            AND Record.RiderID = ?
             ORDER BY RideTime
             """)
             query.addBindValue(riderID)
@@ -57,7 +57,7 @@ def get_fast_time(event_type,riderID):
             WHERE EventReference.EventReferenceID = (SELECT EventType.EventReferenceID
             FROM EventType
             WHERE EventType = 10))
-            AND Record.RiderID
+            AND Record.RiderID = ?
             ORDER BY RideTime
             """)
             query.addBindValue(riderID)
@@ -67,7 +67,7 @@ def get_fast_time(event_type,riderID):
             value = query.value(1)
             print("Handicap {0}".format(value))
         elif event_type == "25":
-            query.clear()
+            query = QSqlQuery()
             query.prepare("""
             SELECT * 
             FROM Record
@@ -76,7 +76,7 @@ def get_fast_time(event_type,riderID):
             WHERE EventReference.EventReferenceID = (SELECT EventType.EventReferenceID
             FROM EventType
             WHERE EventType = 25))
-            AND Record.RiderID
+            AND Record.RiderID = ?
             ORDER BY RideTime
             """)
             query.addBindValue(riderID)
