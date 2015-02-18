@@ -253,11 +253,14 @@ class MainWindow(QMainWindow):
             self.riderID,self.forename,self.surname = self.display.search_club_reference(self.current_table)
 
     def open_database_connection(self):
-        self.path = QFileDialog.getOpenFileName()
-        print(self.path)
-        self.connection = SQLConnection(self.path)
-        ok = self.connection.open_database()
-        print(ok)
+        ok = False
+        while ok == False:
+            self.path = QFileDialog.getOpenFileName()
+            print(self.path)
+            #if self.path
+            self.connection = SQLConnection(self.path)
+            ok = self.connection.open_database()
+            
 
     def display_table(self):
         if not hasattr(self,"display"):

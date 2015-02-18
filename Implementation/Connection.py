@@ -152,28 +152,38 @@ class SQLConnection:
         #
         if current_table == 0:
             if (data[0] != "Rider ID" or data[0] != "") and (data[1] == "Forename" or data[1] == "") and (data[2] == "Surname" or data[2] == ""):
-                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID = ?")
+                self.ok = self.search_query.prepare("""SELECT * FROM Rider WHERE Rider.RiderID LIKE ? """)
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
                 self.search_query.exec_()
                 return self.search_query
             
             elif (data[0] == "Rider ID" or data[0] == "") and (data[1] != "Forename" or data[1] != "") and (data[2] == "Surname" or data[2] == ""):
-                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE Forename = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE Forename LIKE ?")
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[1])
                 self.search_query.exec_()
                 return self.search_query
 
             elif (data[0] == "Rider ID" or data[0] == "") and (data[1] == "Forename" or data[1] == "") and (data[2] != "Surname" or data[2] != ""):
-                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE Surname = ?")
+                self.ok = self.search_query.prepare("""SELECT * FROM Rider WHERE Rider.Surname LIKE ? """)
+                self.hold = ("%{0}%".format(data[2]))
+                data[2] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[2])
                 self.search_query.exec_()
                 return self.search_query
             
             elif (data[0] != "Rider ID" or data[0] != "") and (data[1] != "Forename" or data[1] != "") and (data[2] == "Surname" or data [2] ==  ""):
-                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID = ? AND Forename = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID LIKE ? AND Forename LIKE ?")
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
                 self.search_query.addBindValue(data[1])
@@ -181,7 +191,11 @@ class SQLConnection:
                 return self.search_query
 
             elif (data[0] == "Rider ID" or data[0] == "") and (data[1] != "Forename" or data[1] != "") and (data[2] != "Surname" or data[2] != ""):
-                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE Forename = ? AND Surname = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE Forename LIKE ? AND Surname LIKE ?")
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
+                self.hold = ("%{0}%".format(data[2]))
+                data[2] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[1])
                 self.search_query.addBindValue(data[2])
@@ -189,7 +203,11 @@ class SQLConnection:
                 return self.search_query
 
             elif (data[0] != "Rider ID" or data[0] != "") and (data[1] == "Forename" or data[1] == "") and (data[2] != "Surname" or data[2] != ""):
-                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID = ? AND Surname = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID LIKE ? AND Surname LIKE ?")
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
+                self.hold = ("%{0}%".format(data[2]))
+                data[2] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
                 self.search_query.addBindValue(data[2])
@@ -197,7 +215,13 @@ class SQLConnection:
                 return self.search_query
 
             elif (data[0] != "Rider ID" or data[0] != "") and (data[1] != "Forename" or data[1] != "") and (data[2] != "Surname" or data[2] != ""):
-                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID = ? AND Forename = ? AND Surname = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM Rider WHERE RiderID LIKE ? AND Forename LIKE ? AND Surname LIKE ?")
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
+                self.hold = ("%{0}%".format(data[2]))
+                data[2] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
                 self.search_query.addBindValue(data[1])
@@ -211,21 +235,29 @@ class SQLConnection:
 
         elif current_table == 1:
             if (data[0] != "ClubID" or data[0] != "") and (data[1] == "Club Name" or data[1] == ""):
-                self.ok = self.search_query.prepare("SELECT * FROM Club WHERE ClubID = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM Club WHERE ClubID LIKE ?")
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
                 self.search_query.exec_()
                 return self.search_query
 
             elif (data[0] == "ClubID" or data[0] == "") and (data[1] != "Club Name" or data[1] != ""):
-                self.ok = self.search_query.prepare("SELECT * FROM Club WHERE Club = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM Club WHERE Club LIKE ?")
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[1])
                 self.search_query.exec_()
                 return self.search_query
 
             elif (data[0] != "ClubID" or data[0] != "") and (data[1] != "Club Name" or data[1] != ""):
-                self.ok = self.search_query.prepare("SELECT * FROM Club WHERE ClubID = ? AND Club = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM Club WHERE ClubID LIKE ? AND Club LIKE ?")
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
                 self.search_query.addBindValue(data[1])
@@ -237,32 +269,39 @@ class SQLConnection:
         #
         
         elif current_table == 2:
-            print("Pass 2")
             if (data[0] != "Event TypeID" or data[0] != "") and (data[1] == "Event Type" or data[1] == "") and (data[2] == "Event ReferenceID" or data[2] == ""):
-                print("Pass 3")
-                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventTypeID = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventTypeID LIKE ?")
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
                 self.search_query.exec_()
-                print("Pass 4")
                 return self.search_query
             
             elif (data[0] == "Event TypeID" or data[0] == "") and (data[1] != "Event Type" or data[1] != "") and (data[2] == "Event ReferenceID" or data[2] == ""):
-                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventType = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventType LIKE ?")
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[1])
                 self.search_query.exec_()
                 return self.search_query
 
             elif (data[0] == "Event TypeID" or data[0] == "") and (data[1] == "Event Type" or data[1] == "") and (data[2] != "Event ReferenceID" or data[2] != ""):
-                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventReferenceID = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventReferenceID LIKE ?")
+                self.hold = ("%{0}%".format(data[2]))
+                data[2] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[2])
                 self.search_query.exec_()
                 return self.search_query
             
             elif (data[0] != "Event TypeID" or data[0] != "") and (data[1] != "Event Type" or data[1] != "") and (data[2] == "Event ReferenceID" or data [2] ==  ""):
-                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventTypeID = ? AND EventType = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventTypeID LIKE ? AND EventType LIKE ?")
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
                 self.search_query.addBindValue(data[1])
@@ -270,7 +309,11 @@ class SQLConnection:
                 return self.search_query
 
             elif (data[0] == "Event TypeID" or data[0] == "") and (data[1] != "Event Type" or data[1] != "") and (data[2] != "Event ReferenceID" or data[2] != ""):
-                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventType = ? AND EventReferenceID = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventType LIKE ? AND EventReferenceID LIKE ?")
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
+                self.hold = ("%{0}%".format(data[2]))
+                data[2] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[1])
                 self.search_query.addBindValue(data[2])
@@ -278,7 +321,11 @@ class SQLConnection:
                 return self.search_query
 
             elif (data[0] != "Event TypeID" or data[0] != "") and (data[1] == "Event Type" or data[1] == "") and (data[2] != "Event ReferenceID" or data[2] != ""):
-                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventTypeID = ? AND EventReferenceID = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventTypeID LIKE ? AND EventReferenceID LIKE ?")
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
+                self.hold = ("%{0}%".format(data[2]))
+                data[2] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
                 self.search_query.addBindValue(data[2])
@@ -286,7 +333,94 @@ class SQLConnection:
                 return self.search_query
 
             elif (data[0] != "Event TypeID" or data[0] != "") and (data[1] != "Event Type" or data[1] != "") and (data[2] != "Event ReferenceID" or data[2] != ""):
-                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventTypeID = ? AND EventType = ? AND EventReferenceID = ?")
+                self.ok = self.search_query.prepare("SELECT * FROM EventType WHERE EventTypeID LIKE ? AND EventType LIKE ? AND EventReferenceID LIKE ?")
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
+                self.hold = ("%{0}%".format(data[2]))
+                data[2] = self.hold
+                print(self.ok)
+                self.search_query.addBindValue(data[0])
+                self.search_query.addBindValue(data[1])
+                self.search_query.addBindValue(data[2])
+                self.search_query.exec_()
+                return self.search_query
+        #
+        #Course
+        #
+        elif current_table == 3:
+            if (data[0] != "CourseID" or data[0] != "") and (data[1] == "Course Code" or data[1] == "") and (data[2] == "Course Distance" or data[2] == ""):
+                self.ok = self.search_query.prepare("SELECT * FROM Course WHERE CourseID LIKE ?")
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
+                print(self.ok)
+                self.search_query.addBindValue(data[0])
+                self.search_query.exec_()
+                return self.search_query
+            
+            elif (data[0] == "CourseID" or data[0] == "") and (data[1] != "Course Code" or data[1] != "") and (data[2] == "Course Distance" or data[2] == ""):
+                self.ok = self.search_query.prepare("SELECT * FROM Course WHERE CourseCode LIKE ?")
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
+                print(self.ok)
+                self.search_query.addBindValue(data[1])
+                self.search_query.exec_()
+                return self.search_query
+
+            elif (data[0] == "CourseID" or data[0] == "") and (data[1] == "Course Code" or data[1] == "") and (data[2] != "Course Distance" or data[2] != ""):
+                self.ok = self.search_query.prepare("SELECT * FROM Course WHERE CourseDistance LIKE ?")
+                self.hold = ("%{0}%".format(data[2]))
+                data[2] = self.hold
+                print(self.ok)
+                self.search_query.addBindValue(data[2])
+                self.search_query.exec_()
+                return self.search_query
+            
+            elif (data[0] != "CourseID" or data[0] != "") and (data[1] != "Course Code" or data[1] != "") and (data[2] == "Course Distance" or data [2] ==  ""):
+                self.ok = self.search_query.prepare("SELECT * FROM Course WHERE CourseID LIKE ? AND CourseCode LIKE ?")
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
+                print(self.ok)
+                self.search_query.addBindValue(data[0])
+                self.search_query.addBindValue(data[1])
+                self.search_query.exec_()
+                return self.search_query
+
+            elif (data[0] == "CourseID" or data[0] == "") and (data[1] != "Course Code" or data[1] != "") and (data[2] != "Course Distance" or data[2] != ""):
+                self.ok = self.search_query.prepare("SELECT * FROM Course WHERE CourseCode LIKE ? AND CourseDistance LIKE ?")
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
+                self.hold = ("%{0}%".format(data[2]))
+                data[2] = self.hold
+                print(self.ok)
+                self.search_query.addBindValue(data[1])
+                self.search_query.addBindValue(data[2])
+                self.search_query.exec_()
+                return self.search_query
+
+            elif (data[0] != "CourseID" or data[0] != "") and (data[1] == "Course Code" or data[1] == "") and (data[2] != "Course Distance" or data[2] != ""):
+                self.ok = self.search_query.prepare("SELECT * FROM Course WHERE CourseID LIKE ? AND CourseDistance LIKE ?")
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
+                self.hold = ("%{0}%".format(data[2]))
+                data[2] = self.hold
+                print(self.ok)
+                self.search_query.addBindValue(data[0])
+                self.search_query.addBindValue(data[2])
+                self.search_query.exec_()
+                return self.search_query
+
+            elif (data[0] != "CourseID" or data[0] != "") and (data[1] != "Course Code" or data[1] != "") and (data[2] != "Course Distance" or data[2] != ""):
+                self.ok = self.search_query.prepare("SELECT * FROM Course WHERE CourseID LIKE ? AND CourseCode LIKE ? AND CourseDistance LIKE ?")
+                self.hold = ("%{0}%".format(data[0]))
+                data[0] = self.hold
+                self.hold = ("%{0}%".format(data[1]))
+                data[1] = self.hold
+                self.hold = ("%{0}%".format(data[2]))
+                data[2] = self.hold
                 print(self.ok)
                 self.search_query.addBindValue(data[0])
                 self.search_query.addBindValue(data[1])
