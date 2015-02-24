@@ -19,14 +19,28 @@
 
 \subsection{Changes to Outline Plan}
 
+
+\begin{tabular}{|l|l|}
+\hline
+Key: & \\ \hline
+\rowcolor{DarkGray} Dark Gray & Dark grey row have been removed \\ \hline
+\rowcolor{LiteGray} Lite Gray & Lite grey row have been added\\ \hline
+White & Will be kept \\ \hline
+
+\end{tabular}
+
+
 \begin{center}
     \begin{tabular}{|p{2cm}|p{5cm}|p{5cm}|p{4cm}|}
         \hline
         \textbf{Test Series} & \textbf{Purpose of Test Series} & \textbf{Testing Strategy} & \textbf{Strategy Rationale}\\ \hline
-        Example & Example & Example & Example \\ \hline
+        1 & Test the flow of control of the user interface  & Top-Down testing &  \\ \hline
+        2 & Validation of user input & Bottom-Up testing &  \\ \hline
+        3 & Validation of system output & System Testing & \\ \hline
+        4 & Validation of core system functionality & White box testing & \\ \hline
+        5 & System performs as required by the specification & Black box testing & \\ \hline
     \end{tabular}
 \end{center}
-
 \subsection{Original Detailed Plan}
 
 \begin{center}
@@ -35,7 +49,7 @@
         \textbf{Test Series} & \textbf{Purpose of Test} & \textbf{Test Description} & \textbf{Test Data} & \textbf{Test Data Type (Normal/ Erroneous/ Boundary)} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Evidence}\\ \hline
         1.01 & Test the file dialogue box & This should out put a file location and link ot the main screen & double click on file location & Normal & the database should be loaded up on the main screen &  &  \\ \hline
         
-        1.02 & Test the change table buttons in the menu bar  & This should change the main layout so that it shows the table of the selected type & Click on each button in the table section of the menu bar & Normal & the main layout changes to the table of the selected type & & \\ \hline
+        1.02 & Testchange table buttons in the menu bar  & This should change the main layout so that it shows the table of the selected type & Click on each button in the table section of the menu bar & Normal & the main layout changes to the table of the selected type & & \\ \hline
         
         1.03 & Test the add data button for the rider table & Click on the add data button while in the club reference table & click on the add data button while in the rider table & normal & display the add data dialogue box for the rider table & & \\ \hline
         1.04 & Test the add data button for the club reference table & Click on the add data button while in the club table & click on the add data button while in the club reference table & normal & display the add data dialogue box for the club reference table & & \\ \hline
@@ -67,7 +81,6 @@
         1.27 & Test the delete data button for the course  table & Click on the delete data button while in the course table & click on the delete data button while in the course table & normal & display the delete data dialogue box for the course  table & & \\ \hline
         1.28 & Test the delete data button for the event reference  table & Click on the delete data button while in the event reference table & click on the delete data button while in the event reference table & normal & display the delete data dialogue box for the event reference  table & & \\ \hline
         1.29 & Test the delete data button for the event type  table & Click on the delete data button while in the event type table & click on the delete data button while in the event type table & normal & display the delete data dialogue box for the event type  table & & \\ \hline
-        
         1.30 & Test the line edits of the dialogue box & Testing the line edits used in the dialogue boxes & "Peter" in the forename section of the search data for the rider table & Normal & "Peter" should be held in the line edit and can be returned & & \\ \hline 
     \end{longtable}
 \end{center}
@@ -76,13 +89,65 @@
 
 \subsection{Changes to Detailed Plan}
 
+\begin{tabular}{|l|l|}
+\hline
+Key: & \\ \hline
+\rowcolor{DarkGray} Dark Gray & Dark grey row have been removed \\ \hline
+\rowcolor{LiteGray} Light Gray & Lite grey row have been added\\ \hline
+White & Will be kept \\ \hline
+
+\end{tabular}
+
+
 \begin{center}
     \begin{longtable}{|p{1.5cm}|p{2.5cm}|p{2.5cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
         \hline
         \textbf{Test Series} & \textbf{Purpose of Test} & \textbf{Test Description} & \textbf{Test Data} & \textbf{Test Data Type (Normal/ Erroneous/ Boundary)} & \textbf{Expected Result} & \textbf{Actual Result} & \textbf{Evidence}\\ \hline
-        Example & Example & Example & Example & Example & Example & Example & Example \\ \hline
+        1.01 & Test the file dialogue box & This should out put a file location and link ot the main screen & double click on file location & Normal & the database should be loaded up on the main screen &  &  \\ \hline
+        
+        1.02 & Test the change table buttons in the menu bar  & This should change the main layout so that it shows the table of the selected type & Click on each button in the table section of the menu bar & Normal & the main layout changes to the table of the selected type & & \\ \hline
+        
+        1.03 & Test the add data button for the rider table & Click on the add data button while in the club reference table & click on the add data button while in the rider table & normal & display the add data dialogue box for the rider table & & \\ \hline
+        1.04 & Test the add data button for the club reference table & Click on the add data button while in the club table & click on the add data button while in the club reference table & normal & display the add data dialogue box for the club reference table & & \\ \hline
+        1.05 & Test the add data button for the club  table & Click on the add data button while in the rider table & click on the add data button while in the club table & normal & display the add data dialogue box for the club  table & & \\ \hline
+        \rowcolor{DarkGray}1.06 & Test the add data button for the record  table & Click on the add data button while in the record table & click on the add data button while in the record table & normal & display the add data dialogue box for the record  table & & \\ \hline
+        \rowcolor{DarkGray}1.07 & Test the add data button for the event points  table & Click on the add data button while in the event points table & click on the add data button while in the event points table & normal & display the add data dialogue box for the event points  table & & \\ \hline
+        \rowcolor{DarkGray}1.08 & Test the add data button for the event  table & Click on the add data button while in the event table & click on the add data button while in the event table & normal & display the add data dialogue box for the event  table & & \\ \hline
+        \rowcolor{DarkGray}1.09 & Test the add data button for the course  table & Click on the add data button while in the course table & click on the add data button while in the course table & normal & display the add data dialogue box for the course  table & & \\ \hline
+        \rowcolor{DarkGray}1.10 & Test the add data button for the event reference  table & Click on the add data button while in the event reference table & click on the add data button while in the event reference table & normal & display the add data dialogue box for the event reference  table & & \\ \hline
+        \rowcolor{DarkGray}1.11 & Test the add data button for the event type  table & Click on the add data button while in the event type table & click on the add data button while in the event type table & normal & display the add data dialogue box for the event type  table & & \\ \hline
+        
+        
+        \rowcolor{DarkGray}1.12 & Test the edit data button for the rider table & Click on the edit data button while in the club reference table & click on the edit data button while in the rider table & normal & display the edit data dialogue box for the rider table & & \\ \hline
+        \rowcolor{DarkGray}1.13 & Test the edit data button for the club reference table & Click on the edit data button while in the club table & click on the edit data button while in the club reference table & normal & display the edit data dialogue box for the club reference table & & \\ \hline
+        \rowcolor{DarkGray}1.14 & Test the edit data button for the club  table & Click on the edit data button while in the rider table & click on the edit data button while in the club table & normal & display the edit data dialogue box for the club  table & & \\ \hline
+        1.15 & Test the edit data button for the record  table & Click on the edit data button while in the record table & click on the edit data button while in the record table & normal & display the edit data dialogue box for the record  table & & \\ \hline
+        1.16 & Test the edit data button for the event points  table & Click on the edit data button while in the event points table & click on the edit data button while in the event points table & normal & display the edit data dialogue box for the event points  table & & \\ \hline
+        1.17 & Test the edit data button for the event  table & Click on the edit data button while in the event table & click on the edit data button while in the event table & normal & display the edit data dialogue box for the event  table & & \\ \hline
+        \rowcolor{DarkGray}1.18 & Test the edit data button for the course  table & Click on the edit data button while in the course table & click on the edit data button while in the course table & normal & display the edit data dialogue box for the course  table & & \\ \hline
+        \rowcolor{DarkGray}1.19 & Test the edit data button for the event reference  table & Click on the edit data button while in the event reference table & click on the edit data button while in the event reference table & normal & display the edit data dialogue box for the event reference  table & & \\ \hline
+        \rowcolor{DarkGray}1.20 & Test the edit data button for the event type  table & Click on the edit data button while in the event type table & click on the edit data button while in the event type table & normal & display the edit data dialogue box for the event type  table & & \\ \hline
+        
+        1.21 & Test the delete data button for the rider table & Click on the delete data button while in the club reference table & click on the delete data button while in the rider table & normal & display the delete data dialogue box for the rider table & & \\ \hline
+        1.22 & Test the delete data button for the club reference table & Click on the delete data button while in the club table & click on the delete data button while in the club reference table & normal & display the delete data dialogue box for the club reference table & & \\ \hline
+        1.23 & Test the delete data button for the club  table & Click on the delete data button while in the rider table & click on the delete data button while in the club table & normal & display the delete data dialogue box for the club  table & & \\ \hline
+        \rowcolor{DarkGray}1.24 & Test the delete data button for the record  table & Click on the delete data button while in the record table & click on the delete data button while in the record table & normal & display the delete data dialogue box for the record  table & & \\ \hline
+        \rowcolor{DarkGray}1.25 & Test the delete data button for the event points  table & Click on the delete data button while in the event points table & click on the delete data button while in the event points table & normal & display the delete data dialogue box for the event points  table & & \\ \hline
+        \rowcolor{DarkGray}1.26 & Test the delete data button for the event  table & Click on the delete data button while in the event table & click on the delete data button while in the event table & normal & display the delete data dialogue box for the event  table & & \\ \hline
+        \rowcolor{DarkGray}1.27 & Test the delete data button for the course  table & Click on the delete data button while in the course table & click on the delete data button while in the course table & normal & display the delete data dialogue box for the course  table & & \\ \hline
+        \rowcolor{DarkGray}1.28 & Test the delete data button for the event reference  table & Click on the delete data button while in the event reference table & click on the delete data button while in the event reference table & normal & display the delete data dialogue box for the event reference  table & & \\ \hline
+        \rowcolor{DarkGray}1.29 & Test the delete data button for the event type  table & Click on the delete data button while in the event type table & click on the delete data button while in the event type table & normal & display the delete data dialogue box for the event type  table & & \\ \hline
+        1.30 & Test the line edits of the dialogue box & Testing the line edits used in the dialogue boxes & "Peter" in the forename section of the search data for the rider table & Normal & "Peter" should be held in the line edit and can be returned & & \\ \hline 
+        
+        \rowcolor{LiteGray} 2.01 & Validate that data is being sent though the system correctly and entered in to the data base & On the event table, I will attempt to add data to the database and find whether the data has been added or not & "22/02/2015" in the date line edit,"2" in the course ID and "1" in the laps line edit then press the "ok" button & Normal & The main ui segment will be updated with the changes present  & & \\ \hline
+        \rowcolor{LiteGray} 2.02 & Validate that data is being sent though the system correctly and entered in to the data base & On the rider table, I will attempt to add data to the database and find whether the data has been added or not & I will not change the default text in the add data dialogue box & Erroneous & Error box saying "All fields mush be filled" & & \\ \hline
+        \rowcolor{LiteGray} 2.03 & Validate that data is being sent though the system correctly and entered in to the data base & On the rider table, I will attempt to delete data from the database and find whether the data has been deleted or not & I will change the default text in the delete data dialogue box "3" & Normal & The main ui segment will be updated with the changes present & & \\ \hline
+        \rowcolor{LiteGray} 2.04 & Validate that data is being sent though the system correctly and entered in to the data base & On the course table, I will attempt to filter the data from the database and find whether the data has been filtered or not & I will not change the default text in the search data dialogue box & Erroneous & The main ui segment will be updated with no changes present & & \\ \hline
+        \rowcolor{LiteGray} 2.05 & Validate that data is being sent though the system correctly and entered in to the data base & On the club table, I will attempt to filter the data from the database and find whether the data has been filtered or not & I will  change the default text in the search data dialogue box from the "Club ID" line edit to "3" & normal & The main ui segment will be updated showing only "Cambridge Tri Club" in the club column and "3" in the ClubID column  & & \\ \hline
+        \rowcolor{LiteGray} 2.06 & Validate that data is being sent though the system correctly and entered in to the data base & On the club table, I will attempt to filter the data from the database and find whether the data has been filtered or not & I will  change the default text in the search data dialogue box from the "Club ID" line edit to "3" & normal & The main ui segment will be updated showing only "Cambridge Tri Club" in the club column and "3" in the ClubID column  & & \\ \hline
     \end{longtable}
 \end{center}
+
 
 \section{Test Data}
 
