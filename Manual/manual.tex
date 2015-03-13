@@ -93,16 +93,24 @@ Note: If  any of the fields are not filled an error messages will appear when th
 \item Click the "OK" button, the database will be updated wit the new information and saved
 \end{enumerate}
 \subsubsection{What is the process of adding a record to an event?}
-
-\subsubsection{What is the process of adding an event with records and points from begining to end?}
 \begin{enumerate}
-\item First you will need to add a Course(see above for detailes)(if the course you want to use is allready added to the databse then skip this instruciton)
-\item Second you will need to add an Event and link it to the course you have just made(see above for detaules)
-\item 
+\item Find the EventID of the Event that you wish to add a Record to
+\item Find the RiderID of the Rider that you wish to use in the Record
+\item Switch to the Record table and click on the "Add Data" button
+\item Put the EventID and RiderID in the matching line edit, and fill the rest of the line edits appropriately
+\item Find the RiderID of the rider that you wish to connect a club to
+\end{enumerate}
+\subsubsection{What is the process of adding an event with records and points from beginning to end?}
+\begin{enumerate}
+\item First you will need to add a Course(see above for details)(if the course you want to use is already added to the database then skip this instruction)
+\item Second you will need to add an Event and link it to the course you have just made(see above for details)
+\item Now make sure that you have riders made to add the event(see above for details)
+\item Now create a record and link it to the event that you have just made and make a new record to each rider you wish to connect to the  event(see above for details)
+\item Finally for each record create a Event Points entry
 \end{enumerate}
 
 \subsection{Saving}
-The system saves to the TeamCambridge.db file each time data is added or deleted from the database, so you will not need to save the database befor closing the aplicaiton.
+The system saves to the TeamCambridge.db file each time data is added or deleted from the database, so you will not need to save the database before closing the application.
 \subsection{Limitations}
 
 \section{Error Recovery}
@@ -115,5 +123,8 @@ The system saves to the TeamCambridge.db file each time data is added or deleted
 \section{System Recovery}
 
 \subsection{Backing-up Data}
+To Back up the data you will need to make a copy of the TeamCambridge.db file. I would recommend that several copies of the file are made on separate storage devises. For example if all the copies of the .db file are on one storage device and that device fails then recovering the .db file can be expensive or impossible as if you keep copies on different storage devices then if one device fail then you will have a back up available.
 
+Making regular updates would also be good for data recover, I would recommend making a backup every week and keeping the last 3 weeks of back ups replacing the oldest back up each week. 
 \subsection{Restoring Data}
+In the unlikely event of data loss or corruption all you will need to do is copy the most recent working copy of the TeamCambidge.db file to the same file as the application and run the application as normal.
