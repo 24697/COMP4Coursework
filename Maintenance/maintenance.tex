@@ -253,9 +253,13 @@ SQL code to find the fastest time of a given rider for the handicap calculation 
 
 \pythonfile[firstline=33,lastline=43]{./Implementation/HandicapCal.py}
 
+This querie uses nested querys to find the fasted time of a rider on the E33/10 course, as when calulating the handicap for a circuet event insted for using the fasted time for the same course the fasted time on a E33/10 event is used insted. The primary querie is to find recrods ordered by time, I then used a nested querie to filter the records by EventID and then the EventID is ferther filtered by a second nested querie filtering them by CourseCode. Finaly the resuts are ordered by ride time and the fist in the list should be the fatses time.
+
 SQL code to find the fastest time of a given rider for the handicap calculation of a 10 mile event:
 
 \pythonfile[firstline=52,lastline=62]{./Implementation/HandicapCal.py}
+
+As before I have used nested queries for filtering across mulitpul tables. This querie is used to find the fasted time for a rider on a 10 mile event. 
 
 SQL code to find the fastest time of a given rider for the handicap calculation of a 25 mile event:
 
