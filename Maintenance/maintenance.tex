@@ -35,12 +35,11 @@ I used the SQL Inspector "Browse Data" function during the development of the CL
 
 \section{System Overview}
 
-%use as many subsections as necessary for the system components
 \subsection{System Component}
 
 \section{Code Structure}
+The general of the system is a model view controller structure with the MainWindow.py file acting as the controller (see page \pageref{fig:MW.py}), View.py file as the view (see page \pageref{fig:Con.py}) and the connection.py file as the model (see page \pageref{fig:View.py}). The view and model import many other files so that the indervidual patrs could be devolped and tested befor they were implemnted in to the main system.
 
-%use as many subsections as necessary for the code sections
 \subsection{Particular Code Section}
 %the code below can be uncommented and used to get a code section from a particular file
 \begin{comment}
@@ -62,7 +61,15 @@ I used the SQL Inspector "Browse Data" function during the development of the CL
 	hold & any & \%bridge\% & used to hold any data temporally be for it is used further in the program \\\hline
 	ok & boolean & True & hold the outcome of .prepare function of a SQL query shows if a query was prepared correctly for debugging \\\hline
 	data & list & ["peter","Millard",1] & used to hold the SQL query data before it is inserted in to the query \\\hline
-	
+	fast\_time & sting & 00:25:24 & holds the fastes time taken from the database when calculating the handicap(in the format of HH:MM:SS) \\\hline
+	fast\_hour & integer & 00 & holds the hour component of the fastes time \\\hline
+	fast\_min & integer & 25 & holds the minuet component of the fastes time \\\hline
+	fast\_sec & integer & 24 & holds the second component of the fastes time \\\hline
+	dif\_min & integer & 08 & holds the minuet value after the 17 minuets have been take from the fast time \\\hline
+	hour\_min & integer & 00 & holds the hour value converted to minuets \\\hline
+	full\_min & integer & 08 & hold the sum of the dif\_min and hour\_min values \\\hline
+	min\_sec & integer & 48 & hold the value of full\_min converted in to seconds \\\hline
+	full\_sec & integer & 72 & holds the sum of min\_sec and fast\_sec \\\hline
 \end{tabular}
 
 \section{System Evidence}
@@ -278,20 +285,22 @@ SQL code to find the fastest time of a given rider for the handicap calculation 
 \subsection{Self-created Algorithms}
 
 \section{Settings}
-For the system to work as expected you will need to make sure that you have any version of Python 3 and a version of PyQt that is compatible with python 3. All other packages used come with the standard library in python 3.
+There are no spesific setting for my system to run.
 \section{Acknowledgements}
 
 \section{Code Listing}
 
 \begin{landscape}
-\subsection{MianWindow.py}
-\pythonfile{./Implementation/MainWindow.py}
+\label{fig:MW.py}
+\pythonfile{./Implementation/MainWindow.py} 
 
 \subsection{Connection.py}
-\pythonfile{./Implementation/Connection.py}
+\label{fig:Con.py}
+\pythonfile{./Implementation/Connection.py} 
 
 \subsection{View.py}
-\pythonfile{./Implementation/View.py}
+\label{fig:View.py}
+\pythonfile{./Implementation/View.py} 
 
 \subsection{ErrorDialog.py}
 \pythonfile{./Implementation/ErrorDialog.py}
