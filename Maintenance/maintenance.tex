@@ -41,13 +41,6 @@ I used the SQL Inspector "Browse Data" function during the development of the CL
 The general of the system is a model view controller structure with the MainWindow.py file acting as the controller (see page \pageref{fig:MW.py}), View.py file as the view (see page \pageref{fig:Con.py}) and the connection.py file as the model (see page \pageref{fig:View.py}). The view and model import many other files so that the individual parts could be devolved and tested before they were implemented in to the main system.
 
 \subsection{Particular Code Section}
-%the code below can be uncommented and used to get a code section from a particular file
-\begin{comment}
-\begin{figure}[H]
-    \pythonfile[firstline=5,lastline=10]{./tex/function_programs/print_function.py}
-    \caption{The print() function} \label{fig:print_function}
-\end{figure}
-\end{comment}
 
 \section{Variable Listing}
 
@@ -75,175 +68,204 @@ The general of the system is a model view controller structure with the MainWind
 
 \section{System Evidence}
 
+\clearpage
 \subsection{User Interface}
 
-\clearpage
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/Club.png}
+\subsubsection{Club UI screens}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/Club.png}
 \caption{The Club UI} \label{fig:club_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/ClubAD.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/ClubAD.png}
 \caption{The Club Add Data UI} \label{fig:ClubAD_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/ClubSearch.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/ClubSearch.png}
 \caption{The Club Search UI} \label{fig:ClubSearch_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/ClubRef.png}
+
+\subsubsection{Club Reference UI Screens}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/ClubRef.png}
 \caption{The Club Reference UI} \label{fig:ClubRef_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/ClubRefAD.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/ClubRefAD.png}
 \caption{The Club Reference Add Data UI} \label{fig:ClubRefAD_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/ClubRefSearch.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/ClubRefSearch.png}
 \caption{The Club Reference Search UI} \label{fig:ClubRefSearch_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/Course.png}
+
+\subsubsection{Course UI Screens}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/Course.png}
 \caption{The Course UI} \label{fig:Course_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/CourseAD.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/CourseAD.png}
 \caption{The Course Add Data UI} \label{fig:CourseAD_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/CourseSearch.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/CourseSearch.png}
 \caption{The Course Search UI} \label{fig:CourseSearch_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/DataDrop.png}
-\caption{The Data Drop Down Menu UI} \label{fig:DataDrop_UI}
-\end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/Delete.png}
-\caption{The Delete UI} \label{fig:Delete_UI}
-\end{figure}
+\subsubsection{Event UI Screens}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/Error.png}
-\caption{The Error UI} \label{fig:Error_UI}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/Event.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/Event.png}
 \caption{The Event UI} \label{fig:Event_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/EventAD.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/EventAD.png}
 \caption{The Event Add Data UI} \label{fig:EventAD_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/EventSearch.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/EventSearch.png}
 \caption{The Event Search UI} \label{fig:EventSearch_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/EventPoints.png}
+
+\subsubsection{Event Points UI Screens}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/EventPoints.png}
 \caption{The Event Points UI} \label{fig:EventPoints_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/EventPointsAD.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/EventPointsAD.png}
 \caption{The Event Points Add Data UI} \label{fig:EventPointsAD_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/EventPointsSearch.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/EventPointsSearch.png}
 \caption{The Event Point Search UI} \label{fig:EventPointsSearch_UI}
 \end{figure}
 
-\clearpage
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/EventRef.png}
+
+\subsubsection{Event Reference UI Screens}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/EventRef.png}
 \caption{The Event Reference UI} \label{fig:EventRef_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/EventRefAD.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/EventRefAD.png}
 \caption{The Event Reference Add Data UI} \label{fig:EventRefAD_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/EventRefSearch.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/EventRefSearch.png}
 \caption{The Event Reference Search UI} \label{fig:EventRefSearch_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/EventType.png}
+\clearpage
+\subsubsection{Event Type UI Screens}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/EventType.png}
 \caption{The Event Type UI} \label{fig:EventType_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/EventTypeAD.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/EventTypeAD.png}
 \caption{The Event Type Add Data UI} \label{fig:EventTypeAD_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/EventTypeSearch.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/EventTypeSearch.png}
 \caption{The Event Type Search UI} \label{fig:EventTypeSearch_UI}
 \end{figure}
 
-\begin{figure}
+\begin{landscape}
+\subsubsection{Record UI Screens}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/Record.png}
+\caption{The Record UI} \label{fig:Record_UI}
+\end{figure}
+\end{landscape}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/RecordAD.png}
+\caption{The Record Add Data UI} \label{fig:RecordAD_UI}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/RecordSearch.png}
+\caption{The Record Search UI} \label{fig:RecordSearch_UI}
+\end{figure}
+
+
+\subsubsection{Rider UI Screens}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/Rider.png}
+\caption{The Rider UI} \label{fig:Rider_UI}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/RiderAD.png}
+\caption{The Rider Add Data UI} \label{fig:RiderAD_UI}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/RiderSearch.png}
+\caption{The Rider Search UI} \label{fig:RdierSearch_UI}
+\end{figure}
+
+
+\subsubsection{Other UI Screens}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/DataDrop.png}
+\caption{The Data Drop Down Menu UI} \label{fig:DataDrop_UI}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/Delete.png}
+\caption{The Delete UI} \label{fig:Delete_UI}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/Error.png}
+\caption{The Error UI} \label{fig:Error_UI}
+\end{figure}
+
+\begin{figure}[H]
 \includegraphics[width=\textwidth]{./Maintenance/UI/FileDia.png}
 \caption{The File Dialogue UI} \label{fig:FileDia_UI}
 \end{figure}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/Record.png}
-\caption{The Record UI} \label{fig:Record_UI}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/RecordAD.png}
-\caption{The Record Add Data UI} \label{fig:RecordAD_UI}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/RecordSearch.png}
-\caption{The Record Search UI} \label{fig:RecordSearch_UI}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/Rider.png}
-\caption{The Rider UI} \label{fig:Rider_UI}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/RiderAD.png}
-\caption{The Rider Add Data UI} \label{fig:RiderAD_UI}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/RiderSearch.png}
-\caption{The Rider Search UI} \label{fig:RdierSearch_UI}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=\textwidth]{./Maintenance/UI/TableDrop.png}
+\begin{figure}[H]
+\includegraphics{./Maintenance/UI/TableDrop.png}
 \caption{The Table Drop Down UI} \label{fig:TableDrop_UI}
 \end{figure}
 
+
 \clearpage
 \subsection{ER Diagram}
-\begin{figure}
+\begin{figure}[H]
 \includegraphics[width=\textwidth]{./Maintenance/ER.pdf}
 \caption{The ER Diagram of the final database} \label{fig:ER_Fin}
 \end{figure}
@@ -267,26 +289,35 @@ SQL code to find the fastest time of a given rider for the handicap calculation 
 
 \pythonfile[firstline=52,lastline=62]{./Implementation/HandicapCal.py}
 
-As before I have used nested queries for filtering across mulitpul tables. This querie is used to find the fasted time for a rider on a 10 mile event. 
+As before I have used nested queries for filtering across multiple tables. This query is used to find the fasted time for a rider on a 10 mile event. 
 
 SQL code to find the fastest time of a given rider for the handicap calculation of a 25 mile event:
 
 \pythonfile[firstline=71,lastline=81]{./Implementation/HandicapCal.py}
-
+As before I have used nested queries for filtering across multiple tables. This query is used to find the fasted time for a rider on a 25 mile event. 
 \section{Testing}
 
 \subsection{Summary of Results}
 
 \subsection{Known Issues}
-
+\begin{itemize}
+\item When adding data to the Event table the first time adding data will fail, you will need to resubmit the data and it shall be added as expected that time and all subsequent times.
+\item When adding data to the Event table the Laps and CourseID get swapped, this can cause a compound error when trying to calculate a handicap modifier.
+\end{itemize}
 \section{Code Explanations}
 
 \subsection{Difficult Sections}
 
 \subsection{Self-created Algorithms}
+The main element of the program is the handicap calculation, this is based of a modified version of the Cycling Time Trials (CTT) handicap method, the current Team Cambridge version of this uses a table to fin the handicap modifier. The general method for this is t find the riders fastest time for the same distance of the event of which the handicap is being calculated for and use a look up table (see figure \ref{fig:Specification} on page \pageref{fig:Specification}) to find the modifier, this modifier is then subtracted from the event ride time.
 
+I had to create 3 different search SQL for each type of handicap statements that I have disused in section 4.5.5, however I also need to create separate calculations for each type of handicap.
+
+\pythonfile[firstline=106,lastline=154]{./Implementation/HandicapCal.py}
+
+For the 10 mile version of the calculation I first split the sting taken from the database in to the composite parts of hours, minuets and seconds, then the minuet modifier is taken from the original minuets value(the minuets modifier if the only part of the calculation that is altered between each distance, for a 10 mile event the value is 17, for a 25 event the value is 45 and for a circuit event the value is 11 minuets). Next the hour, minuet and seconds components are converted down to seconds, this value is then floor divided by 15 to find the "change" value which is taken from the "full\_sec" value to find the handicapped time. Finally the handicapped time is converted back to hours, minuets and seconds then reformatted to HH:MM:SS.
 \section{Settings}
-There are no spesific setting for my system to run.
+There are no specific setting for my system to run.
 \section{Acknowledgements}
 
 \section{Code Listing}
