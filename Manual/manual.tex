@@ -1,5 +1,8 @@
 \chapter{User Manual}
 
+\startcontents[UserManual]
+\printcontents[UserManual]{}{1}{}
+
 \section{Introduction}
 This system is disned for cycling clubs that host time triles and want a digital system for storig results and calculation handicaps. Spsifcly this system is disined for Team Cambridge as the handicap calculation is sepsific to there handicap system. The handicap module can be replaced so that any other club can use the system with there own handicap system.
 \section{Installation}
@@ -36,6 +39,7 @@ To run the system you will need to run the MainWindow.py file
 \section{Tutorial}
 
 \subsection{Introduction}
+This tutorial is structured in a FAQ style so that the user can find how to complease a spesific tast aswell as find the overall squence of how to add an event and then records to the event while being able to look up the spesifics of each section. 
 
 \subsection{Assumptions}
 I am assuming that the user has a basic understanding of the time tile system and basic skills with a computer.
@@ -112,7 +116,7 @@ Note: If  any of the fields are not filled an error messages will appear when th
 \subsection{Saving}
 The system saves to the TeamCambridge.db file each time data is added or deleted from the database, so you will not need to save the database before closing the application.
 \subsection{Limitations}
-
+There are few limitation of the current system, one is that the edit funtion is not implemented in the main application, this was due to lack of time however the edit funtion was implemented in the CLI so you can edit data using the CLI.
 \section{Error Recovery}
 
 %include as many subsections as necessary for each error
@@ -128,3 +132,5 @@ To Back up the data you will need to make a copy of the TeamCambridge.db file. I
 Making regular updates would also be good for data recover, I would recommend making a backup every week and keeping the last 3 weeks of back ups replacing the oldest back up each week. 
 \subsection{Restoring Data}
 In the unlikely event of data loss or corruption all you will need to do is copy the most recent working copy of the TeamCambidge.db file to the same file as the application and run the application as normal.
+
+\stopcontents[UserManual]

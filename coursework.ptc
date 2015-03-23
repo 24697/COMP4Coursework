@@ -1,0 +1,240 @@
+\contentsline {chapter}{\numberline {1}Analysis}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{5}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Client Identification}{5}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Define the current system}{5}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Describe the problems}{6}{subsection.1.1.3}
+\contentsline {subsection}{\numberline {1.1.4}Section appendix}{8}{subsection.1.1.4}
+\contentsline {section}{\numberline {1.2}Investigation}{20}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}The current system}{20}{subsection.1.2.1}
+\contentsline {subsubsection}{Data sources and destinations}{20}{section*.2}
+\contentsline {subsubsection}{Algorithms}{20}{section*.3}
+\contentsline {subsubsection}{Data flow diagram}{21}{section*.4}
+\contentsline {subsubsection}{Input Forms, Output Forms, Report Formats}{27}{section*.5}
+\contentsline {subsubsection}{Data sources and destinations}{28}{section*.6}
+\contentsline {subsection}{\numberline {1.2.2}The proposed system}{29}{subsection.1.2.2}
+\contentsline {subsubsection}{Data flow diagram}{29}{section*.7}
+\contentsline {subsubsection}{Data dictionary}{30}{section*.8}
+\contentsline {subsubsection}{Volumetrics}{30}{section*.9}
+\contentsline {section}{\numberline {1.3}Objectives}{31}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}General Objectives}{31}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Specific Objectives}{31}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Core Objectives}{31}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}Other Objectives}{31}{subsection.1.3.4}
+\contentsline {section}{\numberline {1.4}ER Diagrams and Descriptions}{32}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}ER Diagram}{32}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Entity Descriptions}{32}{subsection.1.4.2}
+\contentsline {section}{\numberline {1.5}Object Analysis}{32}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Object Listing}{32}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Relationship diagrams}{34}{subsection.1.5.2}
+\contentsline {subsection}{\numberline {1.5.3}Class definitions}{34}{subsection.1.5.3}
+\contentsline {section}{\numberline {1.6}Other Abstractions and Graphs}{34}{section.1.6}
+\contentsline {section}{\numberline {1.7}Constraints}{35}{section.1.7}
+\contentsline {subsection}{\numberline {1.7.1}Hardware}{35}{subsection.1.7.1}
+\contentsline {subsection}{\numberline {1.7.2}Software}{35}{subsection.1.7.2}
+\contentsline {subsection}{\numberline {1.7.3}Time}{35}{subsection.1.7.3}
+\contentsline {subsection}{\numberline {1.7.4}User Knowledge}{35}{subsection.1.7.4}
+\contentsline {subsection}{\numberline {1.7.5}Access restrictions}{35}{subsection.1.7.5}
+\contentsline {section}{\numberline {1.8}Limitations}{36}{section.1.8}
+\contentsline {subsection}{\numberline {1.8.1}Areas which will not be included in computerisation}{36}{subsection.1.8.1}
+\contentsline {subsection}{\numberline {1.8.2}Areas considered for future computerisation}{36}{subsection.1.8.2}
+\contentsline {section}{\numberline {1.9}Solutions}{36}{section.1.9}
+\contentsline {subsection}{\numberline {1.9.1}Alternative solutions}{36}{subsection.1.9.1}
+\contentsline {subsection}{\numberline {1.9.2}Justification of chosen solution}{36}{subsection.1.9.2}
+\contentsline {chapter}{\numberline {2}Design}{37}{chapter.2}
+\contentsline {section}{\numberline {2.1}Overall System Design}{37}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Short description of the main parts of the system}{37}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}User Interface Designs}{39}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}System flowcharts showing an overview of the complete system}{43}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Hardware Spesifiacation}{50}{section.2.3}
+\contentsline {section}{\numberline {2.4}Program Structure}{50}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Top-down design structure charts}{50}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Algorithms in pseudo-code for each data transformation process}{50}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Object Diagrams}{50}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Class Definitions}{50}{subsection.2.4.4}
+\contentsline {section}{\numberline {2.5}Prototyping}{50}{section.2.5}
+\contentsline {section}{\numberline {2.6}Definition of Data Requirements}{53}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Identification of all data input items}{53}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Identification of all data output items}{53}{subsection.2.6.2}
+\contentsline {subsection}{\numberline {2.6.3}Explanation of how data output items are generated}{54}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}Data Dictionary}{56}{subsection.2.6.4}
+\contentsline {subsection}{\numberline {2.6.5}Identification of appropriate storage media}{57}{subsection.2.6.5}
+\contentsline {section}{\numberline {2.7}Database Design}{57}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Normalisation}{57}{subsection.2.7.1}
+\contentsline {subsubsection}{ER Diagrams}{57}{section*.10}
+\contentsline {subsubsection}{Entity Descriptions}{57}{section*.11}
+\contentsline {subsubsection}{UNF to 3NF}{58}{section*.12}
+\contentsline {section}{\numberline {2.8}Security and Integrity of the System and Data}{60}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Security and Integrity of Data}{60}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}System Security}{60}{subsection.2.8.2}
+\contentsline {section}{\numberline {2.9}Validation}{60}{section.2.9}
+\contentsline {section}{\numberline {2.10}Testing}{60}{section.2.10}
+\contentsline {subsection}{\numberline {2.10.1}Outline Plan}{61}{subsection.2.10.1}
+\contentsline {subsection}{\numberline {2.10.2}Detailed Plan}{61}{subsection.2.10.2}
+\contentsline {chapter}{\numberline {3}Testing}{68}{chapter.3}
+\contentsline {section}{\numberline {3.1}Test Plan}{68}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Original Outline Plan}{69}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Changes to Outline Plan}{69}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Original Detailed Plan}{70}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Changes to Detailed Plan}{77}{subsection.3.1.4}
+\contentsline {section}{\numberline {3.2}Test Data}{91}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Original Test Data}{91}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Changes to Test Data}{91}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Annotated Samples}{91}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Actual Results}{96}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Evidence}{96}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Evaluation}{97}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Approach to Testing}{97}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Problems Encountered}{97}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Strengths of Testing}{97}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Weaknesses of Testing}{97}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}Reliability of Application}{97}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.6}Robustness of Application}{97}{subsection.3.4.6}
+\contentsline {chapter}{\numberline {4}System Maintenance}{98}{chapter.4}
+\contentsline {section}{\numberline {4.1}Environment}{98}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Software}{98}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Usage Explanation}{98}{subsection.4.1.2}
+\contentsline {subsubsection}{Python 3}{98}{section*.13}
+\contentsline {subsubsection}{IDLE}{98}{section*.14}
+\contentsline {subsubsection}{PyQt}{99}{section*.15}
+\contentsline {subsubsection}{SQLite 3}{99}{section*.16}
+\contentsline {subsubsection}{SQL Inspector}{99}{section*.17}
+\contentsline {subsection}{\numberline {4.1.3}Features Used}{99}{subsection.4.1.3}
+\contentsline {subsubsection}{Python 3}{99}{section*.18}
+\contentsline {subsubsection}{IDLE}{99}{section*.19}
+\contentsline {subsubsection}{PyQt}{99}{section*.20}
+\contentsline {subsubsection}{SQLite 3}{99}{section*.21}
+\contentsline {subsubsection}{SQL Inspector}{100}{section*.22}
+\contentsline {section}{\numberline {4.2}System Overview}{100}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}System Component}{100}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}Code Structure}{100}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Particular Code Section}{100}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Variable Listing}{100}{section.4.4}
+\contentsline {section}{\numberline {4.5}System Evidence}{101}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}User Interface}{102}{subsection.4.5.1}
+\contentsline {subsubsection}{Club UI screens}{102}{section*.23}
+\contentsline {subsubsection}{Club Reference UI Screens}{104}{section*.24}
+\contentsline {subsubsection}{Course UI Screens}{106}{section*.25}
+\contentsline {subsubsection}{Event UI Screens}{108}{section*.26}
+\contentsline {subsubsection}{Event Points UI Screens}{110}{section*.27}
+\contentsline {subsubsection}{Event Reference UI Screens}{112}{section*.28}
+\contentsline {subsubsection}{Event Type UI Screens}{114}{section*.29}
+\contentsline {subsubsection}{Record UI Screens}{117}{section*.30}
+\contentsline {subsubsection}{Rider UI Screens}{119}{section*.31}
+\contentsline {subsubsection}{Other UI Screens}{121}{section*.32}
+\contentsline {subsection}{\numberline {4.5.2}ER Diagram}{125}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Database Table Views}{125}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Database SQL}{126}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.5}SQL Queries}{130}{subsection.4.5.5}
+\contentsline {section}{\numberline {4.6}Testing}{131}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Summary of Results}{131}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Known Issues}{131}{subsection.4.6.2}
+\contentsline {section}{\numberline {4.7}Code Explanations}{131}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Difficult Sections}{131}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Self-created Algorithms}{131}{subsection.4.7.2}
+\contentsline {section}{\numberline {4.8}Settings}{133}{section.4.8}
+\contentsline {section}{\numberline {4.9}Acknowledgements}{133}{section.4.9}
+\contentsline {section}{\numberline {4.10}Code Listing}{133}{section.4.10}
+\contentsline {subsection}{\numberline {4.10.1}Connection.py}{145}{subsection.4.10.1}
+\contentsline {subsection}{\numberline {4.10.2}View.py}{162}{subsection.4.10.2}
+\contentsline {subsection}{\numberline {4.10.3}ErrorDialog.py}{177}{subsection.4.10.3}
+\contentsline {subsection}{\numberline {4.10.4}CreatingNewRecords.py}{179}{subsection.4.10.4}
+\contentsline {subsection}{\numberline {4.10.5}Search.py}{182}{subsection.4.10.5}
+\contentsline {subsection}{\numberline {4.10.6}DialogBox.py}{182}{subsection.4.10.6}
+\contentsline {subsection}{\numberline {4.10.7}RecordDialogBox.py}{185}{subsection.4.10.7}
+\contentsline {subsection}{\numberline {4.10.8}HandicapCal.py}{188}{subsection.4.10.8}
+\contentsline {subsection}{\numberline {4.10.9}CLI.py}{197}{subsection.4.10.9}
+\contentsline {subsection}{\numberline {4.10.10}Model.py}{216}{subsection.4.10.10}
+\contentsline {subsection}{\numberline {4.10.11}DleateData.py}{218}{subsection.4.10.11}
+\contentsline {subsection}{\numberline {4.10.12}EditClub.py}{220}{subsection.4.10.12}
+\contentsline {subsection}{\numberline {4.10.13}EditRider.py}{221}{subsection.4.10.13}
+\contentsline {subsection}{\numberline {4.10.14}EditEventType.py}{221}{subsection.4.10.14}
+\contentsline {subsection}{\numberline {4.10.15}EditCourse.py}{222}{subsection.4.10.15}
+\contentsline {subsection}{\numberline {4.10.16}EditEventReference.py}{223}{subsection.4.10.16}
+\contentsline {subsection}{\numberline {4.10.17}EditEvent.py}{223}{subsection.4.10.17}
+\contentsline {subsection}{\numberline {4.10.18}EditRecord.py}{224}{subsection.4.10.18}
+\contentsline {subsection}{\numberline {4.10.19}EditClubReference.py}{226}{subsection.4.10.19}
+\contentsline {subsection}{\numberline {4.10.20}EditEventPoints.py}{227}{subsection.4.10.20}
+\contentsline {subsection}{\numberline {4.10.21}DatabaseConstructor.py}{228}{subsection.4.10.21}
+\contentsline {chapter}{\numberline {5}User Manual}{233}{chapter.5}
+\ttl@starttoc {UserManual@1}
+\contentsline {section}{\numberline {5.1}Introduction}{234}{section.5.1}
+\contentsline {section}{\numberline {5.2}Installation}{235}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Prerequisite Installation}{235}{subsection.5.2.1}
+\contentsline {subsubsection}{Installing Python}{235}{section*.33}
+\contentsline {subsubsection}{Installing PyQt}{235}{section*.34}
+\contentsline {subsection}{\numberline {5.2.2}System Installation}{235}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Running the System}{236}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Tutorial}{236}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Introduction}{236}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Assumptions}{236}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Tutorial Questions}{236}{subsection.5.3.3}
+\contentsline {subsubsection}{What is the process of loading the database}{236}{section*.35}
+\contentsline {subsubsection}{What is the process of adding a rider?}{236}{section*.36}
+\contentsline {subsubsection}{What is the process of adding a club?}{236}{section*.37}
+\contentsline {subsubsection}{What is the process of adding a course?}{237}{section*.38}
+\contentsline {subsubsection}{What is the process of connecting a club to a rider?}{237}{section*.39}
+\contentsline {subsubsection}{What is the process of adding an event?}{237}{section*.40}
+\contentsline {subsubsection}{What is the process of adding a record to an event?}{238}{section*.41}
+\contentsline {subsubsection}{What is the process of adding an event with records and points from beginning to end?}{238}{section*.42}
+\contentsline {subsection}{\numberline {5.3.4}Saving}{238}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Limitations}{239}{subsection.5.3.5}
+\contentsline {section}{\numberline {5.4}Error Recovery}{239}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Error 1}{239}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Error 2}{239}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}System Recovery}{239}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Backing-up Data}{239}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Restoring Data}{239}{subsection.5.5.2}
+\ttl@stoptoc {UserManual@1}
+\contentsline {chapter}{\numberline {6}Evaluation}{240}{chapter.6}
+\contentsline {section}{\numberline {6.1}Customer Requirements}{240}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Genral Objetives}{240}{subsection.6.1.1}
+\contentsline {subsubsection}{First Objective}{240}{section*.43}
+\contentsline {subsubsection}{Objective Completed?}{240}{section*.44}
+\contentsline {subsubsection}{Evidence}{240}{section*.45}
+\contentsline {subsubsection}{Second Objective}{240}{section*.46}
+\contentsline {subsubsection}{Objective Completed?}{240}{section*.47}
+\contentsline {subsubsection}{Evidence}{240}{section*.48}
+\contentsline {subsubsection}{Thrid Objective}{240}{section*.49}
+\contentsline {subsubsection}{Objective Completed?}{241}{section*.50}
+\contentsline {subsubsection}{Evidence}{241}{section*.51}
+\contentsline {subsubsection}{Forth Objective}{241}{section*.52}
+\contentsline {subsubsection}{Objective Completed?}{241}{section*.53}
+\contentsline {subsubsection}{Evidence}{241}{section*.54}
+\contentsline {subsection}{\numberline {6.1.2}Specific Objectives}{241}{subsection.6.1.2}
+\contentsline {subsubsection}{First Objective}{241}{section*.55}
+\contentsline {subsubsection}{Objective Completed?}{241}{section*.56}
+\contentsline {subsubsection}{Evidence}{241}{section*.57}
+\contentsline {subsubsection}{Second Objective}{241}{section*.58}
+\contentsline {subsubsection}{Thrid Objective}{241}{section*.59}
+\contentsline {subsubsection}{Objective Completed?}{241}{section*.60}
+\contentsline {subsubsection}{Evidence}{241}{section*.61}
+\contentsline {subsubsection}{Forth Objective}{241}{section*.62}
+\contentsline {subsubsection}{Objective Completed?}{242}{section*.63}
+\contentsline {subsubsection}{Evidence}{242}{section*.64}
+\contentsline {subsection}{\numberline {6.1.3}Core Objectives}{242}{subsection.6.1.3}
+\contentsline {subsubsection}{First Objective}{242}{section*.65}
+\contentsline {subsubsection}{Objective Completed?}{243}{section*.66}
+\contentsline {subsubsection}{Evidence}{243}{section*.67}
+\contentsline {subsubsection}{Second Objective}{243}{section*.68}
+\contentsline {subsubsection}{Objective Completed?}{243}{section*.69}
+\contentsline {subsubsection}{Evidence}{243}{section*.70}
+\contentsline {subsection}{\numberline {6.1.4}Other Objectives}{243}{subsection.6.1.4}
+\contentsline {subsubsection}{First Objective}{243}{section*.71}
+\contentsline {subsubsection}{Objective Completed?}{243}{section*.72}
+\contentsline {subsubsection}{Evidence}{243}{section*.73}
+\contentsline {subsubsection}{Second Objective}{243}{section*.74}
+\contentsline {subsubsection}{Objective Completed?}{243}{section*.75}
+\contentsline {subsubsection}{Thrid Objective}{244}{section*.76}
+\contentsline {subsubsection}{Objective Completed?}{244}{section*.77}
+\contentsline {subsection}{\numberline {6.1.5}Objective Evaluation}{244}{subsection.6.1.5}
+\contentsline {section}{\numberline {6.2}Effectiveness}{244}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Objective Evaluation}{244}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Learnability}{244}{section.6.3}
+\contentsline {section}{\numberline {6.4}Usability}{244}{section.6.4}
+\contentsline {section}{\numberline {6.5}Maintainability}{244}{section.6.5}
+\contentsline {section}{\numberline {6.6}Suggestions for Improvement}{244}{section.6.6}
+\contentsline {section}{\numberline {6.7}End User Evidence}{244}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Questionnaires}{244}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}Graphs}{244}{subsection.6.7.2}
+\contentsline {subsection}{\numberline {6.7.3}Written Statements}{244}{subsection.6.7.3}
+\contentsfinish 
