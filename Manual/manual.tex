@@ -207,11 +207,18 @@ Note: If  any of the fields are not filled an error messages will appear when th
 The system saves to the TeamCambridge.db file each time data is added or deleted from the database, so you will not need to save the database before closing the application.
 \subsection{Limitations}
 There are few limitation of the current system, one is that the edit function is not implemented in the main application, this was due to lack of time however the edit function was implemented in the CLI so you can edit data using the CLI.
-\section{Error Recovery}
-There are some error with the current system 
-\subsection{Error 1}
 
-\subsection{Error 2}
+\section{Error Recovery}
+There are some errors with the current system there are documented bellow.
+
+\subsection{Error 1 - Add data}
+On Some tables when adding data, when the "Add Data" button is pressed the data will not be added to the database. To resolve this issue you will need to reopen the add data dialog box, as the data is stored in the dialog box you can just click the add data button another time and the data should be added.
+
+\subsection{Error 2 - Calculating andicap}
+In some instances when trying to use the "cal handicap" button in the record add data diagloug box the handicap does not get calcuated, it is not clear if this is a bug or that the requiered steps have not been followed out before hand.
+
+\subsection{Error 3 - No add data error box}
+If a incompleated add data dialogue box is atempted to be added to the database an error box should appear warring the use that the data has not been added to the database and the form need to be compleated first. On some tables the error box does not appear and the data is added to the database, all you will need to do in this instance is deleat the incompleated dataset and reopen the add data dialoug box and compleat the form and add the data finaly.
 
 \section{System Recovery}
 

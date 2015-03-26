@@ -180,62 +180,63 @@
 \contentsline {subsection}{\numberline {5.4.4}Saving}{257}{subsection.5.4.4}
 \contentsline {subsection}{\numberline {5.4.5}Limitations}{257}{subsection.5.4.5}
 \contentsline {section}{\numberline {5.5}Error Recovery}{257}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Error 1}{257}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Error 2}{257}{subsection.5.5.2}
-\contentsline {section}{\numberline {5.6}System Recovery}{257}{section.5.6}
-\contentsline {subsection}{\numberline {5.6.1}Backing-up Data}{257}{subsection.5.6.1}
-\contentsline {subsection}{\numberline {5.6.2}Restoring Data}{257}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.5.1}Error 1 - Add data}{257}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Error 2 - Calculating andicap}{257}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Error 3 - No add data error box}{257}{subsection.5.5.3}
+\contentsline {section}{\numberline {5.6}System Recovery}{258}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Backing-up Data}{258}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Restoring Data}{258}{subsection.5.6.2}
 \ttl@stoptoc {UserManual@1}
-\contentsline {chapter}{\numberline {6}Evaluation}{258}{chapter.6}
-\contentsline {section}{\numberline {6.1}Customer Requirements}{258}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Genral Objetives}{258}{subsection.6.1.1}
-\contentsline {subsubsection}{First Objective}{258}{section*.43}
-\contentsline {subsubsection}{Objective Completed?}{258}{section*.44}
-\contentsline {subsubsection}{Evidence}{258}{section*.45}
-\contentsline {subsubsection}{Second Objective}{258}{section*.46}
-\contentsline {subsubsection}{Objective Completed?}{258}{section*.47}
-\contentsline {subsubsection}{Evidence}{258}{section*.48}
-\contentsline {subsubsection}{Thrid Objective}{258}{section*.49}
-\contentsline {subsubsection}{Objective Completed?}{259}{section*.50}
-\contentsline {subsubsection}{Evidence}{259}{section*.51}
-\contentsline {subsubsection}{Forth Objective}{259}{section*.52}
-\contentsline {subsubsection}{Objective Completed?}{259}{section*.53}
-\contentsline {subsubsection}{Evidence}{259}{section*.54}
-\contentsline {subsection}{\numberline {6.1.2}Specific Objectives}{259}{subsection.6.1.2}
-\contentsline {subsubsection}{First Objective}{259}{section*.55}
-\contentsline {subsubsection}{Objective Completed?}{259}{section*.56}
-\contentsline {subsubsection}{Evidence}{259}{section*.57}
-\contentsline {subsubsection}{Second Objective}{259}{section*.58}
-\contentsline {subsubsection}{Thrid Objective}{259}{section*.59}
-\contentsline {subsubsection}{Objective Completed?}{259}{section*.60}
-\contentsline {subsubsection}{Evidence}{259}{section*.61}
-\contentsline {subsubsection}{Forth Objective}{259}{section*.62}
-\contentsline {subsubsection}{Objective Completed?}{260}{section*.63}
-\contentsline {subsubsection}{Evidence}{260}{section*.64}
-\contentsline {subsection}{\numberline {6.1.3}Core Objectives}{260}{subsection.6.1.3}
-\contentsline {subsubsection}{First Objective}{260}{section*.65}
-\contentsline {subsubsection}{Objective Completed?}{261}{section*.66}
-\contentsline {subsubsection}{Evidence}{261}{section*.67}
-\contentsline {subsubsection}{Second Objective}{261}{section*.68}
-\contentsline {subsubsection}{Objective Completed?}{261}{section*.69}
-\contentsline {subsubsection}{Evidence}{261}{section*.70}
-\contentsline {subsection}{\numberline {6.1.4}Other Objectives}{261}{subsection.6.1.4}
-\contentsline {subsubsection}{First Objective}{261}{section*.71}
-\contentsline {subsubsection}{Objective Completed?}{261}{section*.72}
-\contentsline {subsubsection}{Evidence}{261}{section*.73}
-\contentsline {subsubsection}{Second Objective}{261}{section*.74}
-\contentsline {subsubsection}{Objective Completed?}{261}{section*.75}
-\contentsline {subsubsection}{Thrid Objective}{262}{section*.76}
-\contentsline {subsubsection}{Objective Completed?}{262}{section*.77}
-\contentsline {subsection}{\numberline {6.1.5}Objective Evaluation}{262}{subsection.6.1.5}
-\contentsline {section}{\numberline {6.2}Effectiveness}{262}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Objective Evaluation}{262}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Learnability}{262}{section.6.3}
-\contentsline {section}{\numberline {6.4}Usability}{262}{section.6.4}
-\contentsline {section}{\numberline {6.5}Maintainability}{262}{section.6.5}
-\contentsline {section}{\numberline {6.6}Suggestions for Improvement}{262}{section.6.6}
-\contentsline {section}{\numberline {6.7}End User Evidence}{262}{section.6.7}
-\contentsline {subsection}{\numberline {6.7.1}Questionnaires}{262}{subsection.6.7.1}
-\contentsline {subsection}{\numberline {6.7.2}Graphs}{262}{subsection.6.7.2}
-\contentsline {subsection}{\numberline {6.7.3}Written Statements}{262}{subsection.6.7.3}
+\contentsline {chapter}{\numberline {6}Evaluation}{259}{chapter.6}
+\contentsline {section}{\numberline {6.1}Customer Requirements}{259}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Genral Objetives}{259}{subsection.6.1.1}
+\contentsline {subsubsection}{First Objective}{259}{section*.43}
+\contentsline {subsubsection}{Objective Completed?}{259}{section*.44}
+\contentsline {subsubsection}{Evidence}{259}{section*.45}
+\contentsline {subsubsection}{Second Objective}{259}{section*.46}
+\contentsline {subsubsection}{Objective Completed?}{259}{section*.47}
+\contentsline {subsubsection}{Evidence}{259}{section*.48}
+\contentsline {subsubsection}{Thrid Objective}{259}{section*.49}
+\contentsline {subsubsection}{Objective Completed?}{260}{section*.50}
+\contentsline {subsubsection}{Evidence}{260}{section*.51}
+\contentsline {subsubsection}{Forth Objective}{260}{section*.52}
+\contentsline {subsubsection}{Objective Completed?}{260}{section*.53}
+\contentsline {subsubsection}{Evidence}{260}{section*.54}
+\contentsline {subsection}{\numberline {6.1.2}Specific Objectives}{260}{subsection.6.1.2}
+\contentsline {subsubsection}{First Objective}{260}{section*.55}
+\contentsline {subsubsection}{Objective Completed?}{260}{section*.56}
+\contentsline {subsubsection}{Evidence}{260}{section*.57}
+\contentsline {subsubsection}{Second Objective}{260}{section*.58}
+\contentsline {subsubsection}{Thrid Objective}{260}{section*.59}
+\contentsline {subsubsection}{Objective Completed?}{260}{section*.60}
+\contentsline {subsubsection}{Evidence}{260}{section*.61}
+\contentsline {subsubsection}{Forth Objective}{260}{section*.62}
+\contentsline {subsubsection}{Objective Completed?}{261}{section*.63}
+\contentsline {subsubsection}{Evidence}{261}{section*.64}
+\contentsline {subsection}{\numberline {6.1.3}Core Objectives}{261}{subsection.6.1.3}
+\contentsline {subsubsection}{First Objective}{261}{section*.65}
+\contentsline {subsubsection}{Objective Completed?}{262}{section*.66}
+\contentsline {subsubsection}{Evidence}{262}{section*.67}
+\contentsline {subsubsection}{Second Objective}{262}{section*.68}
+\contentsline {subsubsection}{Objective Completed?}{262}{section*.69}
+\contentsline {subsubsection}{Evidence}{262}{section*.70}
+\contentsline {subsection}{\numberline {6.1.4}Other Objectives}{262}{subsection.6.1.4}
+\contentsline {subsubsection}{First Objective}{262}{section*.71}
+\contentsline {subsubsection}{Objective Completed?}{262}{section*.72}
+\contentsline {subsubsection}{Evidence}{262}{section*.73}
+\contentsline {subsubsection}{Second Objective}{262}{section*.74}
+\contentsline {subsubsection}{Objective Completed?}{262}{section*.75}
+\contentsline {subsubsection}{Thrid Objective}{263}{section*.76}
+\contentsline {subsubsection}{Objective Completed?}{263}{section*.77}
+\contentsline {subsection}{\numberline {6.1.5}Objective Evaluation}{263}{subsection.6.1.5}
+\contentsline {section}{\numberline {6.2}Effectiveness}{263}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Objective Evaluation}{263}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Learnability}{263}{section.6.3}
+\contentsline {section}{\numberline {6.4}Usability}{263}{section.6.4}
+\contentsline {section}{\numberline {6.5}Maintainability}{263}{section.6.5}
+\contentsline {section}{\numberline {6.6}Suggestions for Improvement}{263}{section.6.6}
+\contentsline {section}{\numberline {6.7}End User Evidence}{263}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Questionnaires}{263}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}Graphs}{263}{subsection.6.7.2}
+\contentsline {subsection}{\numberline {6.7.3}Written Statements}{263}{subsection.6.7.3}
 \contentsfinish 
