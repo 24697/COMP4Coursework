@@ -162,80 +162,80 @@
 \contentsline {section}{\numberline {5.3}Installation}{234}{section.5.3}
 \contentsline {subsection}{\numberline {5.3.1}Prerequisite Installation}{234}{subsection.5.3.1}
 \contentsline {subsubsection}{Installing Python}{234}{section*.33}
-\contentsline {subsubsection}{Installing PyQt}{234}{section*.34}
-\contentsline {subsection}{\numberline {5.3.2}System Installation}{234}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Running the System}{235}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}Tutorial}{235}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Introduction}{235}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}Assumptions}{235}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Tutorial Questions}{235}{subsection.5.4.3}
-\contentsline {subsubsection}{What is the process of loading the database}{235}{section*.35}
-\contentsline {subsubsection}{What is the process of adding a rider?}{236}{section*.36}
-\contentsline {subsubsection}{What is the process of adding a club?}{236}{section*.37}
-\contentsline {subsubsection}{What is the process of adding a course?}{236}{section*.38}
-\contentsline {subsubsection}{What is the process of connecting a club to a rider?}{237}{section*.39}
-\contentsline {subsubsection}{What is the process of adding an event?}{237}{section*.40}
-\contentsline {subsubsection}{What is the process of adding a record to an event?}{237}{section*.41}
-\contentsline {subsubsection}{What is the process of adding an event with records and points from beginning to end?}{237}{section*.42}
-\contentsline {subsection}{\numberline {5.4.4}Saving}{238}{subsection.5.4.4}
-\contentsline {subsection}{\numberline {5.4.5}Limitations}{238}{subsection.5.4.5}
-\contentsline {section}{\numberline {5.5}Error Recovery}{238}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}Error 1}{238}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}Error 2}{238}{subsection.5.5.2}
-\contentsline {section}{\numberline {5.6}System Recovery}{238}{section.5.6}
-\contentsline {subsection}{\numberline {5.6.1}Backing-up Data}{238}{subsection.5.6.1}
-\contentsline {subsection}{\numberline {5.6.2}Restoring Data}{239}{subsection.5.6.2}
+\contentsline {subsubsection}{Installing PyQt}{241}{section*.34}
+\contentsline {subsection}{\numberline {5.3.2}System Installation}{248}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Running the System}{253}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}Tutorial}{254}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Introduction}{254}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Assumptions}{254}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Tutorial Questions}{254}{subsection.5.4.3}
+\contentsline {subsubsection}{What is the process of loading the database}{254}{section*.35}
+\contentsline {subsubsection}{What is the process of adding a rider?}{254}{section*.36}
+\contentsline {subsubsection}{What is the process of adding a club?}{255}{section*.37}
+\contentsline {subsubsection}{What is the process of adding a course?}{255}{section*.38}
+\contentsline {subsubsection}{What is the process of connecting a club to a rider?}{255}{section*.39}
+\contentsline {subsubsection}{What is the process of adding an event?}{256}{section*.40}
+\contentsline {subsubsection}{What is the process of adding a record to an event?}{256}{section*.41}
+\contentsline {subsubsection}{What is the process of adding an event with records and points from beginning to end?}{256}{section*.42}
+\contentsline {subsection}{\numberline {5.4.4}Saving}{257}{subsection.5.4.4}
+\contentsline {subsection}{\numberline {5.4.5}Limitations}{257}{subsection.5.4.5}
+\contentsline {section}{\numberline {5.5}Error Recovery}{257}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Error 1}{257}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Error 2}{257}{subsection.5.5.2}
+\contentsline {section}{\numberline {5.6}System Recovery}{257}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Backing-up Data}{257}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Restoring Data}{257}{subsection.5.6.2}
 \ttl@stoptoc {UserManual@1}
-\contentsline {chapter}{\numberline {6}Evaluation}{240}{chapter.6}
-\contentsline {section}{\numberline {6.1}Customer Requirements}{240}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Genral Objetives}{240}{subsection.6.1.1}
-\contentsline {subsubsection}{First Objective}{240}{section*.43}
-\contentsline {subsubsection}{Objective Completed?}{240}{section*.44}
-\contentsline {subsubsection}{Evidence}{240}{section*.45}
-\contentsline {subsubsection}{Second Objective}{240}{section*.46}
-\contentsline {subsubsection}{Objective Completed?}{240}{section*.47}
-\contentsline {subsubsection}{Evidence}{240}{section*.48}
-\contentsline {subsubsection}{Thrid Objective}{240}{section*.49}
-\contentsline {subsubsection}{Objective Completed?}{241}{section*.50}
-\contentsline {subsubsection}{Evidence}{241}{section*.51}
-\contentsline {subsubsection}{Forth Objective}{241}{section*.52}
-\contentsline {subsubsection}{Objective Completed?}{241}{section*.53}
-\contentsline {subsubsection}{Evidence}{241}{section*.54}
-\contentsline {subsection}{\numberline {6.1.2}Specific Objectives}{241}{subsection.6.1.2}
-\contentsline {subsubsection}{First Objective}{241}{section*.55}
-\contentsline {subsubsection}{Objective Completed?}{241}{section*.56}
-\contentsline {subsubsection}{Evidence}{241}{section*.57}
-\contentsline {subsubsection}{Second Objective}{241}{section*.58}
-\contentsline {subsubsection}{Thrid Objective}{241}{section*.59}
-\contentsline {subsubsection}{Objective Completed?}{241}{section*.60}
-\contentsline {subsubsection}{Evidence}{241}{section*.61}
-\contentsline {subsubsection}{Forth Objective}{241}{section*.62}
-\contentsline {subsubsection}{Objective Completed?}{242}{section*.63}
-\contentsline {subsubsection}{Evidence}{242}{section*.64}
-\contentsline {subsection}{\numberline {6.1.3}Core Objectives}{242}{subsection.6.1.3}
-\contentsline {subsubsection}{First Objective}{242}{section*.65}
-\contentsline {subsubsection}{Objective Completed?}{243}{section*.66}
-\contentsline {subsubsection}{Evidence}{243}{section*.67}
-\contentsline {subsubsection}{Second Objective}{243}{section*.68}
-\contentsline {subsubsection}{Objective Completed?}{243}{section*.69}
-\contentsline {subsubsection}{Evidence}{243}{section*.70}
-\contentsline {subsection}{\numberline {6.1.4}Other Objectives}{243}{subsection.6.1.4}
-\contentsline {subsubsection}{First Objective}{243}{section*.71}
-\contentsline {subsubsection}{Objective Completed?}{243}{section*.72}
-\contentsline {subsubsection}{Evidence}{243}{section*.73}
-\contentsline {subsubsection}{Second Objective}{243}{section*.74}
-\contentsline {subsubsection}{Objective Completed?}{243}{section*.75}
-\contentsline {subsubsection}{Thrid Objective}{244}{section*.76}
-\contentsline {subsubsection}{Objective Completed?}{244}{section*.77}
-\contentsline {subsection}{\numberline {6.1.5}Objective Evaluation}{244}{subsection.6.1.5}
-\contentsline {section}{\numberline {6.2}Effectiveness}{244}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Objective Evaluation}{244}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Learnability}{244}{section.6.3}
-\contentsline {section}{\numberline {6.4}Usability}{244}{section.6.4}
-\contentsline {section}{\numberline {6.5}Maintainability}{244}{section.6.5}
-\contentsline {section}{\numberline {6.6}Suggestions for Improvement}{244}{section.6.6}
-\contentsline {section}{\numberline {6.7}End User Evidence}{244}{section.6.7}
-\contentsline {subsection}{\numberline {6.7.1}Questionnaires}{244}{subsection.6.7.1}
-\contentsline {subsection}{\numberline {6.7.2}Graphs}{244}{subsection.6.7.2}
-\contentsline {subsection}{\numberline {6.7.3}Written Statements}{244}{subsection.6.7.3}
+\contentsline {chapter}{\numberline {6}Evaluation}{258}{chapter.6}
+\contentsline {section}{\numberline {6.1}Customer Requirements}{258}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Genral Objetives}{258}{subsection.6.1.1}
+\contentsline {subsubsection}{First Objective}{258}{section*.43}
+\contentsline {subsubsection}{Objective Completed?}{258}{section*.44}
+\contentsline {subsubsection}{Evidence}{258}{section*.45}
+\contentsline {subsubsection}{Second Objective}{258}{section*.46}
+\contentsline {subsubsection}{Objective Completed?}{258}{section*.47}
+\contentsline {subsubsection}{Evidence}{258}{section*.48}
+\contentsline {subsubsection}{Thrid Objective}{258}{section*.49}
+\contentsline {subsubsection}{Objective Completed?}{259}{section*.50}
+\contentsline {subsubsection}{Evidence}{259}{section*.51}
+\contentsline {subsubsection}{Forth Objective}{259}{section*.52}
+\contentsline {subsubsection}{Objective Completed?}{259}{section*.53}
+\contentsline {subsubsection}{Evidence}{259}{section*.54}
+\contentsline {subsection}{\numberline {6.1.2}Specific Objectives}{259}{subsection.6.1.2}
+\contentsline {subsubsection}{First Objective}{259}{section*.55}
+\contentsline {subsubsection}{Objective Completed?}{259}{section*.56}
+\contentsline {subsubsection}{Evidence}{259}{section*.57}
+\contentsline {subsubsection}{Second Objective}{259}{section*.58}
+\contentsline {subsubsection}{Thrid Objective}{259}{section*.59}
+\contentsline {subsubsection}{Objective Completed?}{259}{section*.60}
+\contentsline {subsubsection}{Evidence}{259}{section*.61}
+\contentsline {subsubsection}{Forth Objective}{259}{section*.62}
+\contentsline {subsubsection}{Objective Completed?}{260}{section*.63}
+\contentsline {subsubsection}{Evidence}{260}{section*.64}
+\contentsline {subsection}{\numberline {6.1.3}Core Objectives}{260}{subsection.6.1.3}
+\contentsline {subsubsection}{First Objective}{260}{section*.65}
+\contentsline {subsubsection}{Objective Completed?}{261}{section*.66}
+\contentsline {subsubsection}{Evidence}{261}{section*.67}
+\contentsline {subsubsection}{Second Objective}{261}{section*.68}
+\contentsline {subsubsection}{Objective Completed?}{261}{section*.69}
+\contentsline {subsubsection}{Evidence}{261}{section*.70}
+\contentsline {subsection}{\numberline {6.1.4}Other Objectives}{261}{subsection.6.1.4}
+\contentsline {subsubsection}{First Objective}{261}{section*.71}
+\contentsline {subsubsection}{Objective Completed?}{261}{section*.72}
+\contentsline {subsubsection}{Evidence}{261}{section*.73}
+\contentsline {subsubsection}{Second Objective}{261}{section*.74}
+\contentsline {subsubsection}{Objective Completed?}{261}{section*.75}
+\contentsline {subsubsection}{Thrid Objective}{262}{section*.76}
+\contentsline {subsubsection}{Objective Completed?}{262}{section*.77}
+\contentsline {subsection}{\numberline {6.1.5}Objective Evaluation}{262}{subsection.6.1.5}
+\contentsline {section}{\numberline {6.2}Effectiveness}{262}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Objective Evaluation}{262}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}Learnability}{262}{section.6.3}
+\contentsline {section}{\numberline {6.4}Usability}{262}{section.6.4}
+\contentsline {section}{\numberline {6.5}Maintainability}{262}{section.6.5}
+\contentsline {section}{\numberline {6.6}Suggestions for Improvement}{262}{section.6.6}
+\contentsline {section}{\numberline {6.7}End User Evidence}{262}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Questionnaires}{262}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}Graphs}{262}{subsection.6.7.2}
+\contentsline {subsection}{\numberline {6.7.3}Written Statements}{262}{subsection.6.7.3}
 \contentsfinish 
